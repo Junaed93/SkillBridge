@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - FreelanceHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">FreelanceHub</span>
+            </a>
+            <div class="navbar-links">
+                <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="browse-freelancers.html" class="btn btn-primary btn-sm">Post Project</a>
+                <a href="browse-freelancers.html" class="navbar-link">Find Freelancers</a>
+                <a href="login.html" class="navbar-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Client Dashboard</h1>
+                <p style="color: var(--gray-600);">Welcome back, Jane Client</p>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Completed Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$15,500</div>
+                    <div class="stat-label">Total Spent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Pending Review</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-header" style="margin-top: 2rem;">
+                <h2>Active Projects</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">E-commerce Platform</h3>
+                            <p style="color: var(--gray-600); margin: 0;">Freelancer: Sarah Johnson</p>
+                        </div>
+                        <span class="badge badge-info">in-progress</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-600);">Progress</span>
+                            <span style="font-size: 0.875rem; font-weight: 600;">65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; color: var(--gray-900);">$5,000</span>
+                            <span style="color: var(--gray-600); font-size: 0.875rem; margin-left: 0.5rem;">Due: 2025-03-01</span>
+                        </div>
+                        <a href="login.html" class="btn btn-secondary btn-sm">Chat</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">Blog Content</h3>
+                            <p style="color: var(--gray-600); margin: 0;">Freelancer: Emily Rodriguez</p>
+                        </div>
+                        <span class="badge badge-warning">delivered</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-600);">Progress</span>
+                            <span style="font-size: 0.875rem; font-weight: 600;">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; color: var(--gray-900);">$1,000</span>
+                            <span style="color: var(--gray-600); font-size: 0.875rem; margin-left: 0.5rem;">Due: 2025-01-20</span>
+                        </div>
+                        <a href="login.html" class="btn btn-success btn-sm">Review Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FreelanceHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

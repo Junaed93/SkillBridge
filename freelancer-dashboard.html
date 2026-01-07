@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Dashboard - FreelanceHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">FreelanceHub</span>
+            </a>
+            <div class="navbar-links">
+                <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="browse-freelancers.html" class="navbar-link">Browse Jobs</a>
+                <a href="login.html" class="navbar-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Freelancer Dashboard</h1>
+                <p style="color: var(--gray-600);">Welcome back, John Freelancer</p>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Completed Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$12,450</div>
+                    <div class="stat-label">Total Earnings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$3,200</div>
+                    <div class="stat-label">Pending Payments</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-header" style="margin-top: 2rem;">
+                <h2>Active Projects</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">E-commerce Platform</h3>
+                            <p style="color: var(--gray-600); margin: 0;">Client: TechStart Inc</p>
+                        </div>
+                        <span class="badge badge-info">in-progress</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-600);">Progress</span>
+                            <span style="font-size: 0.875rem; font-weight: 600;">65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; color: var(--gray-900);">$5,000</span>
+                            <span style="color: var(--gray-600); font-size: 0.875rem; margin-left: 0.5rem;">Due: 2025-03-01</span>
+                        </div>
+                        <a href="login.html" class="btn btn-primary btn-sm">Deliver Work</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">Mobile App Redesign</h3>
+                            <p style="color: var(--gray-600); margin: 0;">Client: AppVentures</p>
+                        </div>
+                        <span class="badge badge-info">in-progress</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-600);">Progress</span>
+                            <span style="font-size: 0.875rem; font-weight: 600;">45%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="font-weight: 600; color: var(--gray-900);">$3,000</span>
+                            <span style="color: var(--gray-600); font-size: 0.875rem; margin-left: 0.5rem;">Due: 2025-02-15</span>
+                        </div>
+                        <a href="login.html" class="btn btn-primary btn-sm">Deliver Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FreelanceHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
