@@ -20,7 +20,7 @@
                 <a href="#" class="navbar-link">About</a>
                 <a href="login.html" class="navbar-link">Login</a>
                 <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-                <a href="post-project.html" class="btn btn-secondary btn-sm">Post a Project</a>
+                <a href="post-project.html" id="navbarProjectLink" class="btn btn-secondary btn-sm">Post a Project</a>
             </div>
         </div>
     </nav>
@@ -166,5 +166,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle role toggle to update navbar
+        const roleToggle = document.getElementById('roleToggle');
+        const navbarProjectLink = document.getElementById('navbarProjectLink');
+        
+        // Function to update navbar based on toggle state
+        function updateNavbar() {
+            if (roleToggle.checked) {
+                // Freelancer mode: Show "Find a Project"
+                navbarProjectLink.textContent = 'Find a Project';
+                navbarProjectLink.href = 'browse-projects.html';
+            } else {
+                // Client mode: Show "Post a Project"
+                navbarProjectLink.textContent = 'Post a Project';
+                navbarProjectLink.href = 'post-project.html';
+            }
+        }
+        
+        // Listen for toggle changes
+        roleToggle.addEventListener('change', updateNavbar);
+        
+        // Initialize on page load
+        updateNavbar();
+    </script>
 </body>
 </html>
