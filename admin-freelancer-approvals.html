@@ -1,215 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pending Freelancer Approvals - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar admin-navbar">
-        <div class="navbar-content">
-            <a href="index.html" class="navbar-logo">
-                <div class="navbar-logo-icon">💼</div>
-                <span class="navbar-logo-text">SkillBridge</span>
-            </a>
-            <div class="navbar-links">
-                <a href="index.html" class="navbar-link">Home</a>
-                <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
-                <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
-                <a href="admin-freelancer-approvals.html" class="navbar-link active">Freelancer Approvals</a>
-                <a href="admin-client-approvals.html" class="navbar-link">Client Approvals</a>
-                <a href="admin-verification.html" class="navbar-link">Verification</a>
-                <div class="navbar-profile">
-                    <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem;">👤</div>
-                </div>
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">
+          <img src="logo.png" alt="SkillBridge Logo" />
+          <span
+            style="font-family: calibri; font-size: 25px; font-weight: bold"
+          >
+            <span style="color: greenyellow">Skill</span
+            ><span style="color: blue">Bridge</span>
+          </span>
+        </a>
+        <div class="navbar-links">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
+          <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+          <a href="admin-freelancer-approvals.html" class="navbar-link active"
+            >Freelancer Approvals</a
+          >
+          <a href="admin-client-approvals.html" class="navbar-link"
+            >Client Approvals</a
+          >
+          <a href="admin-verification.html" class="navbar-link">Verification</a>
+          <div class="navbar-profile">
+            <div
+              class="avatar"
+              style="width: 32px; height: 32px; font-size: 1rem"
+            >
+              👤
             </div>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Pending Freelancer Approvals -->
     <div class="dashboard">
-        <div class="container">
-            <div class="dashboard-header">
-                <h1>Pending Freelancer Approvals</h1>
-                <p style="color: var(--gray-600);">Review and approve freelancer applications.</p>
-            </div>
-
-            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-                <button class="btn btn-danger btn-lg">Reject All</button>
-                <button class="btn btn-success btn-lg">Approve All</button>
-            </div>
-
-            <div class="table-container">
-                <table class="table admin-table">
-                    <thead>
-                        <tr>
-                            <th>Photo</th>
-                            <th>Name</th>
-                            <th>Profession</th>
-                            <th>Email</th>
-                            <th>Portfolio</th>
-                            <th>GitHub</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="hoverable-row" data-details='{"name":"Mahin Ahmed","email":"mahin@example.com","profession":"Graphic Designer","portfolio":"https://mahin-portfolio.com","github":"https://github.com/mahin","experience":"5+ years","skills":"Photoshop, Illustrator, Figma","bio":"Experienced graphic designer specializing in brand identity and digital marketing materials."}'>
-                            <td>
-                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem;">👨‍🎨</div>
-                            </td>
-                            <td>Mahin Ahmed</td>
-                            <td>Graphic Designer</td>
-                            <td>mahin@example.com</td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="btn btn-success btn-sm">Approve</button>
-                                    <button class="btn btn-danger btn-sm">Reject</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="hoverable-row" data-details='{"name":"Ishfa Tabassum","email":"ishfa@example.com","profession":"Web Developer","portfolio":"https://ishfa-portfolio.com","github":"https://github.com/ishfa","experience":"3+ years","skills":"React, Node.js, MongoDB","bio":"Full-stack developer with expertise in modern web technologies and responsive design."}'>
-                            <td>
-                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem;">👩‍💻</div>
-                            </td>
-                            <td>Ishfa Tabassum</td>
-                            <td>Web Developer</td>
-                            <td>ishfa@example.com</td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="btn btn-success btn-sm">Approve</button>
-                                    <button class="btn btn-danger btn-sm">Reject</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="hoverable-row" data-details='{"name":"Junaed Khandakar","email":"junaed@example.com","profession":"UI/UX Designer","portfolio":"https://junaed-portfolio.com","github":"https://github.com/junaed","experience":"4+ years","skills":"Figma, Adobe XD, Sketch","bio":"Creative UI/UX designer focused on creating intuitive and beautiful user experiences."}'>
-                            <td>
-                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem;">👨‍💼</div>
-                            </td>
-                            <td>Junaed Khandakar</td>
-                            <td>UI/UX Designer</td>
-                            <td>junaed@example.com</td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="btn btn-success btn-sm">Approve</button>
-                                    <button class="btn btn-danger btn-sm">Reject</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="hoverable-row" data-details='{"name":"Sarah Johnson","email":"sarah@example.com","profession":"Content Writer","portfolio":"https://sarah-portfolio.com","github":"https://github.com/sarah","experience":"6+ years","skills":"SEO, Copywriting, Blog Writing","bio":"Professional content writer specializing in SEO-optimized articles and marketing copy."}'>
-                            <td>
-                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem;">✍️</div>
-                            </td>
-                            <td>Sarah Johnson</td>
-                            <td>Content Writer</td>
-                            <td>sarah@example.com</td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="btn btn-success btn-sm">Approve</button>
-                                    <button class="btn btn-danger btn-sm">Reject</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="hoverable-row" data-details='{"name":"Michael Chen","email":"michael@example.com","profession":"Video Editor","portfolio":"https://michael-portfolio.com","github":"https://github.com/michael","experience":"5+ years","skills":"Premiere Pro, After Effects, Final Cut","bio":"Professional video editor with expertise in motion graphics and post-production."}'>
-                            <td>
-                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem;">🎬</div>
-                            </td>
-                            <td>Michael Chen</td>
-                            <td>Video Editor</td>
-                            <td>michael@example.com</td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td><a href="#" style="color: var(--blue-600);">View</a></td>
-                            <td>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="btn btn-success btn-sm">Approve</button>
-                                    <button class="btn btn-danger btn-sm">Reject</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Hover Tooltip -->
-            <div id="hoverTooltip" class="hover-tooltip"></div>
+      <div class="container">
+        <div class="dashboard-header">
+          <h1>Pending Freelancer Approvals</h1>
+          <p style="color: var(--gray-600)">
+            Review and approve freelancer applications.
+          </p>
         </div>
+
+        <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
+          <button class="btn btn-danger btn-lg">Reject All</button>
+          <button class="btn btn-success btn-lg">Approve All</button>
+        </div>
+
+        <div class="table-container">
+          <table class="table admin-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Profession</th>
+                <th>Email</th>
+                <th>Portfolio</th>
+                <th>GitHub</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="hoverable-row"
+                data-details='{"name":"Mahin Ahmed","email":"mahin@example.com","profession":"Graphic Designer","portfolio":"https://mahin-portfolio.com","github":"https://github.com/mahin","experience":"5+ years","skills":"Photoshop, Illustrator, Figma","bio":"Experienced graphic designer specializing in brand identity and digital marketing materials."}'
+              >
+                <td>
+                  <div
+                    class="avatar avatar-sm"
+                    style="width: 50px; height: 50px; font-size: 1.5rem"
+                  >
+                    👨‍🎨
+                  </div>
+                </td>
+                <td>Mahin Ahmed</td>
+                <td>Graphic Designer</td>
+                <td>mahin@example.com</td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem">
+                    <button class="btn btn-success btn-sm">Approve</button>
+                    <button class="btn btn-danger btn-sm">Reject</button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="hoverable-row"
+                data-details='{"name":"Ishfa Tabassum","email":"ishfa@example.com","profession":"Web Developer","portfolio":"https://ishfa-portfolio.com","github":"https://github.com/ishfa","experience":"3+ years","skills":"React, Node.js, MongoDB","bio":"Full-stack developer with expertise in modern web technologies and responsive design."}'
+              >
+                <td>
+                  <div
+                    class="avatar avatar-sm"
+                    style="width: 50px; height: 50px; font-size: 1.5rem"
+                  >
+                    👩‍💻
+                  </div>
+                </td>
+                <td>Ishfa Tabassum</td>
+                <td>Web Developer</td>
+                <td>ishfa@example.com</td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem">
+                    <button class="btn btn-success btn-sm">Approve</button>
+                    <button class="btn btn-danger btn-sm">Reject</button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="hoverable-row"
+                data-details='{"name":"Junaed Khandakar","email":"junaed@example.com","profession":"UI/UX Designer","portfolio":"https://junaed-portfolio.com","github":"https://github.com/junaed","experience":"4+ years","skills":"Figma, Adobe XD, Sketch","bio":"Creative UI/UX designer focused on creating intuitive and beautiful user experiences."}'
+              >
+                <td>
+                  <div
+                    class="avatar avatar-sm"
+                    style="width: 50px; height: 50px; font-size: 1.5rem"
+                  >
+                    👨‍💼
+                  </div>
+                </td>
+                <td>Junaed Khandakar</td>
+                <td>UI/UX Designer</td>
+                <td>junaed@example.com</td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem">
+                    <button class="btn btn-success btn-sm">Approve</button>
+                    <button class="btn btn-danger btn-sm">Reject</button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="hoverable-row"
+                data-details='{"name":"Sarah Johnson","email":"sarah@example.com","profession":"Content Writer","portfolio":"https://sarah-portfolio.com","github":"https://github.com/sarah","experience":"6+ years","skills":"SEO, Copywriting, Blog Writing","bio":"Professional content writer specializing in SEO-optimized articles and marketing copy."}'
+              >
+                <td>
+                  <div
+                    class="avatar avatar-sm"
+                    style="width: 50px; height: 50px; font-size: 1.5rem"
+                  >
+                    ✍️
+                  </div>
+                </td>
+                <td>Sarah Johnson</td>
+                <td>Content Writer</td>
+                <td>sarah@example.com</td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem">
+                    <button class="btn btn-success btn-sm">Approve</button>
+                    <button class="btn btn-danger btn-sm">Reject</button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="hoverable-row"
+                data-details='{"name":"Michael Chen","email":"michael@example.com","profession":"Video Editor","portfolio":"https://michael-portfolio.com","github":"https://github.com/michael","experience":"5+ years","skills":"Premiere Pro, After Effects, Final Cut","bio":"Professional video editor with expertise in motion graphics and post-production."}'
+              >
+                <td>
+                  <div
+                    class="avatar avatar-sm"
+                    style="width: 50px; height: 50px; font-size: 1.5rem"
+                  >
+                    🎬
+                  </div>
+                </td>
+                <td>Michael Chen</td>
+                <td>Video Editor</td>
+                <td>michael@example.com</td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td><a href="#" style="color: var(--blue-600)">View</a></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem">
+                    <button class="btn btn-success btn-sm">Approve</button>
+                    <button class="btn btn-danger btn-sm">Reject</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Hover Tooltip -->
+        <div id="hoverTooltip" class="hover-tooltip"></div>
+      </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer skillbridge-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="navbar-logo-icon">💼</div>
-                        <span class="navbar-logo-text">SkillBridge</span>
-                    </div>
-                    <div class="footer-address">
-                        <p><strong>Where employment bridges skills</strong></p>
-                        <p>22/1, Block-B, Mirpur-1</p>
-                        <p>Dhaka, Bangladesh</p>
-                        <p>Phone: +880 1234 567890</p>
-                        <p>Email: info@skillbridge.com</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Find your skills</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">UI/UX Designer</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Video Editor</a></li>
-                        <li><a href="#">Data Scientist</a></li>
-                        <li><a href="#">Graphic Designer</a></li>
-                        <li><a href="#">Content Writer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
-                        <a href="#" class="social-icon" aria-label="Email">✉️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023, SkillBridge. All rights reserved.</p>
-            </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <h2 class="logo">SkillsBridge</h2>
+          <p class="tagline">Where employment bridges skills</p>
+
+          <h4>Address:</h4>
+          <p>
+            442 lorem ipsum, lorem<br />
+            Dhaka, Bangladesh
+          </p>
+
+          <h4>Contact:</h4>
+          <p>
+            +880-1710999999<br />
+            +880-1910999999<br />
+            support@skillbridge.com
+          </p>
         </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Services:</h4>
+          <ul>
+            <li>Post a Job</li>
+            <li>Browse Jobs</li>
+          </ul>
+
+          <h4>Find a:</h4>
+          <ul>
+            <li>Web Designer</li>
+            <li>Photoshop designer</li>
+            <li>Illustrator designer</li>
+            <li>Visualizer</li>
+            <li>SEO expert</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4>Find a job for skills:</h4>
+          <ul>
+            <li>Web development</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>After effects</li>
+            <li>SEO</li>
+            <li>Digital Marketing</li>
+            <li>Social Media Management</li>
+            <li>C++ developer</li>
+            <li>PHP developer</li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Legal:</h4>
+          <ul>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms and conditions</li>
+          </ul>
+
+          <div class="social-icons">
+            <div class="icon">f</div>
+            <div class="icon">📷</div>
+            <div class="icon">✉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
     </footer>
 
     <script>
-        // Hover tooltip functionality
-        const rows = document.querySelectorAll('.hoverable-row');
-        const tooltip = document.getElementById('hoverTooltip');
+      // Hover tooltip functionality
+      const rows = document.querySelectorAll(".hoverable-row");
+      const tooltip = document.getElementById("hoverTooltip");
 
-        rows.forEach(row => {
-            row.addEventListener('mouseenter', function(e) {
-                const details = JSON.parse(this.getAttribute('data-details'));
-                const rect = this.getBoundingClientRect();
-                
-                tooltip.innerHTML = `
+      rows.forEach((row) => {
+        row.addEventListener("mouseenter", function (e) {
+          const details = JSON.parse(this.getAttribute("data-details"));
+          const rect = this.getBoundingClientRect();
+
+          tooltip.innerHTML = `
                     <div style="padding: 1rem;">
                         <h3 style="margin-bottom: 0.5rem; color: var(--gray-900);">${details.name}</h3>
                         <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Profession:</strong> ${details.profession}</p>
@@ -223,47 +300,46 @@
                         </div>
                     </div>
                 `;
-                
-                const tooltipWidth = 350;
-                let left = rect.right + 20;
-                let top = rect.top + window.scrollY;
-                
-                // Adjust if tooltip goes off screen
-                if (left + tooltipWidth > window.innerWidth) {
-                    left = rect.left - tooltipWidth - 20;
-                }
-                
-                tooltip.style.display = 'block';
-                tooltip.style.left = left + 'px';
-                tooltip.style.top = top + 'px';
-            });
 
-            row.addEventListener('mouseleave', function() {
-                tooltip.style.display = 'none';
-            });
+          const tooltipWidth = 350;
+          let left = rect.right + 20;
+          let top = rect.top + window.scrollY;
 
-            row.addEventListener('mousemove', function(e) {
-                const rect = this.getBoundingClientRect();
-                const tooltipWidth = 350;
-                const tooltipHeight = 200;
-                
-                let left = rect.right + 20;
-                let top = rect.top + window.scrollY;
-                
-                // Adjust if tooltip goes off screen
-                if (left + tooltipWidth > window.innerWidth) {
-                    left = rect.left - tooltipWidth - 20;
-                }
-                
-                if (top + tooltipHeight > window.innerHeight + window.scrollY) {
-                    top = window.innerHeight + window.scrollY - tooltipHeight - 20;
-                }
-                
-                tooltip.style.left = left + 'px';
-                tooltip.style.top = top + 'px';
-            });
+          // Adjust if tooltip goes off screen
+          if (left + tooltipWidth > window.innerWidth) {
+            left = rect.left - tooltipWidth - 20;
+          }
+
+          tooltip.style.display = "block";
+          tooltip.style.left = left + "px";
+          tooltip.style.top = top + "px";
         });
-    </script>
-</body>
-</html>
 
+        row.addEventListener("mouseleave", function () {
+          tooltip.style.display = "none";
+        });
+
+        row.addEventListener("mousemove", function (e) {
+          const rect = this.getBoundingClientRect();
+          const tooltipWidth = 350;
+          const tooltipHeight = 200;
+
+          let left = rect.right + 20;
+          let top = rect.top + window.scrollY;
+
+          // Adjust if tooltip goes off screen
+          if (left + tooltipWidth > window.innerWidth) {
+            left = rect.left - tooltipWidth - 20;
+          }
+
+          if (top + tooltipHeight > window.innerHeight + window.scrollY) {
+            top = window.innerHeight + window.scrollY - tooltipHeight - 20;
+          }
+
+          tooltip.style.left = left + "px";
+          tooltip.style.top = top + "px";
+        });
+      });
+    </script>
+  </body>
+</html>

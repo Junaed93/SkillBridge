@@ -1,209 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        /* Pure CSS solution - show fields when freelancer radio is checked */
-        .role-selector {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .role-option {
-            display: none;
-        }
-        
-        .role-option + label {
-            display: block;
-            padding: 0.625rem 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 0.375rem;
-            cursor: pointer;
-            background-color: var(--white);
-            transition: all 0.2s;
-        }
-        
-        .role-option + label:hover {
-            background-color: var(--gray-50);
-        }
-        
-        .role-option:checked + label {
-            border-color: var(--blue-600);
-            background-color: var(--blue-50);
-            color: var(--blue-700);
-        }
-        
-        #freelancerFields {
-            display: none;
-        }
-        
-        /* Show fields when freelancer radio is checked */
-        #roleFreelancer:checked ~ #freelancerFields {
-            display: block;
-        }
+      /* Pure CSS solution - show fields when freelancer radio is checked */
+      .role-selector {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .role-option {
+        display: none;
+      }
+
+      .role-option + label {
+        display: block;
+        padding: 0.625rem 0.75rem;
+        border: 1px solid var(--gray-300);
+        border-radius: 0.375rem;
+        cursor: pointer;
+        background-color: var(--white);
+        transition: all 0.2s;
+      }
+
+      .role-option + label:hover {
+        background-color: var(--gray-50);
+      }
+
+      .role-option:checked + label {
+        border-color: var(--blue-600);
+        background-color: var(--blue-50);
+        color: var(--blue-700);
+      }
+
+      #freelancerFields {
+        display: none;
+      }
+
+      /* Show fields when freelancer radio is checked */
+      #roleFreelancer:checked ~ #freelancerFields {
+        display: block;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="navbar-content">
-            <a href="index.html" class="navbar-logo">
-                <div class="navbar-logo-icon">💼</div>
-                <span class="navbar-logo-text">SkillBridge</span>
-            </a>
-            <div class="navbar-links">
-                <a href="browse-freelancers.html" class="navbar-link">Browse Freelancers</a>
-                <a href="login.html" class="navbar-link">Login</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
-            </div>
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">
+          <img src="logo.png" alt="SkillBridge Logo" />
+          <span
+            style="font-family: calibri; font-size: 25px; font-weight: bold"
+          >
+            <span style="color: greenyellow">Skill</span
+            ><span style="color: blue">Bridge</span>
+          </span>
+        </a>
+        <div class="navbar-links">
+          <a href="browse-freelancers.html" class="navbar-link"
+            >Browse Freelancers</a
+          >
+          <a href="login.html" class="navbar-link">Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
         </div>
+      </div>
     </nav>
 
     <!-- Signup Form -->
     <div class="auth-container">
-        <div class="auth-card">
-            <div class="auth-title">
-                <h1>Sign Up</h1>
-                <p style="color: var(--gray-600);">Create your SkillBridge account</p>
-            </div>
-            
-            <form action="#" method="post" id="signupForm">
-                <div class="form-group">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-input" name="name" id="signupName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" name="email" id="signupEmail" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-input" name="password" id="signupPassword" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-input" name="confirmPassword" id="signupConfirmPassword" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">I want to:</label>
-                    <div class="role-selector">
-                        <input type="radio" name="role" id="roleFreelancer" value="freelancer" class="role-option" required>
-                        <label for="roleFreelancer">Work as a Freelancer</label>
-                        
-                        <input type="radio" name="role" id="roleClient" value="client" class="role-option" required>
-                        <label for="roleClient">Hire Freelancers</label>
-                        
-                        <div id="freelancerFields">
-                            <div class="form-group" style="margin-top: 1rem;">
-                                <label class="form-label">Portfolio URL <span style="color: var(--red-600);">*</span></label>
-                                <input type="url" class="form-input" name="portfolio" id="signupPortfolio" placeholder="https://your-portfolio.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">GitHub Profile URL <span style="color: var(--red-600);">*</span></label>
-                                <input type="url" class="form-input" name="github" id="signupGithub" placeholder="https://github.com/username">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
-                    Create Account
-                </button>
-                
-                <p style="text-align: center; color: var(--gray-600);">
-                    Already have an account? 
-                    <a href="login.html" style="color: var(--blue-600);">Login</a>
-                </p>
-            </form>
-            
-            <div class="alert alert-info" style="margin-top: 1.5rem;">
-                <strong>Note:</strong> Freelancer accounts require admin approval before you can start bidding on jobs. Please provide your Portfolio and GitHub Profile URLs when signing up as a freelancer.
-            </div>
-            
-            <div style="text-align: center; margin-top: 1rem;">
-                <a href="index.html" style="color: var(--gray-600); font-size: 0.875rem;">← Back to Home</a>
-            </div>
+      <div class="auth-card">
+        <div class="auth-title">
+          <h1>Sign Up</h1>
+          <p style="color: var(--gray-600)">Create your SkillBridge account</p>
         </div>
+
+        <form action="#" method="post" id="signupForm">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-input"
+              name="name"
+              id="signupName"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-input"
+              name="email"
+              id="signupEmail"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-input"
+              name="password"
+              id="signupPassword"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Confirm Password</label>
+            <input
+              type="password"
+              class="form-input"
+              name="confirmPassword"
+              id="signupConfirmPassword"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">I want to:</label>
+            <div class="role-selector">
+              <input
+                type="radio"
+                name="role"
+                id="roleFreelancer"
+                value="freelancer"
+                class="role-option"
+                required
+              />
+              <label for="roleFreelancer">Work as a Freelancer</label>
+
+              <input
+                type="radio"
+                name="role"
+                id="roleClient"
+                value="client"
+                class="role-option"
+                required
+              />
+              <label for="roleClient">Hire Freelancers</label>
+
+              <div id="freelancerFields">
+                <div class="form-group" style="margin-top: 1rem">
+                  <label class="form-label"
+                    >Portfolio URL
+                    <span style="color: var(--red-600)">*</span></label
+                  >
+                  <input
+                    type="url"
+                    class="form-input"
+                    name="portfolio"
+                    id="signupPortfolio"
+                    placeholder="https://your-portfolio.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label"
+                    >GitHub Profile URL
+                    <span style="color: var(--red-600)">*</span></label
+                  >
+                  <input
+                    type="url"
+                    class="form-input"
+                    name="github"
+                    id="signupGithub"
+                    placeholder="https://github.com/username"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; margin-bottom: 1rem"
+          >
+            Create Account
+          </button>
+
+          <p style="text-align: center; color: var(--gray-600)">
+            Already have an account?
+            <a href="login.html" style="color: var(--blue-600)">Login</a>
+          </p>
+        </form>
+
+        <div class="alert alert-info" style="margin-top: 1.5rem">
+          <strong>Note:</strong> Freelancer accounts require admin approval
+          before you can start bidding on jobs. Please provide your Portfolio
+          and GitHub Profile URLs when signing up as a freelancer.
+        </div>
+
+        <div style="text-align: center; margin-top: 1rem">
+          <a
+            href="index.html"
+            style="color: var(--gray-600); font-size: 0.875rem"
+            >← Back to Home</a
+          >
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer skillbridge-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <div class="navbar-logo-icon">💼</div>
-                        <span class="navbar-logo-text">
-                            <span class="skills-text">Skills</span><span class="bridge-text">Bridge</span>
-                        </span>
-                    </div>
-                    <p class="footer-tagline">Where employment bridges skills</p>
-                    <div class="footer-address">
-                        <p>442 lorem ipsum, lorem Dhaka, Bangladesh</p>
-                        <p>Phone: +880-1710999999</p>
-                        <p>Phone: +880-1912999000</p>
-                        <p>Email: support@skillsbridge.com</p>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="post-project.html">Post a Job</a></li>
-                        <li><a href="browse-projects.html">Browse Jobs</a></li>
-                    </ul>
-                    <h4 class="footer-heading" style="margin-top: 1.5rem;">Find a:</h4>
-                    <ul class="footer-links">
-                        <li><a href="browse-freelancers.html">Web Designer</a></li>
-                        <li><a href="browse-freelancers.html">Photoshop designer</a></li>
-                        <li><a href="browse-freelancers.html">Illustrator designer</a></li>
-                        <li><a href="browse-freelancers.html">Visualizer</a></li>
-                        <li><a href="browse-freelancers.html">SEO expert</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Find a job for skills:</h4>
-                    <ul class="footer-links">
-                        <li><a href="browse-projects.html">Web development</a></li>
-                        <li><a href="browse-projects.html">Photoshop</a></li>
-                        <li><a href="browse-projects.html">Illustrator</a></li>
-                        <li><a href="browse-projects.html">After effects</a></li>
-                        <li><a href="browse-projects.html">SEO</a></li>
-                        <li><a href="browse-projects.html">Digital Marketing</a></li>
-                        <li><a href="browse-projects.html">Social Media Management</a></li>
-                        <li><a href="browse-projects.html">C++ developer</a></li>
-                        <li><a href="browse-projects.html">PHP developer</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-heading">Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms and conditions</a></li>
-                    </ul>
-                    <div class="social-icons" style="margin-top: 1.5rem;">
-                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
-                        <a href="#" class="social-icon" aria-label="Email">✉️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2005, SkillsBridge, Inc</p>
-            </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <h2 class="logo">SkillsBridge</h2>
+          <p class="tagline">Where employment bridges skills</p>
+
+          <h4>Address:</h4>
+          <p>
+            442 lorem ipsum, lorem<br />
+            Dhaka, Bangladesh
+          </p>
+
+          <h4>Contact:</h4>
+          <p>
+            +880-1710999999<br />
+            +880-1910999999<br />
+            support@skillbridge.com
+          </p>
         </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Services:</h4>
+          <ul>
+            <li>Post a Job</li>
+            <li>Browse Jobs</li>
+          </ul>
+
+          <h4>Find a:</h4>
+          <ul>
+            <li>Web Designer</li>
+            <li>Photoshop designer</li>
+            <li>Illustrator designer</li>
+            <li>Visualizer</li>
+            <li>SEO expert</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4>Find a job for skills:</h4>
+          <ul>
+            <li>Web development</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>After effects</li>
+            <li>SEO</li>
+            <li>Digital Marketing</li>
+            <li>Social Media Management</li>
+            <li>C++ developer</li>
+            <li>PHP developer</li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Legal:</h4>
+          <ul>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms and conditions</li>
+          </ul>
+
+          <div class="social-icons">
+            <div class="icon">f</div>
+            <div class="icon">📷</div>
+            <div class="icon">✉</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
     </footer>
-</body>
+  </body>
 </html>
