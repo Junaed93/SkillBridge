@@ -21,13 +21,14 @@
         </a>
         <div class="navbar-links">
           <a href="index.html" class="navbar-link">Home</a>
-          <a href="browse-freelancers.html" class="navbar-link"
-            >Browse Projects</a
+          <a href="browse-projects.html" class="navbar-link navbar-browse"
+            >Find a Project</a
           >
+          <a href="freelancer-dashboard.html" class="navbar-link" style="display: none;" id="dashboardLink">Dashboard</a>
           <a href="#" class="navbar-link">About</a>
           <a href="login.html" class="navbar-link">Login</a>
           <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm"
+          <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post"
             >Post a Project</a
           >
         </div>
@@ -59,7 +60,7 @@
                 class="search-input"
                 placeholder="Search for skills, services, or freelancers..."
               />
-              <button class="btn btn-primary search-btn">Search</button>
+              <a href="browse-projects.html" class="btn btn-primary search-btn">Search</a>
             </div>
 
             <div class="popular-searches">
@@ -77,14 +78,14 @@
                 >Get started</a
               >
               <a href="#" class="btn btn-outline btn-lg">Testimonials</a>
-              <a href="browse-freelancers.html" class="btn btn-outline btn-lg"
+              <a href="browse-projects.html" class="btn btn-outline btn-lg"
                 >Browse Top Freelancers</a
               >
             </div>
           </div>
           <div class="hero-image-content">
             <div class="hero-image-placeholder">
-              <div class="hero-person">👩‍💼</div>
+              <div class="hero-person"></div>
             </div>
           </div>
         </div>
@@ -95,55 +96,41 @@
     <div class="section section-white">
       <div class="container">
         <h2 class="section-title">Our trusted clients</h2>
-        <div class="grid grid-3 trusted-clients-grid">
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">Fariha Malon</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">Kashif Khan</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">Sarah Ahmed</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">John Smith</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">Emily Davis</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
-          <div class="card client-card">
-            <div class="client-avatar">👤</div>
-            <h3 class="client-name">Michael Brown</h3>
-            <p class="client-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-          </div>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fariha Malon</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+              <tr>
+                <td>Kashif Khan</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+              <tr>
+                <td>Sarah Ahmed</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+              <tr>
+                <td>Emily Davis</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+              <tr>
+                <td>Michael Brown</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -214,14 +201,15 @@
           </ul>
 
           <div class="social-icons">
-            <div class="icon">f</div>
-            <div class="icon">📷</div>
-            <div class="icon">✉</div>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Email</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
     </footer>
+
   </body>
 </html>

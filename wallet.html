@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallet Dashboard - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">
+          <img src="logo.png" alt="SkillBridge Logo" />
+          <span
+            style="font-family: calibri; font-size: 25px; font-weight: bold"
+          >
+            <span style="color: greenyellow">Skill</span
+            ><span style="color: blue">Bridge</span>
+          </span>
+        </a>
+        <div class="navbar-links">
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="browse-projects.html" class="navbar-link">Browse Projects</a>
+          <a href="#" class="navbar-link">About</a>
+          <a href="login.html" class="navbar-link">Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
+          <a href="post-project.html" class="btn btn-secondary btn-sm">Post a Project</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Wallet Header -->
+    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+      <div class="container">
+        <h1 class="section-title">Wallet Dashboard</h1>
+        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Manage your wallet balance and transactions.</p>
+      </div>
+    </div>
+
+    <!-- Current Wallet Balance -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Current Wallet Balance</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your balance available for withdrawal</p>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Balance</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-size: 1.5rem; font-weight: 600;">$500</td>
+                  <td>
+                    <button class="btn btn-outline-secondary btn-sm">Withdraw</button>
+                    <button class="btn btn-primary btn-sm">Add Funds</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="section section-white" id="transaction-history">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Transaction History</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your past transactions</p>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Payment Received</td>
+                  <td>Project A</td>
+                  <td>$200</td>
+                </tr>
+                <tr>
+                  <td>Payment Made</td>
+                  <td>Project B</td>
+                  <td>$100</td>
+                </tr>
+                <tr>
+                  <td>Withdrawal</td>
+                  <td>Bank Transfer</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>Deposit</td>
+                  <td>Direct Transfer</td>
+                  <td>$300</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <button class="btn btn-outline-secondary btn-sm">View full history</button>
+            <a href="#" class="btn btn-primary btn-sm">Download Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add New Wallet -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Add New Wallet</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose a wallet type to withdraw funds.</p>
+          <div class="add-wallet-form">
+            <div class="form-group">
+              <label class="form-label">Wallet Type</label>
+              <div class="wallet-type-chips">
+                <span class="wallet-chip">bKash</span>
+                <span class="wallet-chip">VISA/Master Debit Card</span>
+                <span class="wallet-chip">PayPal</span>
+                <span class="wallet-chip">Other</span>
+              </div>
+              <p class="form-hint">Please choose a wallet option.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Wallet Address</label>
+              <input type="text" class="form-input" placeholder="Enter your wallet address" />
+              <p class="form-hint">Your unique wallet identifier.</p>
+            </div>
+
+            <div class="form-actions">
+              <a href="wallet.html" class="btn btn-outline-secondary">Cancel</a>
+              <a href="wallet.html" class="btn btn-primary">Add Wallet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supported Wallets -->
+    <div class="section section-white">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Supported Wallets</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose your preferred payment method.</p>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Wallet Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>bKash</td>
+                  <td>Popular Mobile Wallet</td>
+                </tr>
+                <tr>
+                  <td>VISA</td>
+                  <td>International Payment Card</td>
+                </tr>
+                <tr>
+                  <td>MasterCard</td>
+                  <td>International Payment Card</td>
+                </tr>
+                <tr>
+                  <td>PayPal</td>
+                  <td>Easy Online Payments</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <h2 class="logo">SkillsBridge</h2>
+          <p class="tagline">Where employment bridges skills</p>
+
+          <h4>Address:</h4>
+          <p>
+            442 lorem ipsum, lorem<br />
+            Dhaka, Bangladesh
+          </p>
+
+          <h4>Contact:</h4>
+          <p>
+            +880-1710999999<br />
+            +880-1910999999<br />
+            support@skillbridge.com
+          </p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Services:</h4>
+          <ul>
+            <li>Post a Job</li>
+            <li>Browse Jobs</li>
+          </ul>
+
+          <h4>Find a:</h4>
+          <ul>
+            <li>Web Designer</li>
+            <li>Photoshop designer</li>
+            <li>Illustrator designer</li>
+            <li>Visualizer</li>
+            <li>SEO expert</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4>Find a job for skills:</h4>
+          <ul>
+            <li>Web development</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>After effects</li>
+            <li>SEO</li>
+            <li>Digital Marketing</li>
+            <li>Social Media Management</li>
+            <li>C++ developer</li>
+            <li>PHP developer</li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Legal:</h4>
+          <ul>
+            <li>Contact</li>
+            <li>Privacy Policy</li>
+            <li>Terms and conditions</li>
+          </ul>
+
+          <div class="social-icons">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
+    </footer>
+  </body>
+</html>

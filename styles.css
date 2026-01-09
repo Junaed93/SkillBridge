@@ -707,8 +707,15 @@ input, textarea, select {
 .section-title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: var(--gray-900);
+    font-weight: 600;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--gray-600);
+    text-align: center;
 }
 
 /* Form Styles */
@@ -1277,7 +1284,684 @@ input, textarea, select {
     border-bottom-color: var(--blue-600);
 }
 
-/* Responsive adjustments */
+/* Freelancer Dashboard Styles */
+.profile-header {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.profile-title {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin-bottom: 0.25rem;
+}
+
+.profile-location {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    margin: 0;
+}
+
+.performance-overview {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.performance-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--gray-50);
+    border-radius: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.detail-value {
+    color: var(--gray-900);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.75rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.project-client {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.project-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.progress-percentage {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.project-budget {
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 1.125rem;
+}
+
+.project-due {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.bids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.bid-card {
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.bid-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.125rem;
+}
+
+.bid-description {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.bid-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bid-amount {
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 1.125rem;
+}
+
+.portfolio-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-50);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.document-icon {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 0.375rem;
+}
+
+.document-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.document-name {
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.document-size {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feedback-item {
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.feedback-client {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feedback-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--blue-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.feedback-name {
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.feedback-rating {
+    font-size: 0.875rem;
+    color: var(--yellow-500);
+}
+
+.feedback-date {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.feedback-text {
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--blue-600);
+    border: 2px solid var(--blue-600);
+}
+
+.btn-outline:hover {
+    background-color: var(--blue-50);
+}
+
+/* Browse Projects Page Styles - Removed special navbar styles to match index.html */
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.navbar-icon {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--gray-700);
+}
+
+.navbar-profile-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+.search-icon {
+    position: absolute;
+    left: 40px;
+    font-size: 20px;
+    z-index: 1;
+    font-weight: 700;
+}
+
+.browse-search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px 0 60px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--gray-900);
+    outline: none;
+}
+
+.browse-search-input::placeholder {
+    color: var(--gray-500);
+}
+
+.browse-filters {
+    max-width: 922px;
+    margin: 0 auto;
+    padding: 0 170px;
+}
+
+.filter-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0 0 45px 0;
+    text-align: center;
+}
+
+.filter-row {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 45px;
+}
+
+.filter-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-chip {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-900);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-chip:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-chip.active {
+    background-color: #9cc746;
+    color: white;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filter-apply-btn {
+    background-color: #9cc746;
+    color: white;
+    padding: 12px;
+    width: 240px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.browse-projects-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.projects-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-card-browse {
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.project-skills {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.project-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+    line-height: 24px;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.project-tag {
+    background-color: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-900);
+}
+
+.project-client-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.client-avatar-small {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.client-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-900);
+}
+
+.project-card-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline-secondary {
+    background-color: transparent;
+    color: var(--gray-900);
+    border: 1px solid var(--gray-900);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 240px;
+    transition: all 0.2s;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--gray-100);
+}
+
+.project-card-actions .btn-primary {
+    background-color: #9cc746;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 240px;
+    transition: all 0.2s;
+}
+
+.project-card-actions .btn-primary:hover {
+    background-color: #8ab83d;
+}
+
+
+@media (max-width: 768px) {
+    .profile-avatar-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .performance-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid,
+    .bids-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .navbar-icons {
+        gap: 0.5rem;
+    }
+}
+
+/* Clickable project and bid items */
+.project-item-dashboard,
+.bid-item-dashboard {
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.project-item-dashboard:hover,
+.bid-item-dashboard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     h1 {
         font-size: 2rem;
@@ -1301,5 +1985,604 @@ input, textarea, select {
     
     .table-container {
         overflow-x: auto;
+    }
+    
+    .performance-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+}
+
+/* Submit Proposal Styles */
+.submit-proposal-header {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.submit-proposal-header .page-header-content {
+    padding: 0 170px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.submit-proposal-form-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.proposal-form-container {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.proposal-form-intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.proposal-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-textarea-proposal {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--white);
+    color: var(--gray-900);
+    min-height: 61px;
+    resize: vertical;
+}
+
+.form-textarea-proposal::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form-textarea-proposal:focus {
+    outline: none;
+    border-color: #9cc746;
+}
+
+/* Work Progress Styles */
+.work-progress-header {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.work-progress-header-content {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.work-progress-title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.work-progress-submit-btn {
+    background-color: #9cc746;
+    color: white;
+    padding: 12px;
+    width: 240px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.work-progress-tabs {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.work-tab {
+    background-color: rgba(217, 217, 217, 0.5);
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-900);
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.work-tab.active {
+    background-color: #9cc746;
+    color: white;
+}
+
+.work-progress-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.progress-overview-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.progress-overview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.progress-overview-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-card-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.progress-card-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.progress-badge {
+    display: inline-block;
+    background-color: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-900);
+    width: fit-content;
+}
+
+.update-form-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.update-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.previous-updates-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.updates-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.update-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37.5px;
+    flex-shrink: 0;
+}
+
+.update-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.update-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.update-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.update-meta {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-900);
+    text-align: right;
+    width: 200px;
+    margin: 0;
+}
+
+/* Wallet Styles */
+.wallet-header-section {
+    padding: 60px 0 80px;
+    background-color: var(--white);
+}
+
+.wallet-header-content {
+    padding: 0 170px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.wallet-header-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wallet-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.wallet-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.wallet-view-btn {
+    background-color: #9cc746;
+    color: white;
+    padding: 12px;
+    width: 160px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.wallet-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.wallet-balance-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.wallet-balance-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.wallet-balance-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.wallet-balance-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.balance-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.balance-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.balance-value a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.balance-value a:hover {
+    color: #9cc746;
+}
+
+.transaction-history-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.transaction-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline-green {
+    background-color: transparent;
+    color: #9cc746;
+    border: 1px solid #9cc746;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 240px;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.transaction-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 37.5px;
+    flex-shrink: 0;
+}
+
+.transaction-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.transaction-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.transaction-amount {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-900);
+    text-align: right;
+    margin: 0;
+}
+
+.add-wallet-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.add-wallet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.wallet-type-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.wallet-chip {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-900);
+}
+
+.supported-wallets-section {
+    padding: 0 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.supported-wallets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.wallet-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 12px;
+    text-align: center;
+}
+
+.wallet-option-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 62.5px;
+}
+
+.wallet-option-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.wallet-option-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* Responsive adjustments for new pages */
+@media (max-width: 1024px) {
+    .proposal-form-container,
+    .work-progress-header-content,
+    .progress-overview-section,
+    .update-form-section,
+    .previous-updates-section,
+    .wallet-header-content,
+    .wallet-balance-section,
+    .transaction-history-section,
+    .add-wallet-section,
+    .supported-wallets-section {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-progress-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .work-tab {
+        width: 100%;
+    }
+    
+    .wallet-header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .wallet-balance-actions,
+    .transaction-actions {
+        flex-direction: column;
+    }
+    
+    .wallet-balance-actions .btn,
+    .transaction-actions .btn {
+        width: 100%;
+    }
+    
+    .supported-wallets-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .update-meta,
+    .transaction-amount {
+        width: auto;
+        text-align: left;
+        margin-top: 8px;
+    }
+    
+    .update-item,
+    .transaction-item {
+        flex-wrap: wrap;
     }
 }

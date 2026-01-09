@@ -20,361 +20,123 @@
           </span>
         </a>
         <div class="navbar-links">
-          <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
-          <a href="browse-projects.html" class="navbar-link">Find a Project</a>
-          <a href="login.html" class="navbar-link">Logout</a>
+          <a href="index.html" class="navbar-link">Home</a>
+          <a href="browse-projects.html" class="navbar-link active">Browse Projects</a>
+          <a href="#" class="navbar-link">About</a>
+          <a href="login.html" class="navbar-link">Login</a>
+          <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
+          <a href="post-project.html" class="btn btn-secondary btn-sm">Post a Project</a>
         </div>
       </div>
     </nav>
 
-    <!-- Browse Projects -->
-    <div class="dashboard">
+    <!-- Hero Section -->
+    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
       <div class="container">
-        <div class="dashboard-header">
-          <h1>Browse Available Projects</h1>
-          <p style="color: var(--gray-600)">
-            Find projects that match your skills and submit proposals
-          </p>
-        </div>
+        <h1 class="section-title">Browse Projects</h1>
+        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Explore the latest job opportunities</p>
+      </div>
+    </div>
 
-        <!-- Filters -->
-        <div class="card" style="margin-bottom: 2rem">
-          <h3 style="margin-bottom: 1rem">Filter Projects</h3>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-              gap: 1rem;
-            "
-          >
-            <div>
-              <label class="form-label" style="font-size: 0.875rem"
-                >Category</label
-              >
-              <select class="form-select" style="font-size: 0.875rem">
-                <option value="">All Categories</option>
-                <option value="web-development">Web Development</option>
-                <option value="ui-ux-design">UI/UX Design</option>
-                <option value="mobile-development">Mobile Development</option>
-                <option value="content-writing">Content Writing</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" style="font-size: 0.875rem"
-                >Budget</label
-              >
-              <select class="form-select" style="font-size: 0.875rem">
-                <option value="">All Budgets</option>
-                <option value="under-500">Under $500</option>
-                <option value="500-1000">$500 - $1,000</option>
-                <option value="1000-2500">$1,000 - $2,500</option>
-                <option value="over-2500">Over $2,500</option>
-              </select>
-            </div>
-            <div>
-              <label class="form-label" style="font-size: 0.875rem"
-                >Duration</label
-              >
-              <select class="form-select" style="font-size: 0.875rem">
-                <option value="">All Durations</option>
-                <option value="less-than-week">Less than 1 week</option>
-                <option value="1-2-weeks">1-2 weeks</option>
-                <option value="2-4-weeks">2-4 weeks</option>
-                <option value="over-month">Over 1 month</option>
-              </select>
-            </div>
+    <!-- Search and Filters Section -->
+    <div class="browse-filters-section">
+      <div class="container">
+        <!-- Search Bar -->
+        <div style="max-width: 600px; margin: 0 auto 2rem;">
+          <div class="hero-search">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search by title or description..."
+            />
+            <button class="btn btn-primary search-btn">Search</button>
           </div>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-2">
-          <div class="card">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                margin-bottom: 1rem;
-              "
-            >
-              <div style="flex: 1">
-                <h3 style="margin-bottom: 0.5rem">
-                  Build a Responsive E-commerce Website
-                </h3>
-                <span class="badge badge-info">Web Development</span>
+        <!-- Filter Results -->
+        <div class="card" style="max-width: 900px; margin: 0 auto 2rem;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Filter Results</h2>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label">Skills Required</label>
+              <div class="popular-tags">
+                <button class="popular-tag">Web Development</button>
+                <button class="popular-tag">Graphic Design</button>
+                <button class="popular-tag">Content Writing</button>
+                <button class="popular-tag">SEO</button>
               </div>
             </div>
-
-            <p
-              style="
-                color: var(--gray-600);
-                margin-bottom: 1rem;
-                font-size: 0.875rem;
-              "
-            >
-              Looking for an experienced developer to build a fully responsive
-              e-commerce website with payment integration, user authentication,
-              and admin dashboard.
-            </p>
-
-            <div
-              style="
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-              "
-            >
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">Stripe</span>
-            </div>
-
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--gray-200);
-              "
-            >
-              <div>
-                <div style="font-weight: 600; color: var(--gray-900)">
-                  Budget: $2,500 - $5,000
-                </div>
-                <div style="font-size: 0.875rem; color: var(--gray-600)">
-                  Duration: 2-4 weeks
-                </div>
+            
+            <div class="form-group">
+              <label class="form-label">Price Range</label>
+              <div class="popular-tags">
+                <button class="popular-tag">$0 - $50</button>
+                <button class="popular-tag">$51 - $100</button>
+                <button class="popular-tag">$101 - $200</button>
+                <button class="popular-tag">$201+</button>
               </div>
-            </div>
-
-            <div style="text-align: center">
-              <a
-                href="submit-proposal.html"
-                class="btn btn-primary btn-sm"
-                style="width: 100%"
-                >Submit Proposal</a
-              >
             </div>
           </div>
 
-          <div class="card">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                margin-bottom: 1rem;
-              "
-            >
-              <div style="flex: 1">
-                <h3 style="margin-bottom: 0.5rem">
-                  UI/UX Design for Mobile App
-                </h3>
-                <span class="badge badge-info">UI/UX Design</span>
-              </div>
-            </div>
-
-            <p
-              style="
-                color: var(--gray-600);
-                margin-bottom: 1rem;
-                font-size: 0.875rem;
-              "
-            >
-              Need a talented designer to create modern, user-friendly UI/UX
-              designs for a fitness tracking mobile application. Must include
-              wireframes and prototypes.
-            </p>
-
-            <div
-              style="
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-              "
-            >
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">Adobe XD</span>
-              <span class="skill-tag">UI Design</span>
-              <span class="skill-tag">Prototyping</span>
-            </div>
-
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--gray-200);
-              "
-            >
-              <div>
-                <div style="font-weight: 600; color: var(--gray-900)">
-                  Budget: $1,000 - $2,500
-                </div>
-                <div style="font-size: 0.875rem; color: var(--gray-600)">
-                  Duration: 1-2 weeks
-                </div>
-              </div>
-            </div>
-
-            <div style="text-align: center">
-              <a
-                href="submit-proposal.html"
-                class="btn btn-primary btn-sm"
-                style="width: 100%"
-                >Submit Proposal</a
-              >
-            </div>
+          <div style="text-align: center;">
+            <button class="btn btn-primary">Apply Filters</button>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="card">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                margin-bottom: 1rem;
-              "
-            >
-              <div style="flex: 1">
-                <h3 style="margin-bottom: 0.5rem">Content Writing for Blog</h3>
-                <span class="badge badge-info">Content Writing</span>
-              </div>
-            </div>
-
-            <p
-              style="
-                color: var(--gray-600);
-                margin-bottom: 1rem;
-                font-size: 0.875rem;
-              "
-            >
-              Seeking a skilled content writer to create SEO-optimized blog
-              posts for a tech startup. Need 10 articles covering various
-              technology topics.
-            </p>
-
-            <div
-              style="
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-              "
-            >
-              <span class="skill-tag">SEO</span>
-              <span class="skill-tag">Copywriting</span>
-              <span class="skill-tag">Blog Writing</span>
-            </div>
-
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--gray-200);
-              "
-            >
-              <div>
-                <div style="font-weight: 600; color: var(--gray-900)">
-                  Budget: $500 - $1,000
-                </div>
-                <div style="font-size: 0.875rem; color: var(--gray-600)">
-                  Duration: 2-4 weeks
-                </div>
-              </div>
-            </div>
-
-            <div style="text-align: center">
-              <a
-                href="submit-proposal.html"
-                class="btn btn-primary btn-sm"
-                style="width: 100%"
-                >Submit Proposal</a
-              >
-            </div>
-          </div>
-
-          <div class="card">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                margin-bottom: 1rem;
-              "
-            >
-              <div style="flex: 1">
-                <h3 style="margin-bottom: 0.5rem">
-                  Video Editing for Marketing Campaign
-                </h3>
-                <span class="badge badge-info">Video Editing</span>
-              </div>
-            </div>
-
-            <p
-              style="
-                color: var(--gray-600);
-                margin-bottom: 1rem;
-                font-size: 0.875rem;
-              "
-            >
-              Need professional video editor to edit promotional videos for
-              social media marketing campaign. Must have experience with motion
-              graphics.
-            </p>
-
-            <div
-              style="
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-              "
-            >
-              <span class="skill-tag">Premiere Pro</span>
-              <span class="skill-tag">After Effects</span>
-              <span class="skill-tag">Motion Graphics</span>
-            </div>
-
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--gray-200);
-              "
-            >
-              <div>
-                <div style="font-weight: 600; color: var(--gray-900)">
-                  Budget: $1,000 - $2,500
-                </div>
-                <div style="font-size: 0.875rem; color: var(--gray-600)">
-                  Duration: 1-2 weeks
-                </div>
-              </div>
-            </div>
-
-            <div style="text-align: center">
-              <a
-                href="submit-proposal.html"
-                class="btn btn-primary btn-sm"
-                style="width: 100%"
-                >Submit Proposal</a
-              >
-            </div>
-          </div>
+    <!-- Projects List -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Project Title</th>
+                <th>Skills Required</th>
+                <th>Description</th>
+                <th>Tags</th>
+                <th>Client</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Web Designer Needed</td>
+                <td>HTML, CSS, JavaScript</td>
+                <td>Looking for a creative web designer to redesign our website.</td>
+                <td>Remote, Urgent</td>
+                <td>XYZ Corp</td>
+                <td>
+                  <a href="submit-proposal.html" class="btn btn-outline-secondary btn-sm">View Details</a>
+                  <a href="submit-proposal.html" class="btn btn-primary btn-sm">Submit Proposal</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Mobile App Development</td>
+                <td>React Native, API Integration</td>
+                <td>Seeking an experienced developer for an ongoing mobile app project.</td>
+                <td>Part-time, Flexible hours</td>
+                <td>ABC Solutions</td>
+                <td>
+                  <a href="submit-proposal.html" class="btn btn-outline-secondary btn-sm">View Details</a>
+                  <a href="submit-proposal.html" class="btn btn-primary btn-sm">Submit Proposal</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Content Writer Required</td>
+                <td>SEO, Copywriting</td>
+                <td>Need a talented writer for blog posts and website content.</td>
+                <td>In-house, Long-term</td>
+                <td>WriteRight</td>
+                <td>
+                  <a href="submit-proposal.html" class="btn btn-outline-secondary btn-sm">View Details</a>
+                  <a href="submit-proposal.html" class="btn btn-primary btn-sm">Submit Proposal</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -445,9 +207,9 @@
           </ul>
 
           <div class="social-icons">
-            <div class="icon">f</div>
-            <div class="icon">📷</div>
-            <div class="icon">✉</div>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Email</a>
           </div>
         </div>
       </div>

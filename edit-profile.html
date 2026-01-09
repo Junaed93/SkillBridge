@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Submit Proposal - SkillBridge</title>
+    <title>Edit Profile - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -33,37 +33,70 @@
     <!-- Page Header -->
     <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
       <div class="container">
-        <h1 class="section-title">Submit Your Proposal</h1>
-        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Fill out the form below to apply for the job. Make your proposal stand out!</p>
+        <h1 class="section-title">Profile Editing</h1>
+        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Update your details to showcase your skills and experience.</p>
       </div>
     </div>
 
-    <!-- Proposal Form -->
+    <!-- Profile Form -->
     <div class="section section-gray">
       <div class="container">
         <div class="card" style="max-width: 800px; margin: 0 auto;">
-          <p style="color: var(--gray-600); margin-bottom: 2rem;">Provide your bid amount, delivery time, and a cover letter.</p>
-          
-          <div class="proposal-form-fields">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Profile Information</h2>
+          <p style="color: var(--gray-600); margin-bottom: 2rem;">Make sure your information is up to date.</p>
+          <div class="form-fields-section">
             <div class="form-group">
-              <label class="form-label">Bid Amount</label>
-              <input type="text" class="form-input" placeholder="Enter your bid amount (in USD)" />
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" placeholder="Enter your full name" />
             </div>
 
             <div class="form-group">
-              <label class="form-label">Delivery Time</label>
-              <input type="text" class="form-input" placeholder="Enter delivery time (in days)" />
+              <label class="form-label">Profile picture</label>
+              <input type="file" class="form-input" accept="image/*" />
+              <p class="form-hint">Update your profile picture.</p>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Cover Letter</label>
-              <textarea class="form-textarea-proposal" placeholder="Explain why you are the right fit for this job" rows="3"></textarea>
-              <p class="form-hint">Provide details on your relevant experience and skills</p>
+              <label class="form-label">Address</label>
+              <input type="text" class="form-input" placeholder="Enter your address" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Baseline payment rate</label>
+              <input type="text" class="form-input" placeholder="Enter your baseline payment rate in $/hr" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Payment Wallet Address</label>
+              <input type="text" class="form-input" placeholder="Enter your wallet address" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Select Skills</label>
+              <div class="skills-chips">
+                <span class="skill-chip">Web Development</span>
+                <span class="skill-chip">Graphic Design</span>
+                <span class="skill-chip">SEO</span>
+                <span class="skill-chip">Content Writing</span>
+                <span class="skill-chip">Data Analysis</span>
+              </div>
+              <p class="form-hint">Add new skills or remove current skills.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">GitHub Link</label>
+              <input type="text" class="form-input" placeholder="Enter your GitHub link" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Portfolio/CV</label>
+              <input type="file" class="form-input" accept=".pdf,.doc,.docx" />
+              <p class="form-hint">Update your portfolio.</p>
             </div>
 
             <div class="form-actions">
-              <a href="browse-projects.html" class="btn btn-outline-secondary">Cancel</a>
-              <a href="freelancer-dashboard.html" class="btn btn-primary">Submit proposal</a>
+              <a href="freelancer-dashboard.html" class="btn btn-outline-secondary">Cancel</a>
+              <a href="freelancer-dashboard.html" class="btn btn-primary">Save Changes</a>
             </div>
           </div>
         </div>
