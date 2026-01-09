@@ -21,14 +21,14 @@
         </a>
         <div class="navbar-links">
           <a href="index.html" class="navbar-link">Home</a>
-          <a href="browse-projects.html" class="navbar-link navbar-browse"
+          <a href="browse-projects.html" class="navbar-link navbar-browse" id="findProjectLink" style="display: none;"
             >Find a Project</a
           >
           <a href="freelancer-dashboard.html" class="navbar-link" style="display: none;" id="dashboardLink">Dashboard</a>
           <a href="#" class="navbar-link">About</a>
           <a href="login.html" class="navbar-link">Login</a>
           <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post"
+          <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post" id="postProjectLink"
             >Post a Project</a
           >
         </div>
@@ -211,5 +211,68 @@
       <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
     </footer>
 
+    <script>
+      // Toggle navbar links based on role selection
+      const roleToggle = document.getElementById('roleToggle');
+      const findProjectLink = document.getElementById('findProjectLink');
+      const postProjectLink = document.getElementById('postProjectLink');
+      const heroToggle = document.querySelector('.hero-toggle');
+      const allToggleSpans = heroToggle ? heroToggle.querySelectorAll('span:not(.toggle-switch)') : [];
+
+      function updateNavbar() {
+        if (roleToggle && roleToggle.checked) {
+          // Freelancer mode - show "Find a Project", hide "Post a Project"
+          if (findProjectLink) {
+            findProjectLink.style.display = 'flex';
+          }
+          if (postProjectLink) {
+            postProjectLink.style.display = 'none';
+          }
+        } else {
+          // Hiring mode - show "Post a Project", hide "Find a Project"
+          if (findProjectLink) {
+            findProjectLink.style.display = 'none';
+          }
+          if (postProjectLink) {
+            postProjectLink.style.display = 'inline-block';
+          }
+        }
+      }
+
+      // Update toggle label styling based on state
+      function updateToggleLabels() {
+        if (allToggleSpans.length >= 2) {
+          if (roleToggle.checked) {
+            // Freelancer mode - second span (For Freelancers) should be active
+            allToggleSpans[0].classList.remove('toggle-active');
+            allToggleSpans[0].style.fontWeight = '400';
+            allToggleSpans[0].style.color = 'var(--gray-600)';
+            allToggleSpans[1].classList.add('toggle-active');
+            allToggleSpans[1].style.fontWeight = '600';
+            allToggleSpans[1].style.color = 'var(--gray-900)';
+          } else {
+            // Hiring mode - first span (For hiring) should be active
+            allToggleSpans[0].classList.add('toggle-active');
+            allToggleSpans[0].style.fontWeight = '600';
+            allToggleSpans[0].style.color = 'var(--gray-900)';
+            allToggleSpans[1].classList.remove('toggle-active');
+            allToggleSpans[1].style.fontWeight = '400';
+            allToggleSpans[1].style.color = 'var(--gray-600)';
+          }
+        }
+      }
+
+      // Listen for toggle changes
+      if (roleToggle) {
+        roleToggle.addEventListener('change', function() {
+          updateNavbar();
+          updateToggleLabels();
+        });
+        
+        // Initialize on page load (default: hiring mode - unchecked)
+        updateNavbar();
+        updateToggleLabels();
+      }
+    </script>
   </body>
 </html>

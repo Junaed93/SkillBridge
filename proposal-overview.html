@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Client Dashboard - SkillBridge</title>
+    <title>Proposal Overview - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -25,55 +25,27 @@
           <a href="#" class="navbar-link">About</a>
           <a href="post-project.html" class="btn btn-primary btn-sm">Post a Project</a>
           <a href="client-chat.html" class="navbar-link">Messages</a>
-          <a href="client-dashboard.html" class="navbar-link active">Dashboard</a>
+          <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
         </div>
       </div>
     </nav>
 
-    <!-- Welcome Banner -->
-    <div class="section section-white" style="padding: 4rem 0; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%);">
-      <div class="container">
-        <div style="text-align: center; padding: 3rem 2rem; background-color: var(--white); border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <h1 class="section-title" style="margin-bottom: 1rem;">Welcome to Your Dashboard</h1>
-          <a href="client-dashboard.html" class="btn btn-primary btn-lg">View Dashboard</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project Statistics -->
-    <div class="section section-gray">
+    <!-- Proposal Overview Header -->
+    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
       <div class="container">
         <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Project Statistics</h2>
           <div class="table-container">
             <table class="table">
               <thead>
                 <tr>
-                  <th>Metric</th>
-                  <th>Value</th>
-                  <th>Actions</th>
+                  <th>Name</th>
+                  <th>Role</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Active Projects</td>
-                  <td>9</td>
-                  <td><a href="client-dashboard.html" class="btn btn-primary btn-sm">View All</a></td>
-                </tr>
-                <tr>
-                  <td>Completed Projects</td>
-                  <td>2</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Total Projects</td>
-                  <td>10</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Pending Projects</td>
-                  <td>1</td>
-                  <td><a href="proposal-overview.html" class="btn btn-primary btn-sm">Review</a></td>
+                  <td><strong>Amelia Katherine</strong></td>
+                  <td>Freelancer</td>
                 </tr>
               </tbody>
             </table>
@@ -82,19 +54,16 @@
       </div>
     </div>
 
-    <!-- Upcoming Tasks -->
-    <div class="section section-white">
+    <!-- Pending Proposals -->
+    <div class="section section-gray">
       <div class="container">
         <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-            <h2 class="section-title" style="font-size: 1.5rem; margin: 0;">Upcoming Tasks</h2>
-            <button class="btn btn-primary btn-sm">Add New Task</button>
-          </div>
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Proposals</h2>
           <div class="table-container">
             <table class="table">
               <thead>
                 <tr>
-                  <th>Task</th>
+                  <th>Proposal</th>
                   <th>Due Date</th>
                   <th>Status</th>
                   <th>Actions</th>
@@ -102,22 +71,16 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Feature Proposal</td>
-                  <td>3 days left</td>
+                  <td>Proposal A</td>
+                  <td>Due by 01/10/2025</td>
                   <td><span class="badge badge-warning">Pending</span></td>
-                  <td><a href="proposal-details.html" class="btn btn-primary btn-sm">View</a></td>
+                  <td><a href="proposal-details.html" class="btn btn-primary btn-sm">Review Proposal</a></td>
                 </tr>
                 <tr>
-                  <td>Review Functional Work</td>
-                  <td>5 days left</td>
-                  <td><span class="badge badge-info">In Progress</span></td>
-                  <td><a href="work-progress.html" class="btn btn-primary btn-sm">Review</a></td>
-                </tr>
-                <tr>
-                  <td>Create Quotes</td>
-                  <td>7 days left</td>
-                  <td><span class="badge badge-info">In Progress</span></td>
-                  <td><a href="request-quote.html" class="btn btn-primary btn-sm">View</a></td>
+                  <td>Proposal B</td>
+                  <td>Due by 05/10/2025</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                  <td><a href="proposal-details.html" class="btn btn-primary btn-sm">Review Proposal</a></td>
                 </tr>
               </tbody>
             </table>
@@ -126,86 +89,73 @@
       </div>
     </div>
 
-    <!-- Project Progress Overview -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Project Progress Overview</h2>
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Project Name</th>
-                  <th>Progress</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>E-commerce Website</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 65%"></div>
-                    </div>
-                    65%
-                  </td>
-                  <td><span class="badge badge-info">In Progress</span></td>
-                  <td><a href="work-progress.html" class="btn btn-primary btn-sm">View Progress</a></td>
-                </tr>
-                <tr>
-                  <td>Mobile App Development</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 45%"></div>
-                    </div>
-                    45%
-                  </td>
-                  <td><span class="badge badge-info">In Progress</span></td>
-                  <td><a href="work-progress.html" class="btn btn-primary btn-sm">View Progress</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Client Feedback -->
+    <!-- Recent Feedback -->
     <div class="section section-white">
       <div class="container">
         <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Client Feedback</h2>
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Feedback</h2>
           <div class="table-container">
             <table class="table">
               <thead>
                 <tr>
-                  <th>Freelancer</th>
                   <th>Rating</th>
-                  <th>Feedback</th>
+                  <th>Review</th>
+                  <th>Date</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>John Smith</td>
                   <td>5.0 / 5.0</td>
-                  <td>Excellent work quality and timely delivery. Highly recommended!</td>
+                  <td>Excellent work quality and professionalism.</td>
+                  <td>2025-01-15</td>
                 </tr>
                 <tr>
-                  <td>Sarah Johnson</td>
                   <td>4.8 / 5.0</td>
-                  <td>Very professional and communicative throughout the project.</td>
-                </tr>
-                <tr>
-                  <td>Emily Davis</td>
-                  <td>5.0 / 5.0</td>
-                  <td>Outstanding work, exceeded expectations. Will definitely work with again.</td>
+                  <td>Great communication and timely delivery.</td>
+                  <td>2025-01-10</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="client-feedback.html" class="btn btn-primary">View All Feedback</a>
+            <a href="client-feedback.html" class="btn btn-primary">View All</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proposal Statistics -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Proposal Statistics</h2>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total Proposals</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Accepted</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>Rejected</td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td>Pending</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
