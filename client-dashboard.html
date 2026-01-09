@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Dashboard - FreelanceHub</title>
+    <title>Client Dashboard - SkillBridge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,11 +12,11 @@
         <div class="navbar-content">
             <a href="index.html" class="navbar-logo">
                 <div class="navbar-logo-icon">💼</div>
-                <span class="navbar-logo-text">FreelanceHub</span>
+                <span class="navbar-logo-text">SkillBridge</span>
             </a>
             <div class="navbar-links">
                 <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
-                <a href="browse-freelancers.html" class="btn btn-primary btn-sm">Post Project</a>
+                <a href="post-project.html" class="btn btn-primary btn-sm">Post Project</a>
                 <a href="browse-freelancers.html" class="navbar-link">Find Freelancers</a>
                 <a href="login.html" class="navbar-link">Logout</a>
             </div>
@@ -50,6 +50,54 @@
                 </div>
             </div>
             
+            <div class="dashboard-header" style="margin-top: 2rem;">
+                <h2>Pending Proposals</h2>
+            </div>
+            
+            <div class="grid grid-2" style="margin-bottom: 2rem;">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">E-commerce Website Project</h3>
+                            <p style="color: var(--gray-600); margin: 0; font-size: 0.875rem;">From: John Freelancer</p>
+                        </div>
+                        <span class="badge badge-warning">Pending Review</span>
+                    </div>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Proposed Budget: <strong>$3,500</strong> | Timeline: <strong>3 weeks</strong>
+                    </p>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        "I have 5+ years of experience building e-commerce platforms. I'll use React for the frontend and Node.js for the backend..."
+                    </p>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button class="btn btn-success btn-sm">Accept Proposal</button>
+                        <button class="btn btn-secondary btn-sm">View Full Proposal</button>
+                        <button class="btn btn-danger btn-sm">Reject</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.25rem;">E-commerce Website Project</h3>
+                            <p style="color: var(--gray-600); margin: 0; font-size: 0.875rem;">From: Sarah Johnson</p>
+                        </div>
+                        <span class="badge badge-warning">Pending Review</span>
+                    </div>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Proposed Budget: <strong>$4,200</strong> | Timeline: <strong>4 weeks</strong>
+                    </p>
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        "Full-stack developer specializing in e-commerce solutions. I've built similar platforms for 10+ clients..."
+                    </p>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button class="btn btn-success btn-sm">Accept Proposal</button>
+                        <button class="btn btn-secondary btn-sm">View Full Proposal</button>
+                        <button class="btn btn-danger btn-sm">Reject</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="dashboard-header" style="margin-top: 2rem;">
                 <h2>Active Projects</h2>
             </div>
@@ -115,9 +163,58 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer skillbridge-footer">
         <div class="container">
-            <p>&copy; 2026 FreelanceHub. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="navbar-logo-icon">💼</div>
+                        <span class="navbar-logo-text">SkillBridge</span>
+                    </div>
+                    <div class="footer-address">
+                        <p>123 Business Street</p>
+                        <p>Suite 100</p>
+                        <p>City, State 12345</p>
+                        <p>Email: info@skillbridge.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Find your skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">UI/UX Designer</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Video Editor</a></li>
+                        <li><a href="#">Data Scientist</a></li>
+                        <li><a href="#">Graphic Designer</a></li>
+                        <li><a href="#">Content Writer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkillBridge. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>

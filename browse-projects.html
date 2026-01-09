@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">SkillBridge</span>
+            </a>
+            <div class="navbar-links">
+                <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="browse-projects.html" class="navbar-link">Find a Project</a>
+                <a href="login.html" class="navbar-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Browse Projects -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Browse Available Projects</h1>
+                <p style="color: var(--gray-600);">Find projects that match your skills and submit proposals</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">Filter Projects</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <label class="form-label" style="font-size: 0.875rem;">Category</label>
+                        <select class="form-select" style="font-size: 0.875rem;">
+                            <option value="">All Categories</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="ui-ux-design">UI/UX Design</option>
+                            <option value="mobile-development">Mobile Development</option>
+                            <option value="content-writing">Content Writing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" style="font-size: 0.875rem;">Budget</label>
+                        <select class="form-select" style="font-size: 0.875rem;">
+                            <option value="">All Budgets</option>
+                            <option value="under-500">Under $500</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-2500">$1,000 - $2,500</option>
+                            <option value="over-2500">Over $2,500</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" style="font-size: 0.875rem;">Duration</label>
+                        <select class="form-select" style="font-size: 0.875rem;">
+                            <option value="">All Durations</option>
+                            <option value="less-than-week">Less than 1 week</option>
+                            <option value="1-2-weeks">1-2 weeks</option>
+                            <option value="2-4-weeks">2-4 weeks</option>
+                            <option value="over-month">Over 1 month</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-2">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 0.5rem;">Build a Responsive E-commerce Website</h3>
+                            <span class="badge badge-info">Web Development</span>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Looking for an experienced developer to build a fully responsive e-commerce website with payment integration, user authentication, and admin dashboard.
+                    </p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Stripe</span>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--gray-900);">Budget: $2,500 - $5,000</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Duration: 2-4 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="submit-proposal.html" class="btn btn-primary btn-sm" style="width: 100%;">Submit Proposal</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 0.5rem;">UI/UX Design for Mobile App</h3>
+                            <span class="badge badge-info">UI/UX Design</span>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Need a talented designer to create modern, user-friendly UI/UX designs for a fitness tracking mobile application. Must include wireframes and prototypes.
+                    </p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--gray-900);">Budget: $1,000 - $2,500</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Duration: 1-2 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="submit-proposal.html" class="btn btn-primary btn-sm" style="width: 100%;">Submit Proposal</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 0.5rem;">Content Writing for Blog</h3>
+                            <span class="badge badge-info">Content Writing</span>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Seeking a skilled content writer to create SEO-optimized blog posts for a tech startup. Need 10 articles covering various technology topics.
+                    </p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Copywriting</span>
+                        <span class="skill-tag">Blog Writing</span>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--gray-900);">Budget: $500 - $1,000</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Duration: 2-4 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="submit-proposal.html" class="btn btn-primary btn-sm" style="width: 100%;">Submit Proposal</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 0.5rem;">Video Editing for Marketing Campaign</h3>
+                            <span class="badge badge-info">Video Editing</span>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.875rem;">
+                        Need professional video editor to edit promotional videos for social media marketing campaign. Must have experience with motion graphics.
+                    </p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <span class="skill-tag">Premiere Pro</span>
+                        <span class="skill-tag">After Effects</span>
+                        <span class="skill-tag">Motion Graphics</span>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--gray-900);">Budget: $1,000 - $2,500</div>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Duration: 1-2 weeks</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <a href="submit-proposal.html" class="btn btn-primary btn-sm" style="width: 100%;">Submit Proposal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer skillbridge-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="navbar-logo-icon">💼</div>
+                        <span class="navbar-logo-text">SkillBridge</span>
+                    </div>
+                    <div class="footer-address">
+                        <p>123 Business Street</p>
+                        <p>Suite 100</p>
+                        <p>City, State 12345</p>
+                        <p>Email: info@skillbridge.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Find your skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">UI/UX Designer</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Video Editor</a></li>
+                        <li><a href="#">Data Scientist</a></li>
+                        <li><a href="#">Graphic Designer</a></li>
+                        <li><a href="#">Content Writer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

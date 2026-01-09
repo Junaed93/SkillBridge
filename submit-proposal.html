@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Proposal - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">SkillBridge</span>
+            </a>
+            <div class="navbar-links">
+                <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="browse-projects.html" class="navbar-link">Find a Project</a>
+                <a href="login.html" class="navbar-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Submit Proposal Form -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Submit Proposal</h1>
+                <p style="color: var(--gray-600);">Submit your proposal for this project</p>
+            </div>
+
+            <!-- Project Details Card -->
+            <div class="card" style="max-width: 800px; margin: 0 auto 2rem; background-color: var(--gray-50);">
+                <h3 style="margin-bottom: 0.5rem;">Project: Build a Responsive E-commerce Website</h3>
+                <p style="color: var(--gray-600); margin-bottom: 0.5rem; font-size: 0.875rem;">
+                    <strong>Budget:</strong> $2,500 - $5,000 | <strong>Duration:</strong> 2-4 weeks
+                </p>
+                <p style="color: var(--gray-600); font-size: 0.875rem; margin: 0;">
+                    Looking for an experienced developer to build a fully responsive e-commerce website with payment integration, user authentication, and admin dashboard.
+                </p>
+            </div>
+
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <form action="client-dashboard.html" method="get" id="proposalForm">
+                    <div class="form-group">
+                        <label class="form-label">Your Proposed Budget <span style="color: var(--red-600);">*</span></label>
+                        <input type="number" class="form-input" name="budget" placeholder="Enter your proposed amount" min="0" step="0.01" required>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.5rem;">Client's budget range: $2,500 - $5,000</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Estimated Timeline <span style="color: var(--red-600);">*</span></label>
+                        <select class="form-select" name="timeline" required>
+                            <option value="">Select timeline...</option>
+                            <option value="1-week">1 week</option>
+                            <option value="2-weeks">2 weeks</option>
+                            <option value="3-weeks">3 weeks</option>
+                            <option value="4-weeks">4 weeks</option>
+                            <option value="5-6-weeks">5-6 weeks</option>
+                            <option value="over-6-weeks">Over 6 weeks</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cover Letter <span style="color: var(--red-600);">*</span></label>
+                        <textarea class="form-textarea" name="coverLetter" rows="6" placeholder="Introduce yourself and explain why you're the best fit for this project. Highlight your relevant experience and how you plan to approach this project." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Your Approach</label>
+                        <textarea class="form-textarea" name="approach" rows="5" placeholder="Describe your approach to completing this project. Include milestones, deliverables, and any specific methodologies you'll use."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Relevant Portfolio/Work Samples (Optional)</label>
+                        <input type="url" class="form-input" name="portfolio" placeholder="https://your-portfolio.com or GitHub link">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Attachments (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="proposalFileInput" multiple accept=".pdf,.doc,.docx,.jpg,.png">
+                            <label for="proposalFileInput" style="cursor: pointer;">
+                                <p style="margin: 0; color: var(--gray-600);">Click to upload files or drag and drop</p>
+                                <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--gray-500);">PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Proposal</button>
+                        <a href="browse-projects.html" class="btn btn-secondary btn-lg">Cancel</a>
+                    </div>
+
+                    <div class="alert alert-info" style="margin-top: 1.5rem;">
+                        <strong>Note:</strong> Your proposal will be sent to the client for review. The client will review all proposals and may accept, reject, or request more information. You'll be notified of any updates.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer skillbridge-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="navbar-logo-icon">💼</div>
+                        <span class="navbar-logo-text">SkillBridge</span>
+                    </div>
+                    <div class="footer-address">
+                        <p>123 Business Street</p>
+                        <p>Suite 100</p>
+                        <p>City, State 12345</p>
+                        <p>Email: info@skillbridge.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Find your skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">UI/UX Designer</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Video Editor</a></li>
+                        <li><a href="#">Data Scientist</a></li>
+                        <li><a href="#">Graphic Designer</a></li>
+                        <li><a href="#">Content Writer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

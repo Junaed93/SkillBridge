@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Project - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">SkillBridge</span>
+            </a>
+            <div class="navbar-links">
+                <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="post-project.html" class="navbar-link">Post Project</a>
+                <a href="browse-freelancers.html" class="navbar-link">Find Freelancers</a>
+                <a href="login.html" class="navbar-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Project Form -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Post a New Project</h1>
+                <p style="color: var(--gray-600);">Fill out the form below to post your project. It will be reviewed by admin before being published.</p>
+            </div>
+
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <form action="admin-dashboard.html" method="get" id="postProjectForm">
+                    <div class="form-group">
+                        <label class="form-label">Project Title <span style="color: var(--red-600);">*</span></label>
+                        <input type="text" class="form-input" name="title" placeholder="e.g., Build a responsive e-commerce website" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Project Description <span style="color: var(--red-600);">*</span></label>
+                        <textarea class="form-textarea" name="description" rows="6" placeholder="Describe your project in detail. Include requirements, deliverables, and any specific features needed." required></textarea>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Category <span style="color: var(--red-600);">*</span></label>
+                            <select class="form-select" name="category" required>
+                                <option value="">Select a category...</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="mobile-development">Mobile Development</option>
+                                <option value="content-writing">Content Writing</option>
+                                <option value="video-editing">Video Editing</option>
+                                <option value="data-science">Data Science</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Budget Range <span style="color: var(--red-600);">*</span></label>
+                            <select class="form-select" name="budget" required>
+                                <option value="">Select budget range...</option>
+                                <option value="under-500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="over-10000">Over $10,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Project Duration <span style="color: var(--red-600);">*</span></label>
+                            <select class="form-select" name="duration" required>
+                                <option value="">Select duration...</option>
+                                <option value="less-than-week">Less than 1 week</option>
+                                <option value="1-2-weeks">1-2 weeks</option>
+                                <option value="2-4-weeks">2-4 weeks</option>
+                                <option value="1-2-months">1-2 months</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="over-3-months">Over 3 months</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Required Skills</label>
+                            <input type="text" class="form-input" name="skills" placeholder="e.g., React, Node.js, MongoDB (comma separated)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Additional Requirements</label>
+                        <textarea class="form-textarea" name="requirements" rows="4" placeholder="Any additional requirements, preferences, or notes for freelancers..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Attachments (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.png">
+                            <label for="fileInput" style="cursor: pointer;">
+                                <p style="margin: 0; color: var(--gray-600);">Click to upload files or drag and drop</p>
+                                <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--gray-500);">PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit for Review</button>
+                        <a href="client-dashboard.html" class="btn btn-secondary btn-lg">Cancel</a>
+                    </div>
+
+                    <div class="alert alert-info" style="margin-top: 1.5rem;">
+                        <strong>Note:</strong> Your project will be submitted to admin for approval. Once approved, it will be visible to freelancers who can submit proposals. You'll be notified when your project is approved.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer skillbridge-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="navbar-logo-icon">💼</div>
+                        <span class="navbar-logo-text">SkillBridge</span>
+                    </div>
+                    <div class="footer-address">
+                        <p>123 Business Street</p>
+                        <p>Suite 100</p>
+                        <p>City, State 12345</p>
+                        <p>Email: info@skillbridge.com</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Find your skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">UI/UX Designer</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Video Editor</a></li>
+                        <li><a href="#">Data Scientist</a></li>
+                        <li><a href="#">Graphic Designer</a></li>
+                        <li><a href="#">Content Writer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

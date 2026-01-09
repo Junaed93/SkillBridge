@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Client Approvals - SkillBridge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar admin-navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <div class="navbar-logo-icon">💼</div>
+                <span class="navbar-logo-text">SkillBridge</span>
+            </a>
+            <div class="navbar-links">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
+                <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="admin-freelancer-approvals.html" class="navbar-link">Freelancer Approvals</a>
+                <a href="admin-client-approvals.html" class="navbar-link active">Client Approvals</a>
+                <a href="admin-verification.html" class="navbar-link">Verification</a>
+                <div class="navbar-profile">
+                    <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem;">👤</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pending Client Approvals -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Pending Client Approvals</h1>
+                <p style="color: var(--gray-600);">Review and approve client registrations.</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                <button class="btn btn-danger btn-lg">Reject All</button>
+                <button class="btn btn-success btn-lg">Approve All</button>
+            </div>
+
+            <div class="table-container">
+                <table class="table admin-table">
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Company Name</th>
+                            <th>Industry</th>
+                            <th>Contact Email</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hoverable-row" data-details='{"name":"Tech Solutions Inc","email":"contact@techsolutions.com","phone":"+1 (555) 123-4567","industry":"Software Development","location":"New York, USA","description":"Leading software development company specializing in enterprise solutions and cloud services.","employees":"50-100","website":"https://techsolutions.com"}'>
+                            <td>
+                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🏢</div>
+                            </td>
+                            <td>Tech Solutions Inc</td>
+                            <td>Software Development</td>
+                            <td>contact@techsolutions.com</td>
+                            <td>+1 (555) 123-4567</td>
+                            <td>New York, USA</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-success btn-sm">Approve</button>
+                                    <button class="btn btn-danger btn-sm">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hoverable-row" data-details='{"name":"Innovate Ltd","email":"hello@innovate.com","phone":"+1 (555) 234-5678","industry":"Graphic Design","location":"Los Angeles, USA","description":"Creative agency focused on branding, graphic design, and digital marketing solutions.","employees":"10-50","website":"https://innovate.com"}'>
+                            <td>
+                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🎨</div>
+                            </td>
+                            <td>Innovate Ltd</td>
+                            <td>Graphic Design</td>
+                            <td>hello@innovate.com</td>
+                            <td>+1 (555) 234-5678</td>
+                            <td>Los Angeles, USA</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-success btn-sm">Approve</button>
+                                    <button class="btn btn-danger btn-sm">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hoverable-row" data-details='{"name":"Creative Minds","email":"info@creativeminds.com","phone":"+1 (555) 345-6789","industry":"Content Writing","location":"Chicago, USA","description":"Content creation agency providing SEO-optimized articles, blog posts, and marketing copy.","employees":"5-10","website":"https://creativeminds.com"}'>
+                            <td>
+                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">✍️</div>
+                            </td>
+                            <td>Creative Minds</td>
+                            <td>Content Writing</td>
+                            <td>info@creativeminds.com</td>
+                            <td>+1 (555) 345-6789</td>
+                            <td>Chicago, USA</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-success btn-sm">Approve</button>
+                                    <button class="btn btn-danger btn-sm">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hoverable-row" data-details='{"name":"Digital Media Pro","email":"contact@digitalmediapro.com","phone":"+1 (555) 456-7890","industry":"Video Editing","location":"Miami, USA","description":"Professional video production and editing services for marketing campaigns and social media.","employees":"20-50","website":"https://digitalmediapro.com"}'>
+                            <td>
+                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🎬</div>
+                            </td>
+                            <td>Digital Media Pro</td>
+                            <td>Video Editing</td>
+                            <td>contact@digitalmediapro.com</td>
+                            <td>+1 (555) 456-7890</td>
+                            <td>Miami, USA</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-success btn-sm">Approve</button>
+                                    <button class="btn btn-danger btn-sm">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hoverable-row" data-details='{"name":"WebCraft Studios","email":"hello@webcraft.com","phone":"+1 (555) 567-8901","industry":"Web Development","location":"Seattle, USA","description":"Full-service web development agency creating custom websites and web applications.","employees":"30-100","website":"https://webcraft.com"}'>
+                            <td>
+                                <div class="avatar avatar-sm" style="width: 50px; height: 50px; font-size: 1.5rem; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">💻</div>
+                            </td>
+                            <td>WebCraft Studios</td>
+                            <td>Web Development</td>
+                            <td>hello@webcraft.com</td>
+                            <td>+1 (555) 567-8901</td>
+                            <td>Seattle, USA</td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-success btn-sm">Approve</button>
+                                    <button class="btn btn-danger btn-sm">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hover Tooltip -->
+            <div id="hoverTooltip" class="hover-tooltip"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer skillbridge-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="navbar-logo-icon">💼</div>
+                        <span class="navbar-logo-text">SkillBridge</span>
+                    </div>
+                    <div class="footer-address">
+                        <p><strong>Where employment bridges skills</strong></p>
+                        <p>22/1, Block-B, Mirpur-1</p>
+                        <p>Dhaka, Bangladesh</p>
+                        <p>Phone: +880 1234 567890</p>
+                        <p>Email: info@skillbridge.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Find your skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">UI/UX Designer</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Video Editor</a></li>
+                        <li><a href="#">Data Scientist</a></li>
+                        <li><a href="#">Graphic Designer</a></li>
+                        <li><a href="#">Content Writer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="Email">✉️</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023, SkillBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hover tooltip functionality
+        const rows = document.querySelectorAll('.hoverable-row');
+        const tooltip = document.getElementById('hoverTooltip');
+
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', function(e) {
+                const details = JSON.parse(this.getAttribute('data-details'));
+                const rect = this.getBoundingClientRect();
+                
+                tooltip.innerHTML = `
+                    <div style="padding: 1rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--gray-900);">${details.name}</h3>
+                        <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Industry:</strong> ${details.industry}</p>
+                        <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Email:</strong> ${details.email}</p>
+                        <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Phone:</strong> ${details.phone}</p>
+                        <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Location:</strong> ${details.location}</p>
+                        <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Employees:</strong> ${details.employees}</p>
+                        <p style="margin: 0.5rem 0 0; color: var(--gray-700); font-size: 0.875rem;">${details.description}</p>
+                        <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200);">
+                            <a href="${details.website}" target="_blank" style="color: var(--blue-600);">Visit Website →</a>
+                        </div>
+                    </div>
+                `;
+                
+                const tooltipWidth = 350;
+                let left = rect.right + 20;
+                let top = rect.top + window.scrollY;
+                
+                // Adjust if tooltip goes off screen
+                if (left + tooltipWidth > window.innerWidth) {
+                    left = rect.left - tooltipWidth - 20;
+                }
+                
+                tooltip.style.display = 'block';
+                tooltip.style.left = left + 'px';
+                tooltip.style.top = top + 'px';
+            });
+
+            row.addEventListener('mouseleave', function() {
+                tooltip.style.display = 'none';
+            });
+
+            row.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const tooltipWidth = 350;
+                const tooltipHeight = 200;
+                
+                let left = rect.right + 20;
+                let top = rect.top + window.scrollY;
+                
+                // Adjust if tooltip goes off screen
+                if (left + tooltipWidth > window.innerWidth) {
+                    left = rect.left - tooltipWidth - 20;
+                }
+                
+                if (top + tooltipHeight > window.innerHeight + window.scrollY) {
+                    top = window.innerHeight + window.scrollY - tooltipHeight - 20;
+                }
+                
+                tooltip.style.left = left + 'px';
+                tooltip.style.top = top + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
+

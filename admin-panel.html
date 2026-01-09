@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - SkillBridge</title>
+    <title>Admin Panel - SkillBridge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
             </a>
             <div class="navbar-links">
                 <a href="index.html" class="navbar-link">Home</a>
-                <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
-                <a href="admin-dashboard.html" class="navbar-link active">Dashboard</a>
+                <a href="admin-panel.html" class="navbar-link active">Admin Panel</a>
+                <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
                 <a href="admin-freelancer-approvals.html" class="navbar-link">Freelancer Approvals</a>
                 <a href="admin-client-approvals.html" class="navbar-link">Client Approvals</a>
                 <a href="admin-verification.html" class="navbar-link">Verification</a>
@@ -28,30 +28,30 @@
         </div>
     </nav>
 
-    <!-- Dashboard -->
-    <div class="dashboard">
+    <!-- Admin Panel Welcome -->
+    <div class="dashboard admin-welcome">
         <div class="container">
-            <div class="dashboard-header">
-                <h1>Pending Actions</h1>
-                <p style="color: var(--gray-600);">Quick stats on pending actions.</p>
-                <button class="btn btn-success btn-lg" style="margin-top: 1rem;">Refresh</button>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; min-height: 60vh;">
+                <div>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Welcome Md. Junaed Khandakar</h1>
+                    <p style="font-size: 1.25rem; color: var(--gray-600); margin-bottom: 2rem;">
+                        Manage your freelancers and clients efficiently.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="admin-dashboard.html" class="btn btn-primary btn-lg">View Dashboard</a>
+                        <a href="login.html" class="btn btn-secondary btn-lg">Log Out</a>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--blue-600);">
+                        THE BEST ADMIN YOU ARE
+                    </div>
+                    <div style="font-size: 8rem; margin: 2rem 0;">👶</div>
+                    <div style="font-size: 1.5rem; font-weight: 600; margin-top: 1rem; color: var(--blue-600);">
+                        THE BEST ADMIN YOU ARE
+                    </div>
+                </div>
             </div>
-            
-            <div class="dashboard-stats">
-                <div class="stat-card admin-stat-card">
-                    <div class="stat-value">15<span style="font-size: 1rem; color: var(--green-600); margin-left: 0.5rem;">+2</span></div>
-                    <div class="stat-label">Pending Freelancer Approvals</div>
-                </div>
-                <div class="stat-card admin-stat-card">
-                    <div class="stat-value">7<span style="font-size: 1rem; color: var(--green-600); margin-left: 0.5rem;">+1</span></div>
-                    <div class="stat-label">Pending Client Approvals</div>
-                </div>
-                <div class="stat-card admin-stat-card">
-                    <div class="stat-value">40<span style="font-size: 1rem; color: var(--green-600); margin-left: 0.5rem;">+5</span></div>
-                    <div class="stat-label">Total Verifications</div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
