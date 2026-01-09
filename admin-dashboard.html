@@ -5,97 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Approval Section */
-      .approval-section {
-        margin-top: 3rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--gray-800);
-      }
-
-      /* Table Wrapper */
-      .table-wrapper {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        overflow-x: auto;
-      }
-
-      /* Table */
-      .approval-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.95rem;
-      }
-
-      .approval-table thead {
-        background: linear-gradient(90deg, #d9f99d, #bfdbfe);
-      }
-
-      .approval-table th {
-        text-align: left;
-        padding: 14px;
-        font-weight: 600;
-        color: #1e293b;
-      }
-
-      .approval-table td {
-        padding: 14px;
-        border-bottom: 1px solid #e5e7eb;
-        color: #374151;
-      }
-
-      .approval-table tbody tr:hover {
-        background-color: #f9fafb;
-      }
-
-      /* Status Badge */
-      .status {
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .status.pending {
-        background-color: #fef3c7;
-        color: #92400e;
-      }
-
-      /* Buttons */
-      .btn {
-        border: none;
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-size: 0.8rem;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .btn.approve {
-        background-color: #22c55e;
-        color: #fff;
-        margin-right: 6px;
-      }
-
-      .btn.approve:hover {
-        background-color: #16a34a;
-      }
-
-      .btn.reject {
-        background-color: #ef4444;
-        color: #fff;
-      }
-
-      .btn.reject:hover {
-        background-color: #dc2626;
-      }
-    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -136,156 +45,57 @@
     </nav>
 
     <!-- Dashboard -->
-    <!-- Approval Table Section -->
-    <div class="approval-section">
-      <h2 class="section-title">Pending Approvals</h2>
+    <div class="dashboard">
+      <div class="container">
+        <div class="dashboard-header">
+          <h1>Pending Actions</h1>
+          <p style="color: var(--gray-600)">Quick stats on pending actions.</p>
+          <button class="btn btn-success btn-lg" style="margin-top: 1rem">
+            Refresh
+          </button>
+        </div>
 
-      <div class="table-wrapper">
-        <table class="approval-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Role</th>
-              <th>Email</th>
-              <th>Requested On</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>01</td>
-              <td>Rahim Uddin</td>
-              <td>Freelancer</td>
-              <td>rahim@gmail.com</td>
-              <td>02 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>02</td>
-              <td>Nusrat Jahan</td>
-              <td>Client</td>
-              <td>nusrat@gmail.com</td>
-              <td>03 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>03</td>
-              <td>Arif Hossain</td>
-              <td>Freelancer</td>
-              <td>arif.h@gmail.com</td>
-              <td>04 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>04</td>
-              <td>Mehedi Hasan</td>
-              <td>Client</td>
-              <td>mehedi@gmail.com</td>
-              <td>04 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>05</td>
-              <td>Sadia Akter</td>
-              <td>Freelancer</td>
-              <td>sadia@gmail.com</td>
-              <td>05 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>06</td>
-              <td>Tanvir Ahmed</td>
-              <td>Client</td>
-              <td>tanvir@gmail.com</td>
-              <td>06 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>07</td>
-              <td>Farzana Islam</td>
-              <td>Freelancer</td>
-              <td>farzana@gmail.com</td>
-              <td>06 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>08</td>
-              <td>Hasan Mahmud</td>
-              <td>Client</td>
-              <td>hasan@gmail.com</td>
-              <td>07 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>09</td>
-              <td>Jannatul Ferdous</td>
-              <td>Freelancer</td>
-              <td>jannatul@gmail.com</td>
-              <td>07 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>10</td>
-              <td>Imran Khan</td>
-              <td>Client</td>
-              <td>imran@gmail.com</td>
-              <td>08 Jan 2025</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <button class="btn approve">Approve</button>
-                <button class="btn reject">Reject</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="dashboard-stats">
+          <div class="stat-card admin-stat-card">
+            <div class="stat-value">
+              15<span
+                style="
+                  font-size: 1rem;
+                  color: var(--green-600);
+                  margin-left: 0.5rem;
+                "
+                >+2</span
+              >
+            </div>
+            <div class="stat-label">Pending Freelancer Approvals</div>
+          </div>
+          <div class="stat-card admin-stat-card">
+            <div class="stat-value">
+              7<span
+                style="
+                  font-size: 1rem;
+                  color: var(--green-600);
+                  margin-left: 0.5rem;
+                "
+                >+1</span
+              >
+            </div>
+            <div class="stat-label">Pending Client Approvals</div>
+          </div>
+          <div class="stat-card admin-stat-card">
+            <div class="stat-value">
+              40<span
+                style="
+                  font-size: 1rem;
+                  color: var(--green-600);
+                  margin-left: 0.5rem;
+                "
+                >+5</span
+              >
+            </div>
+            <div class="stat-label">Total Verifications</div>
+          </div>
+        </div>
       </div>
     </div>
 
