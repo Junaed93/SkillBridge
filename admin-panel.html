@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Admin Panel */
+      .admin-panel-main {
+        padding: 4rem 0;
+      }
+
+      .admin-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .admin-header h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+
+      .admin-header p {
+        font-size: 1.1rem;
+        color: var(--gray-600);
+        margin-top: 0.5rem;
+      }
+
+      /* Cards Layout */
+      .admin-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+      }
+
+      .admin-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 2rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .admin-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .admin-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: var(--gray-800);
+      }
+
+      .admin-card p {
+        font-size: 0.95rem;
+        color: var(--gray-600);
+        margin-bottom: 1.5rem;
+      }
+
+      .logout-card {
+        border: 2px dashed #ef4444;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -43,59 +102,51 @@
     </nav>
 
     <!-- Admin Panel Welcome -->
-    <div class="dashboard admin-welcome">
+    <!-- Admin Panel Main -->
+    <div class="dashboard admin-panel-main">
       <div class="container">
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 60vh;
-          "
-        >
-          <div>
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem">
-              Welcome Md. Junaed Khandakar
-            </h1>
-            <p
-              style="
-                font-size: 1.25rem;
-                color: var(--gray-600);
-                margin-bottom: 2rem;
-              "
-            >
-              Manage your freelancers and clients efficiently.
-            </p>
-            <div style="display: flex; gap: 1rem">
-              <a href="admin-dashboard.html" class="btn btn-primary btn-lg"
-                >View Dashboard</a
-              >
-              <a href="login.html" class="btn btn-secondary btn-lg">Log Out</a>
-            </div>
+        <!-- Welcome Header -->
+        <div class="admin-header">
+          <h1>Welcome, Md. Junaed Khandakar</h1>
+          <p>Control and monitor the entire platform from here.</p>
+        </div>
+
+        <!-- Admin Cards -->
+        <div class="admin-cards">
+          <div class="admin-card">
+            <h3>Dashboard Overview</h3>
+            <p>View statistics and pending actions</p>
+            <a href="admin-dashboard.html" class="btn btn-primary">Open</a>
           </div>
-          <div style="text-align: center">
-            <div
-              style="
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 1rem;
-                color: var(--blue-600);
-              "
+
+          <div class="admin-card">
+            <h3>Freelancer Approvals</h3>
+            <p>Approve or reject freelancer requests</p>
+            <a href="admin-freelancer-approvals.html" class="btn btn-success"
+              >Manage</a
             >
-              THE BEST ADMIN YOU ARE
-            </div>
-            <div style="font-size: 8rem; margin: 2rem 0">👶</div>
-            <div
-              style="
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-top: 1rem;
-                color: var(--blue-600);
-              "
+          </div>
+
+          <div class="admin-card">
+            <h3>Client Approvals</h3>
+            <p>Verify and approve client accounts</p>
+            <a href="admin-client-approvals.html" class="btn btn-success"
+              >Manage</a
             >
-              THE BEST ADMIN YOU ARE
-            </div>
+          </div>
+
+          <div class="admin-card">
+            <h3>User Verification</h3>
+            <p>Review identity & document verification</p>
+            <a href="admin-verification.html" class="btn btn-secondary"
+              >Review</a
+            >
+          </div>
+
+          <div class="admin-card logout-card">
+            <h3>Log Out</h3>
+            <p>End your admin session securely</p>
+            <a href="login.html" class="btn btn-danger">Log Out</a>
           </div>
         </div>
       </div>
@@ -178,3 +229,4 @@
     </footer>
   </body>
 </html>
+
