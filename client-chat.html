@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat Messages - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* CHAT CARD */
+      .chat-card {
+        max-width: 900px;
+        margin: auto;
+        padding: 1.5rem;
+      }
+
+      /* CHAT BOX */
+      .chat-box {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 1rem;
+        height: 320px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* MESSAGE */
+      .message {
+        max-width: 70%;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      /* RECEIVED */
+      .message.received {
+        background: #e5e7eb;
+        align-self: flex-start;
+      }
+
+      /* SENT */
+      .message.sent {
+        background: #8df5a7;
+        color: #ffffff;
+        align-self: flex-end;
+      }
+
+      /* TIME */
+      .message .time {
+        display: block;
+        font-size: 11px;
+        margin-top: 4px;
+        opacity: 0.7;
+      }
+
+      /* INPUT AREA */
+      .chat-input {
+        margin-top: 1rem;
+        display: flex;
+        gap: 10px;
+      }
+
+      .chat-input input {
+        flex: 1;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -23,7 +84,9 @@
           <a href="index.html" class="navbar-link">Home</a>
           <a href="browse-projects.html" class="navbar-link">Browse Projects</a>
           <a href="#" class="navbar-link">About</a>
-          <a href="post-project.html" class="btn btn-primary btn-sm">Post a Project</a>
+          <a href="post-project.html" class="btn btn-primary btn-sm"
+            >Post a Project</a
+          >
           <a href="client-chat.html" class="navbar-link active">Messages</a>
           <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
         </div>
@@ -31,7 +94,10 @@
     </nav>
 
     <!-- Profile Section -->
-    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div
+      class="section section-white"
+      style="padding-top: 4rem; padding-bottom: 2rem"
+    >
       <div class="container">
         <div class="card">
           <div class="table-container">
@@ -47,7 +113,13 @@
                 <tr>
                   <td><strong>Mira Tabassum</strong></td>
                   <td>Freelancer</td>
-                  <td><a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">View Profile</a></td>
+                  <td>
+                    <a
+                      href="freelancer-dashboard.html"
+                      class="btn btn-primary btn-sm"
+                      >View Profile</a
+                    >
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -57,42 +129,37 @@
     </div>
 
     <!-- Chat Messages -->
+    <!-- Chat Messages -->
     <div class="section section-gray">
       <div class="container">
-        <div class="card" style="max-width: 900px; margin: 0 auto;">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Chat Messages</h2>
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Sender</th>
-                  <th>Message</th>
-                  <th>Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Mira Tabassum</td>
-                  <td>Hey, I need a UI/UX design for my website</td>
-                  <td>10:30 AM</td>
-                </tr>
-                <tr>
-                  <td>You</td>
-                  <td>Sure, I can help you with that</td>
-                  <td>10:32 AM</td>
-                </tr>
-                <tr>
-                  <td>You</td>
-                  <td>I have attached some samples for your review</td>
-                  <td>10:35 AM</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="card chat-card">
+          <h2 class="section-title">Chat with Mira Tabassum</h2>
+
+          <!-- Chat Box -->
+          <div class="chat-box">
+            <div class="message received">
+              <p>Hey, I need a UI/UX design for my website</p>
+              <span class="time">10:30 AM</span>
+            </div>
+
+            <div class="message sent">
+              <p>Sure, I can help you with that</p>
+              <span class="time">10:32 AM</span>
+            </div>
+
+            <div class="message sent">
+              <p>I have attached some samples for your review</p>
+              <span class="time">10:35 AM</span>
+            </div>
           </div>
 
           <!-- Message Input -->
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-            <input type="text" class="form-input" placeholder="Type your message..." style="flex: 1;" />
+          <div class="chat-input">
+            <input
+              type="text"
+              class="form-input"
+              placeholder="Type your message..."
+            />
             <button class="btn btn-primary">Send</button>
           </div>
         </div>
@@ -176,3 +243,4 @@
     </footer>
   </body>
 </html>
+
