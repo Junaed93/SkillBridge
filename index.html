@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkillBridge - Professional Freelance Marketplace</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -21,27 +22,13 @@
         </a>
         <div class="navbar-links">
           <a href="index.html" class="navbar-link">Home</a>
-          <a
-            href="browse-projects.html"
-            class="navbar-link navbar-browse"
-            id="findProjectLink"
-            style="display: none"
-            >Find a Project</a
-          >
-          <a
-            href="freelancer-dashboard.html"
-            class="navbar-link"
-            style="display: none"
-            id="dashboardLink"
-            >Dashboard</a
-          >
           <a href="#" class="navbar-link">About</a>
           <a href="login.html" class="navbar-link">Login</a>
           <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-          <a
-            href="post-project.html"
-            class="btn btn-secondary btn-sm navbar-post"
-            id="postProjectLink"
+          <a href="browse-projects.html" class="btn btn-primary btn-sm navbar-post" id="findProjectLink" style="display: none;"
+            >Find a Project</a
+          >
+          <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post" id="postProjectLink"
             >Post a Project</a
           >
         </div>
@@ -73,9 +60,7 @@
                 class="search-input"
                 placeholder="Search for skills, services, or freelancers..."
               />
-              <a href="browse-projects.html" class="btn btn-primary search-btn"
-                >Search</a
-              >
+              <a href="browse-projects.html" class="btn btn-primary search-btn">Search</a>
             </div>
 
             <div class="popular-searches">
@@ -111,64 +96,49 @@
     <div class="section section-white">
       <div class="container">
         <h2 class="section-title">Our trusted clients</h2>
-        <div class="table-container">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Fariha Malon</strong></td>
-                <td>
-                  Startup founder who hired freelancers for UI/UX design and
-                  brand identity development for her e-commerce platform.
-                </td>
-              </tr>
-
-              <tr>
-                <td><strong>Kashif Khan</strong></td>
-                <td>
-                  Business consultant who frequently posts web development and
-                  SEO projects for international clients.
-                </td>
-              </tr>
-
-              <tr>
-                <td><strong>Sarah Ahmed</strong></td>
-                <td>
-                  Digital marketing manager seeking content writers and social
-                  media strategists for brand growth.
-                </td>
-              </tr>
-
-              <tr>
-                <td><strong>John Smith</strong></td>
-                <td>
-                  Technology entrepreneur hiring full-stack developers for SaaS
-                  product development.
-                </td>
-              </tr>
-
-              <tr>
-                <td><strong>Emily Davis</strong></td>
-                <td>
-                  Creative director collaborating with graphic designers and
-                  video editors for marketing campaigns.
-                </td>
-              </tr>
-
-              <tr>
-                <td><strong>Michael Brown</strong></td>
-                <td>
-                  Product manager outsourcing mobile app development and UI
-                  testing projects.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="trusted-clients-container">
+          <div class="client-item">
+            <div class="client-avatar">👩‍💼</div>
+            <div class="client-content">
+              <h3 class="client-name">Fariha Malon</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-avatar">👨‍💼</div>
+            <div class="client-content">
+              <h3 class="client-name">Kashif Khan</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-avatar">👩‍💻</div>
+            <div class="client-content">
+              <h3 class="client-name">Sarah Ahmed</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-avatar">👨‍💻</div>
+            <div class="client-content">
+              <h3 class="client-name">John Smith</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-avatar">👩‍🎨</div>
+            <div class="client-content">
+              <h3 class="client-name">Emily Davis</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="client-item">
+            <div class="client-avatar">👨‍🎨</div>
+            <div class="client-content">
+              <h3 class="client-name">Michael Brown</h3>
+              <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -251,69 +221,68 @@
 
     <script>
       // Toggle navbar links based on role selection
-      const roleToggle = document.getElementById("roleToggle");
-      const findProjectLink = document.getElementById("findProjectLink");
-      const postProjectLink = document.getElementById("postProjectLink");
-      const heroToggle = document.querySelector(".hero-toggle");
-      const allToggleSpans = heroToggle
-        ? heroToggle.querySelectorAll("span:not(.toggle-switch)")
-        : [];
+      document.addEventListener('DOMContentLoaded', function() {
+        const roleToggle = document.getElementById('roleToggle');
+        const findProjectLink = document.getElementById('findProjectLink');
+        const postProjectLink = document.getElementById('postProjectLink');
+        const heroToggle = document.querySelector('.hero-toggle');
+        const allToggleSpans = heroToggle ? heroToggle.querySelectorAll('span:not(.toggle-switch)') : [];
 
-      function updateNavbar() {
-        if (roleToggle && roleToggle.checked) {
-          // Freelancer mode - show "Find a Project", hide "Post a Project"
-          if (findProjectLink) {
-            findProjectLink.style.display = "flex";
-          }
-          if (postProjectLink) {
-            postProjectLink.style.display = "none";
-          }
-        } else {
-          // Hiring mode - show "Post a Project", hide "Find a Project"
-          if (findProjectLink) {
-            findProjectLink.style.display = "none";
-          }
-          if (postProjectLink) {
-            postProjectLink.style.display = "inline-block";
-          }
-        }
-      }
-
-      // Update toggle label styling based on state
-      function updateToggleLabels() {
-        if (allToggleSpans.length >= 2) {
-          if (roleToggle.checked) {
-            // Freelancer mode - second span (For Freelancers) should be active
-            allToggleSpans[0].classList.remove("toggle-active");
-            allToggleSpans[0].style.fontWeight = "400";
-            allToggleSpans[0].style.color = "var(--gray-600)";
-            allToggleSpans[1].classList.add("toggle-active");
-            allToggleSpans[1].style.fontWeight = "600";
-            allToggleSpans[1].style.color = "var(--gray-900)";
+        function updateNavbar() {
+          if (roleToggle && roleToggle.checked) {
+            // Freelancer mode - show "Find a Project", hide "Post a Project"
+            if (findProjectLink) {
+              findProjectLink.style.display = 'inline-flex';
+            }
+            if (postProjectLink) {
+              postProjectLink.style.display = 'none';
+            }
           } else {
-            // Hiring mode - first span (For hiring) should be active
-            allToggleSpans[0].classList.add("toggle-active");
-            allToggleSpans[0].style.fontWeight = "600";
-            allToggleSpans[0].style.color = "var(--gray-900)";
-            allToggleSpans[1].classList.remove("toggle-active");
-            allToggleSpans[1].style.fontWeight = "400";
-            allToggleSpans[1].style.color = "var(--gray-600)";
+            // Hiring mode - show "Post a Project", hide "Find a Project"
+            if (findProjectLink) {
+              findProjectLink.style.display = 'none';
+            }
+            if (postProjectLink) {
+              postProjectLink.style.display = 'inline-block';
+            }
           }
         }
-      }
 
-      // Listen for toggle changes
-      if (roleToggle) {
-        roleToggle.addEventListener("change", function () {
+        // Update toggle label styling based on state
+        function updateToggleLabels() {
+          if (allToggleSpans.length >= 2) {
+            if (roleToggle.checked) {
+              // Freelancer mode - second span (For Freelancers) should be active
+              allToggleSpans[0].classList.remove('toggle-active');
+              allToggleSpans[0].style.fontWeight = '400';
+              allToggleSpans[0].style.color = 'var(--gray-600)';
+              allToggleSpans[1].classList.add('toggle-active');
+              allToggleSpans[1].style.fontWeight = '600';
+              allToggleSpans[1].style.color = 'var(--gray-900)';
+            } else {
+              // Hiring mode - first span (For hiring) should be active
+              allToggleSpans[0].classList.add('toggle-active');
+              allToggleSpans[0].style.fontWeight = '600';
+              allToggleSpans[0].style.color = 'var(--gray-900)';
+              allToggleSpans[1].classList.remove('toggle-active');
+              allToggleSpans[1].style.fontWeight = '400';
+              allToggleSpans[1].style.color = 'var(--gray-600)';
+            }
+          }
+        }
+
+        // Listen for toggle changes
+        if (roleToggle) {
+          roleToggle.addEventListener('change', function() {
+            updateNavbar();
+            updateToggleLabels();
+          });
+          
+          // Initialize on page load (default: hiring mode - unchecked)
           updateNavbar();
           updateToggleLabels();
-        });
-
-        // Initialize on page load (default: hiring mode - unchecked)
-        updateNavbar();
-        updateToggleLabels();
-      }
+        }
+      });
     </script>
   </body>
 </html>
-

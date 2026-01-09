@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pending Client Approvals - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -57,119 +58,67 @@
           <button class="btn btn-success btn-lg">Approve All</button>
         </div>
 
-        <div class="table-container">
-          <table class="table admin-table">
-            <thead>
-              <tr>
-                <th>Logo</th>
-                <th>Company Name</th>
-                <th>Industry</th>
-                <th>Contact Email</th>
-                <th>Phone</th>
-                <th>Location</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                class="hoverable-row"
-                data-details='{"name":"Tech Solutions Inc","email":"contact@techsolutions.com","phone":"+1 (555) 123-4567","industry":"Software Development","location":"New York, USA","description":"Leading software development company specializing in enterprise solutions and cloud services.","employees":"50-100","website":"https://techsolutions.com"}'
-              >
-                <td>
-                  <div
-                    class="avatar avatar-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      font-size: 1.5rem;
-                      background: linear-gradient(
-                        135deg,
-                        #667eea 0%,
-                        #764ba2 100%
-                      );
-                    "
-                  >
-                    🏢
-                  </div>
-                </td>
-                <td>Tech Solutions Inc</td>
-                <td>Software Development</td>
-                <td>contact@techsolutions.com</td>
-                <td>+1 (555) 123-4567</td>
-                <td>New York, USA</td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem">
-                    <button class="btn btn-success btn-sm">Approve</button>
-                    <button class="btn btn-danger btn-sm">Reject</button>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="hoverable-row"
-                data-details='{"name":"Innovate Ltd","email":"hello@innovate.com","phone":"+1 (555) 234-5678","industry":"Graphic Design","location":"Los Angeles, USA","description":"Creative agency focused on branding, graphic design, and digital marketing solutions.","employees":"10-50","website":"https://innovate.com"}'
-              >
-                <td>
-                  <div
-                    class="avatar avatar-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      font-size: 1.5rem;
-                      background: linear-gradient(
-                        135deg,
-                        #f093fb 0%,
-                        #f5576c 100%
-                      );
-                    "
-                  >
-                    🎨
-                  </div>
-                </td>
-                <td>Innovate Ltd</td>
-                <td>Graphic Design</td>
-                <td>hello@innovate.com</td>
-                <td>+1 (555) 234-5678</td>
-                <td>Los Angeles, USA</td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem">
-                    <button class="btn btn-success btn-sm">Approve</button>
-                    <button class="btn btn-danger btn-sm">Reject</button>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="hoverable-row"
-                data-details='{"name":"Creative Minds","email":"info@creativeminds.com","phone":"+1 (555) 345-6789","industry":"Content Writing","location":"Chicago, USA","description":"Content creation agency providing SEO-optimized articles, blog posts, and marketing copy.","employees":"5-10","website":"https://creativeminds.com"}'
-              >
-                <td>
-                  <div
-                    class="avatar avatar-sm"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      font-size: 1.5rem;
-                      background: linear-gradient(
-                        135deg,
-                        #4facfe 0%,
-                        #00f2fe 100%
-                      );
-                    "
-                  >
-                    ✍️
-                  </div>
-                </td>
-                <td>Creative Minds</td>
-                <td>Content Writing</td>
-                <td>info@creativeminds.com</td>
-                <td>+1 (555) 345-6789</td>
-                <td>Chicago, USA</td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem">
-                    <button class="btn btn-success btn-sm">Approve</button>
-                    <button class="btn btn-danger btn-sm">Reject</button>
-                  </div>
-                </td>
-              </tr>
+        <div class="approvals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+          <!-- Client Card 1 -->
+          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; align-items: center; justify-content: center;">🏢</div>
+              <div style="flex: 1; min-width: 0;">
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Tech Solutions Inc</h3>
+                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Software Development</p>
+              </div>
+            </div>
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> contact@techsolutions.com</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> New York, USA</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+            </div>
+          </div>
+
+          <!-- Client Card 2 -->
+          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; display: flex; align-items: center; justify-content: center;\">🎨</div>
+              <div style="flex: 1; min-width: 0;">
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Innovate Ltd</h3>
+                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Graphic Design</p>
+              </div>
+            </div>
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> hello@innovate.com</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 234-5678</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Los Angeles, USA</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+            </div>
+          </div>
+
+          <!-- Client Card 3 -->
+          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; display: flex; align-items: center; justify-content: center;\">✍️</div>
+              <div style="flex: 1; min-width: 0;">
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Creative Minds</h3>
+                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Content Writing</p>
+              </div>
+            </div>
+            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> info@creativeminds.com</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 345-6789</p>
+              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Chicago, USA</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+            </div>
+          </div>
+        </div>
               <tr
                 class="hoverable-row"
                 data-details='{"name":"Digital Media Pro","email":"contact@digitalmediapro.com","phone":"+1 (555) 456-7890","industry":"Video Editing","location":"Miami, USA","description":"Professional video production and editing services for marketing campaigns and social media.","employees":"20-50","website":"https://digitalmediapro.com"}'

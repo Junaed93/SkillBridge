@@ -5,67 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat Messages - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* CHAT CARD */
-      .chat-card {
-        max-width: 900px;
-        margin: auto;
-        padding: 1.5rem;
-      }
-
-      /* CHAT BOX */
-      .chat-box {
-        background: #f9fafb;
-        border-radius: 12px;
-        padding: 1rem;
-        height: 320px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      /* MESSAGE */
-      .message {
-        max-width: 70%;
-        padding: 10px 14px;
-        border-radius: 12px;
-        font-size: 14px;
-        line-height: 1.4;
-      }
-
-      /* RECEIVED */
-      .message.received {
-        background: #e5e7eb;
-        align-self: flex-start;
-      }
-
-      /* SENT */
-      .message.sent {
-        background: #8df5a7;
-        color: #ffffff;
-        align-self: flex-end;
-      }
-
-      /* TIME */
-      .message .time {
-        display: block;
-        font-size: 11px;
-        margin-top: 4px;
-        opacity: 0.7;
-      }
-
-      /* INPUT AREA */
-      .chat-input {
-        margin-top: 1rem;
-        display: flex;
-        gap: 10px;
-      }
-
-      .chat-input input {
-        flex: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -84,9 +24,7 @@
           <a href="index.html" class="navbar-link">Home</a>
           <a href="browse-projects.html" class="navbar-link">Browse Projects</a>
           <a href="#" class="navbar-link">About</a>
-          <a href="post-project.html" class="btn btn-primary btn-sm"
-            >Post a Project</a
-          >
+          <a href="post-project.html" class="btn btn-primary btn-sm">Post a Project</a>
           <a href="client-chat.html" class="navbar-link active">Messages</a>
           <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
         </div>
@@ -94,72 +32,53 @@
     </nav>
 
     <!-- Profile Section -->
-    <div
-      class="section section-white"
-      style="padding-top: 4rem; padding-bottom: 2rem"
-    >
+    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
       <div class="container">
         <div class="card">
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Role</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Mira Tabassum</strong></td>
-                  <td>Freelancer</td>
-                  <td>
-                    <a
-                      href="freelancer-dashboard.html"
-                      class="btn btn-primary btn-sm"
-                      >View Profile</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="profile-card" style="display: flex; align-items: center; gap: 20px; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 600;">MT</div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0;">Mira Tabassum</h3>
+              <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;"><i class="fas fa-user-tie" style="margin-right: 0.5rem;"></i>Freelancer</p>
+            </div>
+            <a href="freelancer-dashboard.html" class="btn btn-primary">View Profile</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Chat Messages -->
-    <!-- Chat Messages -->
     <div class="section section-gray">
       <div class="container">
-        <div class="card chat-card">
-          <h2 class="section-title">Chat with Mira Tabassum</h2>
-
-          <!-- Chat Box -->
-          <div class="chat-box">
-            <div class="message received">
-              <p>Hey, I need a UI/UX design for my website</p>
-              <span class="time">10:30 AM</span>
+        <div class="card" style="max-width: 900px; margin: 0 auto;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Chat Messages</h2>
+          <div class="messages-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;">
+            <div class="message-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px; border-left: 4px solid var(--blue-600);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <p style="font-weight: 600; margin: 0;">Mira Tabassum</p>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">10:30 AM</span>
+              </div>
+              <p style="color: var(--gray-600); margin: 0;">Hey, I need a UI/UX design for my website</p>
             </div>
-
-            <div class="message sent">
-              <p>Sure, I can help you with that</p>
-              <span class="time">10:32 AM</span>
+            <div class="message-item" style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <p style="font-weight: 600; margin: 0;">You</p>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">10:32 AM</span>
+              </div>
+              <p style="color: var(--gray-600); margin: 0;">Sure, I can help you with that</p>
             </div>
-
-            <div class="message sent">
-              <p>I have attached some samples for your review</p>
-              <span class="time">10:35 AM</span>
+            <div class="message-item" style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <p style="font-weight: 600; margin: 0;">You</p>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">10:35 AM</span>
+              </div>
+              <p style="color: var(--gray-600); margin: 0;">I have attached some samples for your review</p>
             </div>
           </div>
 
           <!-- Message Input -->
-          <div class="chat-input">
-            <input
-              type="text"
-              class="form-input"
-              placeholder="Type your message..."
-            />
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <input type="text" class="form-input" placeholder="Type your message..." style="flex: 1;" />
             <button class="btn btn-primary">Send</button>
           </div>
         </div>
@@ -243,4 +162,3 @@
     </footer>
   </body>
 </html>
-

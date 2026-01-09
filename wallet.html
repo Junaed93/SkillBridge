@@ -5,127 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wallet Dashboard - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: #f4f6f8;
-        color: #333;
-      }
-
-      /* Header */
-      .dashboard-header {
-        background: white;
-        padding: 40px;
-        text-align: center;
-      }
-
-      .dashboard-header h1 {
-        margin-bottom: 5px;
-      }
-
-      /* Container */
-      .dashboard-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        padding: 30px;
-      }
-
-      /* Balance Cards */
-      .balance-card {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      .balance-card.secondary {
-        background: linear-gradient(135deg, #eef2ff, #f9f9ff);
-      }
-
-      .balance-amount {
-        font-size: 32px;
-        font-weight: bold;
-        margin: 10px 0;
-      }
-
-      .balance-actions {
-        display: flex;
-        gap: 10px;
-      }
-
-      /* Gateway */
-      .gateway-section {
-        padding: 30px;
-      }
-
-      .gateway-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-      }
-
-      .gateway-card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Transactions */
-      .transaction-section {
-        padding: 30px;
-      }
-
-      .transaction-table {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-
-      .transaction-table th,
-      .transaction-table td {
-        padding: 14px;
-        border-bottom: 1px solid #eee;
-      }
-
-      .credit {
-        color: green;
-        font-weight: 600;
-      }
-
-      .debit {
-        color: red;
-        font-weight: 600;
-      }
-
-      /* Buttons */
-      .btn-primary {
-        background: #50eb58;
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-
-      .btn-outline {
-        background: transparent;
-        border: 1px solid #50eb58;
-        color: #50eb58;
-        padding: 8px 14px;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
-
   <body>
-    <!-- Navbar (UNCHANGED) -->
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar-content">
         <a href="index.html" class="navbar-logo">
@@ -143,101 +26,149 @@
           <a href="#" class="navbar-link">About</a>
           <a href="login.html" class="navbar-link">Login</a>
           <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm"
-            >Post a Project</a
-          >
+          <a href="post-project.html" class="btn btn-secondary btn-sm">Post a Project</a>
         </div>
       </div>
     </nav>
 
-    <!-- Dashboard Header -->
-    <section class="dashboard-header">
-      <h1>Wallet Dashboard</h1>
-      <p>Securely manage your balance & withdraw earnings in BDT</p>
-    </section>
+    <!-- Wallet Header -->
+    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+      <div class="container">
+        <h1 class="section-title">Wallet Dashboard</h1>
+        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Manage your wallet balance and transactions.</p>
+      </div>
+    </div>
 
-    <!-- Balance Cards -->
-    <section class="dashboard-container">
-      <div class="balance-card">
-        <h3>Available Balance</h3>
-        <p class="balance-amount">৳25,000</p>
-        <div class="balance-actions">
-          <button class="btn-outline">Withdraw</button>
-          <button class="btn-primary">Add Balance</button>
+    <!-- Current Wallet Balance -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Current Wallet Balance</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your balance available for withdrawal</p>
+          <div class="wallet-balance-container" style="background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%); border-radius: 14px; padding: 30px; color: white; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <p style="opacity: 0.9; margin-bottom: 0.5rem;">Available Balance</p>
+              <p style="font-size: 2.5rem; font-weight: 700;">$500</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-outline-secondary btn-sm">Withdraw</button>
+              <button class="btn btn-primary btn-sm">Add Funds</button>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="balance-card secondary">
-        <h3>Pending Earnings</h3>
-        <p class="balance-amount">৳7,500</p>
-        <span class="note">Releases after project approval</span>
-      </div>
-    </section>
-
-    <!-- Payment Gateway -->
-    <section class="gateway-section">
-      <h2>Withdraw via Payment Gateway (BDT)</h2>
-
-      <div class="gateway-grid">
-        <div class="gateway-card">
-          <h4>bKash</h4>
-          <p>Instant mobile wallet transfer</p>
-          <button class="btn-primary">Withdraw to bKash</button>
-        </div>
-
-        <div class="gateway-card">
-          <h4>Nagad</h4>
-          <p>Government digital wallet</p>
-          <button class="btn-primary">Withdraw to Nagad</button>
-        </div>
-
-        <div class="gateway-card">
-          <h4>Rocket</h4>
-          <p>DBBL mobile banking</p>
-          <button class="btn-primary">Withdraw to Rocket</button>
-        </div>
-
-        <div class="gateway-card">
-          <h4>Bank Account</h4>
-          <p>Direct bank transfer (1–2 days)</p>
-          <button class="btn-primary">Withdraw to Bank</button>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- Transaction History -->
-    <section class="transaction-section">
-      <h2>Recent Transactions</h2>
+    <div class="section section-white" id="transaction-history">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Transaction History</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your past transactions</p>
+          <div class="transactions-list" style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
+              <div>
+                <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Received</p>
+                <p style="font-size: 0.9rem; color: var(--gray-600);">Project A</p>
+              </div>
+              <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$200</p>
+            </div>
+            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
+              <div>
+                <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Made</p>
+                <p style="font-size: 0.9rem; color: var(--gray-600);">Project B</p>
+              </div>
+              <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$100</p>
+            </div>
+            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
+              <div>
+                <p style="font-weight: 600; margin-bottom: 0.25rem;">Withdrawal</p>
+                <p style="font-size: 0.9rem; color: var(--gray-600);">Bank Transfer</p>
+              </div>
+              <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$50</p>
+            </div>
+            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
+              <div>
+                <p style="font-weight: 600; margin-bottom: 0.25rem;">Deposit</p>
+                <p style="font-size: 0.9rem; color: var(--gray-600);">Direct Transfer</p>
+              </div>
+              <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$300</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <button class="btn btn-outline-secondary btn-sm">View full history</button>
+            <a href="#" class="btn btn-primary btn-sm">Download Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <table class="transaction-table">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Received</td>
-            <td>Website Design Project</td>
-            <td class="credit">+৳20,000</td>
-          </tr>
-          <tr>
-            <td>Withdrawal</td>
-            <td>bKash Transfer</td>
-            <td class="debit">-৳5,000</td>
-          </tr>
-          <tr>
-            <td>Deposit</td>
-            <td>Bank Transfer</td>
-            <td class="credit">+৳15,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <!-- Add New Wallet -->
+    <div class="section section-gray">
+      <div class="container">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Add New Wallet</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose a wallet type to withdraw funds.</p>
+          <div class="add-wallet-form">
+            <div class="form-group">
+              <label class="form-label">Wallet Type</label>
+              <div class="wallet-type-chips">
+                <span class="wallet-chip">bKash</span>
+                <span class="wallet-chip">VISA/Master Debit Card</span>
+                <span class="wallet-chip">PayPal</span>
+                <span class="wallet-chip">Other</span>
+              </div>
+              <p class="form-hint">Please choose a wallet option.</p>
+            </div>
 
-    <!-- Footer (UNCHANGED) -->
+            <div class="form-group">
+              <label class="form-label">Wallet Address</label>
+              <input type="text" class="form-input" placeholder="Enter your wallet address" />
+              <p class="form-hint">Your unique wallet identifier.</p>
+            </div>
+
+            <div class="form-actions">
+              <a href="wallet.html" class="btn btn-outline-secondary">Cancel</a>
+              <a href="wallet.html" class="btn btn-primary">Add Wallet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supported Wallets -->
+    <div class="section section-white">
+      <div class="container">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Supported Wallets</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose your preferred payment method.</p>
+          <div class="wallets-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+              <i class="fas fa-mobile" style="font-size: 2rem; color: var(--blue-600); margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">bKash</h3>
+              <p style="color: var(--gray-600); font-size: 0.95rem;">Popular Mobile Wallet</p>
+            </div>
+            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+              <i class="fas fa-credit-card" style="font-size: 2rem; color: #1434cb; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">VISA</h3>
+              <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
+            </div>
+            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+              <i class="fas fa-credit-card" style="font-size: 2rem; color: #eb001b; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">MasterCard</h3>
+              <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
+            </div>
+            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+              <i class="fas fa-paypal" style="font-size: 2rem; color: #003087; margin-bottom: 1rem; display: block;"></i>
+              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">PayPal</h3>
+              <p style="color: var(--gray-600); font-size: 0.95rem;">Easy Online Payments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <!-- Column 1 -->
@@ -314,4 +245,3 @@
     </footer>
   </body>
 </html>
-

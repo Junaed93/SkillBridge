@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Work Progress Dashboard - SkillBridge</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -53,33 +54,22 @@
         <div class="card">
           <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Project Progress Overview</h2>
           <p class="section-subtitle" style="margin-bottom: 1.5rem;">Here's the overall progress for your project.</p>
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  <th>Value</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Current Progress</td>
-                  <td>75%</td>
-                  <td><span class="badge badge-info">In Progress</span></td>
-                </tr>
-                <tr>
-                  <td>Tasks Completed</td>
-                  <td>3 out of 4</td>
-                  <td><span class="badge badge-warning">Pending Task</span></td>
-                </tr>
-                <tr>
-                  <td>Next Steps</td>
-                  <td>Review and adjustments required.</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Current Progress</p>
+              <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">75%</p>
+              <span class="badge badge-info">In Progress</span>
+            </div>
+            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Tasks Completed</p>
+              <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">3 out of 4</p>
+              <span class="badge badge-warning">Pending Task</span>
+            </div>
+            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Next Steps</p>
+              <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Review and adjustments required.</p>
+              <span style="color: var(--gray-500);">-</span>
+            </div>
           </div>
         </div>
       </div>
@@ -122,37 +112,31 @@
         <div class="card">
           <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Previous Updates</h2>
           <p class="section-subtitle" style="margin-bottom: 1.5rem;">Review your past updates and files submitted.</p>
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Update</th>
-                  <th>Description</th>
-                  <th>Progress</th>
-                  <th>Attached Files</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Update 1</td>
-                  <td>Completed the first milestone</td>
-                  <td>40%</td>
-                  <td>file1.pdf</td>
-                </tr>
-                <tr>
-                  <td>Update 2</td>
-                  <td>Revised after client feedback</td>
-                  <td>65%</td>
-                  <td>file2.docx</td>
-                </tr>
-                <tr>
-                  <td>Update 3</td>
-                  <td>Final adjustments made</td>
-                  <td>75%</td>
-                  <td>final_project.zip</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="updates-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
+            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 1</h4>
+              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Completed the first milestone</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 1.2rem; font-weight: 600;">40%</span>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">file1.pdf</span>
+              </div>
+            </div>
+            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 2</h4>
+              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Revised after client feedback</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 1.2rem; font-weight: 600;">65%</span>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">file2.docx</span>
+              </div>
+            </div>
+            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 3</h4>
+              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Final adjustments made</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 1.2rem; font-weight: 600;">75%</span>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">final_project.zip</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
