@@ -1,164 +1,235 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Messages - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-          <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-          <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-          <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
-          <a href="client-chat.html" class="navbar-link active"><i class="fas fa-comments"></i> Messages</a>
-          <a href="client-dashboard.html" class="navbar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Profile Section -->
-    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-      <div class="container">
-        <div class="card">
-          <div class="profile-card" style="display: flex; align-items: center; gap: 20px; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px;">
-            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 600;">MT</div>
-            <div style="flex: 1;">
-              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0;">Mira Tabassum</h3>
-              <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;"><i class="fas fa-user-tie" style="margin-right: 0.5rem;"></i>Freelancer</p>
-            </div>
-            <a href="freelancer-dashboard.html" class="btn btn-primary">View Profile</a>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Messages - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
+        <a href="client-chat.html" class="navbar-link active"><i class="fas fa-comments"></i> Messages</a>
+        <a href="client-dashboard.html" class="navbar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
       </div>
     </div>
+  </nav>
 
-    <!-- Chat Messages -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card" style="max-width: 900px; margin: 0 auto;">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Chat Messages</h2>
-          <div class="messages-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;">
-            <div class="message-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px; border-left: 4px solid var(--blue-600);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <p style="font-weight: 600; margin: 0;">Mira Tabassum</p>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">10:30 AM</span>
+  <!-- Two-Panel Chat Interface -->
+  <div class="section section-gray" style="padding-top: 4rem;">
+    <div class="container">
+      <div style="display: flex; gap: 20px; max-width: 1200px; margin: 0 auto;">
+
+        <!-- Left Panel: Freelancer List -->
+        <div class="card" style="width: 300px; flex-shrink: 0; padding: 20px;">
+          <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Messages</h3>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+
+            <!-- Active Freelancer -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; border-left: 4px solid var(--blue-600); cursor: pointer;">
+              <div
+                style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                MT</div>
+              <div style="flex: 1; min-width: 0;">
+                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Mira Tabassum</p>
+                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Freelancer</p>
               </div>
-              <p style="color: var(--gray-600); margin: 0;">Hey, I need a UI/UX design for my website</p>
             </div>
-            <div class="message-item" style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <p style="font-weight: 600; margin: 0;">You</p>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">10:32 AM</span>
+
+            <!-- Other Freelancers -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
+              <div
+                style="width: 45px; height: 45px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                JS</div>
+              <div style="flex: 1; min-width: 0;">
+                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">John Smith</p>
+                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Developer</p>
               </div>
-              <p style="color: var(--gray-600); margin: 0;">Sure, I can help you with that</p>
             </div>
-            <div class="message-item" style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <p style="font-weight: 600; margin: 0;">You</p>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">10:35 AM</span>
+
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
+              <div
+                style="width: 45px; height: 45px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                SJ</div>
+              <div style="flex: 1; min-width: 0;">
+                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Sarah Johnson</p>
+                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Designer</p>
               </div>
-              <p style="color: var(--gray-600); margin: 0;">I have attached some samples for your review</p>
+            </div>
+
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
+              <div
+                style="width: 45px; height: 45px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                ED</div>
+              <div style="flex: 1; min-width: 0;">
+                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Emily Davis</p>
+                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Writer</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Panel: Chat Area -->
+        <div class="card" style="flex: 1; display: flex; flex-direction: column;">
+
+          <!-- Chat Header -->
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <div
+                style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 600;">
+                MT</div>
+              <div>
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.25rem 0;">Mira Tabassum</h3>
+                <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;"><i class="fas fa-user-tie"
+                    style="margin-right: 0.5rem;"></i>Freelancer</p>
+              </div>
+            </div>
+            <a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">View Profile</a>
+          </div>
+
+          <!-- Messages -->
+          <div style="flex: 1; overflow-y: auto; padding: 0 20px;">
+            <div class="messages-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;">
+              <div class="message-item"
+                style="background: #f9f9f9; border-radius: 10px; padding: 16px; border-left: 4px solid var(--blue-600);">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <p style="font-weight: 600; margin: 0;">Mira Tabassum</p>
+                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:30 AM</span>
+                </div>
+                <p style="color: var(--gray-600); margin: 0;">Hey, I need a UI/UX design for my website</p>
+              </div>
+              <div class="message-item"
+                style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <p style="font-weight: 600; margin: 0;">You</p>
+                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:32 AM</span>
+                </div>
+                <p style="color: var(--gray-600); margin: 0;">Sure, I can help you with that</p>
+              </div>
+              <div class="message-item"
+                style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <p style="font-weight: 600; margin: 0;">You</p>
+                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:35 AM</span>
+                </div>
+                <p style="color: var(--gray-600); margin: 0;">I have attached some samples for your review</p>
+              </div>
             </div>
           </div>
 
           <!-- Message Input -->
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-            <input type="text" class="form-input" placeholder="Type your message..." style="flex: 1;" />
-            <button class="btn btn-primary">Send</button>
+          <div style="padding: 20px; border-top: 1px solid var(--gray-200);">
+            <div style="display: flex; gap: 1rem;">
+              <input type="text" class="form-input" placeholder="Type your message..." style="flex: 1;" />
+              <button class="btn btn-primary btn-sm">Send</button>
+            </div>
           </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
-
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <a href="#" class="social-link">Facebook</a>
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Email</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-  </body>
 </html>
+

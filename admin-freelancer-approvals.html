@@ -1,229 +1,230 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pending Freelancer Approvals - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar admin-navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link">Home</a>
-          <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
-          <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
-          <a href="admin-freelancer-approvals.html" class="navbar-link active"
-            >Freelancer Approvals</a
-          >
-          <a href="admin-client-approvals.html" class="navbar-link"
-            >Client Approvals</a
-          >
-          <a href="admin-verification.html" class="navbar-link">Verification</a>
-          <div class="navbar-profile">
-            <div
-              class="avatar"
-              style="width: 32px; height: 32px; font-size: 1rem"
-            >
-              👤
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pending Freelancer Approvals - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar admin-navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
+        <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="admin-freelancer-approvals.html" class="navbar-link active">Freelancer Approvals</a>
+        <a href="admin-client-approvals.html" class="navbar-link">Client Approvals</a>
+        <a href="admin-verification.html" class="navbar-link">Verification</a>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            ðŸ‘¤
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Pending Freelancer Approvals -->
-    <div class="dashboard">
-      <div class="container">
-        <div class="dashboard-header">
-          <h1>Pending Freelancer Approvals</h1>
-          <p style="color: var(--gray-600)">
-            Review and approve freelancer applications.
-          </p>
-        </div>
+  <!-- Pending Freelancer Approvals -->
+  <div class="dashboard">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Pending Freelancer Approvals</h1>
+        <p style="color: var(--gray-600)">
+          Review and approve freelancer applications.
+        </p>
+      </div>
 
-        <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
-          <button class="btn btn-danger btn-lg">Reject All</button>
-          <button class="btn btn-success btn-lg">Approve All</button>
-        </div>
+      <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
+        <button class="btn btn-danger btn-sm">Reject All</button>
+        <button class="btn btn-success btn-sm">Approve All</button>
+      </div>
 
-        <div class="approvals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
-          <!-- Freelancer Card 1 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">👨‍🎨</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Mahin Ahmed</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Graphic Designer</p>
-                <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">mahin@example.com</p>
-              </div>
+      <div class="approvals-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+        <!-- Freelancer Card 1 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">ðŸ‘¨â€ðŸŽ¨
             </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 5+ years</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> Photoshop, Illustrator, Figma</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Mahin Ahmed</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Graphic Designer</p>
+              <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">mahin@example.com</p>
             </div>
           </div>
-
-          <!-- Freelancer Card 2 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">👩‍💻</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Ishfa Tabassum</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Web Developer</p>
-                <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">ishfa@example.com</p>
-              </div>
-            </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 3+ years</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> React, Node.js, MongoDB</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
-            </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 5+ years</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> Photoshop, Illustrator, Figma</p>
           </div>
-
-          <!-- Freelancer Card 3 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">🎨</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Junaed Khandakar</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">UI/UX Designer</p>
-                <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">junaed@example.com</p>
-              </div>
-            </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 4+ years</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> Figma, Adobe XD, Sketch</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
-              <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
-            </div>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
           </div>
         </div>
 
-        <!-- Hover Tooltip -->
-        <div id="hoverTooltip" class="hover-tooltip"></div>
+        <!-- Freelancer Card 2 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">ðŸ‘©â€ðŸ’»
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Ishfa Tabassum</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Web Developer</p>
+              <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">ishfa@example.com</p>
+            </div>
+          </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 3+ years</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> React, Node.js, MongoDB</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+          </div>
+        </div>
+
+        <!-- Freelancer Card 3 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0;">ðŸŽ¨</div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Junaed Khandakar</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">UI/UX Designer</p>
+              <p style="color: var(--gray-500); font-size: 0.85rem; margin: 0;\">junaed@example.com</p>
+            </div>
+          </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Experience:</strong> 4+ years</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Skills:</strong> Figma, Adobe XD, Sketch</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View Portfolio</a>
+            <a href=\"#\" class=\"btn btn-outline-secondary btn-sm\" style=\"flex: 1;\">View GitHub</a>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hover Tooltip -->
+      <div id="hoverTooltip" class="hover-tooltip"></div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
+  <script>
+    // Hover tooltip functionality
+    const rows = document.querySelectorAll(".hoverable-row");
+    const tooltip = document.getElementById("hoverTooltip");
 
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
+    rows.forEach((row) => {
+      row.addEventListener("mouseenter", function (e) {
+        const details = JSON.parse(this.getAttribute("data-details"));
+        const rect = this.getBoundingClientRect();
 
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <div class="icon">f</div>
-            <div class="icon">📷</div>
-            <div class="icon">✉</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-
-    <script>
-      // Hover tooltip functionality
-      const rows = document.querySelectorAll(".hoverable-row");
-      const tooltip = document.getElementById("hoverTooltip");
-
-      rows.forEach((row) => {
-        row.addEventListener("mouseenter", function (e) {
-          const details = JSON.parse(this.getAttribute("data-details"));
-          const rect = this.getBoundingClientRect();
-
-          tooltip.innerHTML = `
+        tooltip.innerHTML = `
                     <div style="padding: 1rem;">
                         <h3 style="margin-bottom: 0.5rem; color: var(--gray-900);">${details.name}</h3>
                         <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Profession:</strong> ${details.profession}</p>
@@ -232,51 +233,53 @@
                         <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Skills:</strong> ${details.skills}</p>
                         <p style="margin: 0.5rem 0 0; color: var(--gray-700); font-size: 0.875rem;">${details.bio}</p>
                         <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200);">
-                            <a href="${details.portfolio}" target="_blank" style="color: var(--blue-600); margin-right: 1rem;">Portfolio →</a>
-                            <a href="${details.github}" target="_blank" style="color: var(--blue-600);">GitHub →</a>
+                            <a href="${details.portfolio}" target="_blank" style="color: var(--blue-600); margin-right: 1rem;">Portfolio â†’</a>
+                            <a href="${details.github}" target="_blank" style="color: var(--blue-600);">GitHub â†’</a>
                         </div>
                     </div>
                 `;
 
-          const tooltipWidth = 350;
-          let left = rect.right + 20;
-          let top = rect.top + window.scrollY;
+        const tooltipWidth = 350;
+        let left = rect.right + 20;
+        let top = rect.top + window.scrollY;
 
-          // Adjust if tooltip goes off screen
-          if (left + tooltipWidth > window.innerWidth) {
-            left = rect.left - tooltipWidth - 20;
-          }
+        // Adjust if tooltip goes off screen
+        if (left + tooltipWidth > window.innerWidth) {
+          left = rect.left - tooltipWidth - 20;
+        }
 
-          tooltip.style.display = "block";
-          tooltip.style.left = left + "px";
-          tooltip.style.top = top + "px";
-        });
-
-        row.addEventListener("mouseleave", function () {
-          tooltip.style.display = "none";
-        });
-
-        row.addEventListener("mousemove", function (e) {
-          const rect = this.getBoundingClientRect();
-          const tooltipWidth = 350;
-          const tooltipHeight = 200;
-
-          let left = rect.right + 20;
-          let top = rect.top + window.scrollY;
-
-          // Adjust if tooltip goes off screen
-          if (left + tooltipWidth > window.innerWidth) {
-            left = rect.left - tooltipWidth - 20;
-          }
-
-          if (top + tooltipHeight > window.innerHeight + window.scrollY) {
-            top = window.innerHeight + window.scrollY - tooltipHeight - 20;
-          }
-
-          tooltip.style.left = left + "px";
-          tooltip.style.top = top + "px";
-        });
+        tooltip.style.display = "block";
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
       });
-    </script>
-  </body>
+
+      row.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+
+      row.addEventListener("mousemove", function (e) {
+        const rect = this.getBoundingClientRect();
+        const tooltipWidth = 350;
+        const tooltipHeight = 200;
+
+        let left = rect.right + 20;
+        let top = rect.top + window.scrollY;
+
+        // Adjust if tooltip goes off screen
+        if (left + tooltipWidth > window.innerWidth) {
+          left = rect.left - tooltipWidth - 20;
+        }
+
+        if (top + tooltipHeight > window.innerHeight + window.scrollY) {
+          top = window.innerHeight + window.scrollY - tooltipHeight - 20;
+        }
+
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
+      });
+    });
+  </script>
+</body>
+
 </html>
+

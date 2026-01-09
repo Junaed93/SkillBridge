@@ -1,247 +1,263 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wallet Dashboard - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-          <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-          <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-          <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
-          <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Wallet Header -->
-    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-      <div class="container">
-        <h1 class="section-title">Wallet Dashboard</h1>
-        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Manage your wallet balance and transactions.</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet Dashboard - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
+        <a href="post-project.html" class="btn btn-secondary btn-sm"><i class="fas fa-plus-circle"></i> Post a
+          Project</a>
       </div>
     </div>
+  </nav>
 
-    <!-- Current Wallet Balance -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Current Wallet Balance</h2>
-          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your balance available for withdrawal</p>
-          <div class="wallet-balance-container" style="background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%); border-radius: 14px; padding: 30px; color: white; display: flex; justify-content: space-between; align-items: center;">
+  <!-- Wallet Header -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <h1 class="section-title">Wallet Dashboard</h1>
+      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Manage your
+        wallet balance and transactions.</p>
+    </div>
+  </div>
+
+  <!-- Current Wallet Balance -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Current Wallet Balance</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your balance available for withdrawal</p>
+        <div class="wallet-balance-container"
+          style="background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%); border-radius: 14px; padding: 30px; color: white; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="opacity: 0.9; margin-bottom: 0.5rem;">Available Balance</p>
+            <p style="font-size: 2.5rem; font-weight: 700;">$500</p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="withdraw.html" class="btn btn-outline-secondary btn-sm">Withdraw</a>
+            <a href="add-fund.html" class="btn btn-primary btn-sm">Add Funds</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transaction History -->
+  <div class="section section-white" id="transaction-history">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Transaction History</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your past transactions</p>
+        <div class="transactions-list" style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="transaction-item"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
             <div>
-              <p style="opacity: 0.9; margin-bottom: 0.5rem;">Available Balance</p>
-              <p style="font-size: 2.5rem; font-weight: 700;">$500</p>
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Received</p>
+              <p style="font-size: 0.9rem; color: var(--gray-600);">Project A</p>
             </div>
-            <div style="display: flex; gap: 10px;">
-              <button class="btn btn-outline-secondary btn-sm">Withdraw</button>
-              <button class="btn btn-primary btn-sm">Add Funds</button>
+            <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$200</p>
+          </div>
+          <div class="transaction-item"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
+            <div>
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Made</p>
+              <p style="font-size: 0.9rem; color: var(--gray-600);">Project B</p>
             </div>
+            <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$100</p>
+          </div>
+          <div class="transaction-item"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
+            <div>
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">Withdrawal</p>
+              <p style="font-size: 0.9rem; color: var(--gray-600);">Bank Transfer</p>
+            </div>
+            <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$50</p>
+          </div>
+          <div class="transaction-item"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
+            <div>
+              <p style="font-weight: 600; margin-bottom: 0.25rem;">Deposit</p>
+              <p style="font-size: 0.9rem; color: var(--gray-600);">Direct Transfer</p>
+            </div>
+            <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$300</p>
+          </div>
+        </div>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <button class="btn btn-outline-secondary btn-sm">View full history</button>
+          <a href="#" class="btn btn-primary btn-sm">Download Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add New Wallet -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Add New Wallet</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Choose a wallet type to withdraw funds.</p>
+        <div class="add-wallet-form">
+          <div class="form-group">
+            <label class="form-label">Wallet Type</label>
+            <div class="wallet-type-chips">
+              <span class="wallet-chip">bKash</span>
+              <span class="wallet-chip">VISA/Master Debit Card</span>
+              <span class="wallet-chip">PayPal</span>
+              <span class="wallet-chip">Other</span>
+            </div>
+            <p class="form-hint">Please choose a wallet option.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Wallet Address</label>
+            <input type="text" class="form-input" placeholder="Enter your wallet address" />
+            <p class="form-hint">Your unique wallet identifier.</p>
+          </div>
+
+          <div class="form-actions">
+            <a href="wallet.html" class="btn btn-outline-secondary btn-sm">Cancel</a>
+            <a href="wallet.html" class="btn btn-primary btn-sm">Add Wallet</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Transaction History -->
-    <div class="section section-white" id="transaction-history">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Transaction History</h2>
-          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your past transactions</p>
-          <div class="transactions-list" style="display: flex; flex-direction: column; gap: 12px;">
-            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
-              <div>
-                <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Received</p>
-                <p style="font-size: 0.9rem; color: var(--gray-600);">Project A</p>
-              </div>
-              <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$200</p>
-            </div>
-            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
-              <div>
-                <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Made</p>
-                <p style="font-size: 0.9rem; color: var(--gray-600);">Project B</p>
-              </div>
-              <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$100</p>
-            </div>
-            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
-              <div>
-                <p style="font-weight: 600; margin-bottom: 0.25rem;">Withdrawal</p>
-                <p style="font-size: 0.9rem; color: var(--gray-600);">Bank Transfer</p>
-              </div>
-              <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$50</p>
-            </div>
-            <div class="transaction-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
-              <div>
-                <p style="font-weight: 600; margin-bottom: 0.25rem;">Deposit</p>
-                <p style="font-size: 0.9rem; color: var(--gray-600);">Direct Transfer</p>
-              </div>
-              <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$300</p>
-            </div>
+  <!-- Supported Wallets -->
+  <div class="section section-white">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Supported Wallets</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Choose your preferred payment method.</p>
+        <div class="wallets-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <div class="wallet-option"
+            style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+            <i class="fas fa-mobile"
+              style="font-size: 2rem; color: var(--blue-600); margin-bottom: 1rem; display: block;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">bKash</h3>
+            <p style="color: var(--gray-600); font-size: 0.95rem;">Popular Mobile Wallet</p>
           </div>
-          <div style="margin-top: 1.5rem; text-align: center;">
-            <button class="btn btn-outline-secondary btn-sm">View full history</button>
-            <a href="#" class="btn btn-primary btn-sm">Download Report</a>
+          <div class="wallet-option"
+            style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+            <i class="fas fa-credit-card"
+              style="font-size: 2rem; color: #1434cb; margin-bottom: 1rem; display: block;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">VISA</h3>
+            <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
+          </div>
+          <div class="wallet-option"
+            style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+            <i class="fas fa-credit-card"
+              style="font-size: 2rem; color: #eb001b; margin-bottom: 1rem; display: block;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">MasterCard</h3>
+            <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
+          </div>
+          <div class="wallet-option"
+            style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
+            <i class="fas fa-paypal" style="font-size: 2rem; color: #003087; margin-bottom: 1rem; display: block;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">PayPal</h3>
+            <p style="color: var(--gray-600); font-size: 0.95rem;">Easy Online Payments</p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Add New Wallet -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card" style="max-width: 800px; margin: 0 auto;">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Add New Wallet</h2>
-          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose a wallet type to withdraw funds.</p>
-          <div class="add-wallet-form">
-            <div class="form-group">
-              <label class="form-label">Wallet Type</label>
-              <div class="wallet-type-chips">
-                <span class="wallet-chip">bKash</span>
-                <span class="wallet-chip">VISA/Master Debit Card</span>
-                <span class="wallet-chip">PayPal</span>
-                <span class="wallet-chip">Other</span>
-              </div>
-              <p class="form-hint">Please choose a wallet option.</p>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Wallet Address</label>
-              <input type="text" class="form-input" placeholder="Enter your wallet address" />
-              <p class="form-hint">Your unique wallet identifier.</p>
-            </div>
-
-            <div class="form-actions">
-              <a href="wallet.html" class="btn btn-outline-secondary">Cancel</a>
-              <a href="wallet.html" class="btn btn-primary">Add Wallet</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Supported Wallets -->
-    <div class="section section-white">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Supported Wallets</h2>
-          <p class="section-subtitle" style="margin-bottom: 2rem;">Choose your preferred payment method.</p>
-          <div class="wallets-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
-              <i class="fas fa-mobile" style="font-size: 2rem; color: var(--blue-600); margin-bottom: 1rem; display: block;"></i>
-              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">bKash</h3>
-              <p style="color: var(--gray-600); font-size: 0.95rem;">Popular Mobile Wallet</p>
-            </div>
-            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
-              <i class="fas fa-credit-card" style="font-size: 2rem; color: #1434cb; margin-bottom: 1rem; display: block;"></i>
-              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">VISA</h3>
-              <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
-            </div>
-            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
-              <i class="fas fa-credit-card" style="font-size: 2rem; color: #eb001b; margin-bottom: 1rem; display: block;"></i>
-              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">MasterCard</h3>
-              <p style="color: var(--gray-600); font-size: 0.95rem;">International Payment Card</p>
-            </div>
-            <div class="wallet-option" style="background: #f9f9f9; border-radius: 12px; padding: 24px; text-align: center; border: 2px solid transparent; transition: all 0.3s ease;">
-              <i class="fas fa-paypal" style="font-size: 2rem; color: #003087; margin-bottom: 1rem; display: block;"></i>
-              <h3 style="font-weight: 600; margin-bottom: 0.5rem;">PayPal</h3>
-              <p style="color: var(--gray-600); font-size: 0.95rem;">Easy Online Payments</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
 
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <a href="#" class="social-link">Facebook</a>
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Email</a>
-          </div>
-        </div>
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
       </div>
 
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-  </body>
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
+
 </html>
+

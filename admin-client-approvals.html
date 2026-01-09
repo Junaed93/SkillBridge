@@ -1,132 +1,133 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pending Client Approvals - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar admin-navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link">Home</a>
-          <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
-          <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
-          <a href="admin-freelancer-approvals.html" class="navbar-link"
-            >Freelancer Approvals</a
-          >
-          <a href="admin-client-approvals.html" class="navbar-link active"
-            >Client Approvals</a
-          >
-          <a href="admin-verification.html" class="navbar-link">Verification</a>
-          <div class="navbar-profile">
-            <div
-              class="avatar"
-              style="width: 32px; height: 32px; font-size: 1rem"
-            >
-              👤
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pending Client Approvals - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar admin-navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="admin-panel.html" class="navbar-link">Admin Panel</a>
+        <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="admin-freelancer-approvals.html" class="navbar-link">Freelancer Approvals</a>
+        <a href="admin-client-approvals.html" class="navbar-link active">Client Approvals</a>
+        <a href="admin-verification.html" class="navbar-link">Verification</a>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            ðŸ‘¤
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Pending Client Approvals -->
-    <div class="dashboard">
-      <div class="container">
-        <div class="dashboard-header">
-          <h1>Pending Client Approvals</h1>
-          <p style="color: var(--gray-600)">
-            Review and approve client registrations.
-          </p>
-        </div>
+  <!-- Pending Client Approvals -->
+  <div class="dashboard">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Pending Client Approvals</h1>
+        <p style="color: var(--gray-600)">
+          Review and approve client registrations.
+        </p>
+      </div>
 
-        <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
-          <button class="btn btn-danger btn-lg">Reject All</button>
-          <button class="btn btn-success btn-lg">Approve All</button>
-        </div>
+      <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
+        <button class="btn btn-danger btn-sm">Reject All</button>
+        <button class="btn btn-success btn-sm">Approve All</button>
+      </div>
 
-        <div class="approvals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
-          <!-- Client Card 1 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; align-items: center; justify-content: center;">🏢</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Tech Solutions Inc</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Software Development</p>
-              </div>
-            </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> contact@techsolutions.com</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 123-4567</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> New York, USA</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+      <div class="approvals-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+        <!-- Client Card 1 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm"
+              style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; align-items: center; justify-content: center;">
+              ðŸ¢</div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Tech Solutions Inc</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Software Development</p>
             </div>
           </div>
-
-          <!-- Client Card 2 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; display: flex; align-items: center; justify-content: center;\">🎨</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Innovate Ltd</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Graphic Design</p>
-              </div>
-            </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> hello@innovate.com</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 234-5678</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Los Angeles, USA</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
-            </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> contact@techsolutions.com</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> New York, USA</p>
           </div>
-
-          <!-- Client Card 3 -->
-          <div class="approval-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
-              <div class="avatar avatar-sm" style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; display: flex; align-items: center; justify-content: center;\">✍️</div>
-              <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Creative Minds</h3>
-                <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Content Writing</p>
-              </div>
-            </div>
-            <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
-              <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> info@creativeminds.com</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 345-6789</p>
-              <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Chicago, USA</p>
-            </div>
-            <div style="display: flex; gap: 0.5rem;">
-              <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
-              <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
-            </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
           </div>
         </div>
-              <tr
-                class="hoverable-row"
-                data-details='{"name":"Digital Media Pro","email":"contact@digitalmediapro.com","phone":"+1 (555) 456-7890","industry":"Video Editing","location":"Miami, USA","description":"Professional video production and editing services for marketing campaigns and social media.","employees":"20-50","website":"https://digitalmediapro.com"}'
-              >
-                <td>
-                  <div
-                    class="avatar avatar-sm"
-                    style="
+
+        <!-- Client Card 2 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm"
+              style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; display: flex; align-items: center; justify-content: center;\">
+              ðŸŽ¨</div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Innovate Ltd</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Graphic Design</p>
+            </div>
+          </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> hello@innovate.com</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 234-5678</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Los Angeles, USA</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+          </div>
+        </div>
+
+        <!-- Client Card 3 -->
+        <div class="approval-card"
+          style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem;">
+            <div class="avatar avatar-sm"
+              style="width: 60px; height: 60px; font-size: 2rem; flex-shrink: 0; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; display: flex; align-items: center; justify-content: center;\">
+              âœï¸</div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.25rem 0;">Creative Minds</h3>
+              <p style="color: var(--gray-600); font-size: 0.9rem; margin: 0;\">Content Writing</p>
+            </div>
+          </div>
+          <div
+            style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);\">
+            <p style=\"margin: 0.5rem 0;\"><strong>Email:</strong> info@creativeminds.com</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Phone:</strong> +1 (555) 345-6789</p>
+            <p style=\"margin: 0.5rem 0;\"><strong>Location:</strong> Chicago, USA</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class=\"btn btn-success btn-sm\" style=\"flex: 1;\">Approve</button>
+            <button class=\"btn btn-danger btn-sm\" style=\"flex: 1;\">Reject</button>
+          </div>
+        </div>
+      </div>
+      <tr class="hoverable-row"
+        data-details='{"name":"Digital Media Pro","email":"contact@digitalmediapro.com","phone":"+1 (555) 456-7890","industry":"Video Editing","location":"Miami, USA","description":"Professional video production and editing services for marketing campaigns and social media.","employees":"20-50","website":"https://digitalmediapro.com"}'>
+        <td>
+          <div class="avatar avatar-sm" style="
                       width: 50px;
                       height: 50px;
                       font-size: 1.5rem;
@@ -135,31 +136,26 @@
                         #fa709a 0%,
                         #fee140 100%
                       );
-                    "
-                  >
-                    🎬
-                  </div>
-                </td>
-                <td>Digital Media Pro</td>
-                <td>Video Editing</td>
-                <td>contact@digitalmediapro.com</td>
-                <td>+1 (555) 456-7890</td>
-                <td>Miami, USA</td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem">
-                    <button class="btn btn-success btn-sm">Approve</button>
-                    <button class="btn btn-danger btn-sm">Reject</button>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="hoverable-row"
-                data-details='{"name":"WebCraft Studios","email":"hello@webcraft.com","phone":"+1 (555) 567-8901","industry":"Web Development","location":"Seattle, USA","description":"Full-service web development agency creating custom websites and web applications.","employees":"30-100","website":"https://webcraft.com"}'
-              >
-                <td>
-                  <div
-                    class="avatar avatar-sm"
-                    style="
+                    ">
+            ðŸŽ¬
+          </div>
+        </td>
+        <td>Digital Media Pro</td>
+        <td>Video Editing</td>
+        <td>contact@digitalmediapro.com</td>
+        <td>+1 (555) 456-7890</td>
+        <td>Miami, USA</td>
+        <td>
+          <div style="display: flex; gap: 0.5rem">
+            <button class="btn btn-success btn-sm">Approve</button>
+            <button class="btn btn-danger btn-sm">Reject</button>
+          </div>
+        </td>
+      </tr>
+      <tr class="hoverable-row"
+        data-details='{"name":"WebCraft Studios","email":"hello@webcraft.com","phone":"+1 (555) 567-8901","industry":"Web Development","location":"Seattle, USA","description":"Full-service web development agency creating custom websites and web applications.","employees":"30-100","website":"https://webcraft.com"}'>
+        <td>
+          <div class="avatar avatar-sm" style="
                       width: 50px;
                       height: 50px;
                       font-size: 1.5rem;
@@ -168,119 +164,118 @@
                         #30cfd0 0%,
                         #330867 100%
                       );
-                    "
-                  >
-                    💻
-                  </div>
-                </td>
-                <td>WebCraft Studios</td>
-                <td>Web Development</td>
-                <td>hello@webcraft.com</td>
-                <td>+1 (555) 567-8901</td>
-                <td>Seattle, USA</td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem">
-                    <button class="btn btn-success btn-sm">Approve</button>
-                    <button class="btn btn-danger btn-sm">Reject</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                    ">
+            ðŸ’»
+          </div>
+        </td>
+        <td>WebCraft Studios</td>
+        <td>Web Development</td>
+        <td>hello@webcraft.com</td>
+        <td>+1 (555) 567-8901</td>
+        <td>Seattle, USA</td>
+        <td>
+          <div style="display: flex; gap: 0.5rem">
+            <button class="btn btn-success btn-sm">Approve</button>
+            <button class="btn btn-danger btn-sm">Reject</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
 
-        <!-- Hover Tooltip -->
-        <div id="hoverTooltip" class="hover-tooltip"></div>
+    <!-- Hover Tooltip -->
+    <div id="hoverTooltip" class="hover-tooltip"></div>
+  </div>
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
+  <script>
+    // Hover tooltip functionality
+    const rows = document.querySelectorAll(".hoverable-row");
+    const tooltip = document.getElementById("hoverTooltip");
 
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
+    rows.forEach((row) => {
+      row.addEventListener("mouseenter", function (e) {
+        const details = JSON.parse(this.getAttribute("data-details"));
+        const rect = this.getBoundingClientRect();
 
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <div class="icon">f</div>
-            <div class="icon">📷</div>
-            <div class="icon">✉</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-
-    <script>
-      // Hover tooltip functionality
-      const rows = document.querySelectorAll(".hoverable-row");
-      const tooltip = document.getElementById("hoverTooltip");
-
-      rows.forEach((row) => {
-        row.addEventListener("mouseenter", function (e) {
-          const details = JSON.parse(this.getAttribute("data-details"));
-          const rect = this.getBoundingClientRect();
-
-          tooltip.innerHTML = `
+        tooltip.innerHTML = `
                     <div style="padding: 1rem;">
                         <h3 style="margin-bottom: 0.5rem; color: var(--gray-900);">${details.name}</h3>
                         <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Industry:</strong> ${details.industry}</p>
@@ -290,50 +285,52 @@
                         <p style="margin: 0.25rem 0; color: var(--gray-600);"><strong>Employees:</strong> ${details.employees}</p>
                         <p style="margin: 0.5rem 0 0; color: var(--gray-700); font-size: 0.875rem;">${details.description}</p>
                         <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--gray-200);">
-                            <a href="${details.website}" target="_blank" style="color: var(--blue-600);">Visit Website →</a>
+                            <a href="${details.website}" target="_blank" style="color: var(--blue-600);">Visit Website â†’</a>
                         </div>
                     </div>
                 `;
 
-          const tooltipWidth = 350;
-          let left = rect.right + 20;
-          let top = rect.top + window.scrollY;
+        const tooltipWidth = 350;
+        let left = rect.right + 20;
+        let top = rect.top + window.scrollY;
 
-          // Adjust if tooltip goes off screen
-          if (left + tooltipWidth > window.innerWidth) {
-            left = rect.left - tooltipWidth - 20;
-          }
+        // Adjust if tooltip goes off screen
+        if (left + tooltipWidth > window.innerWidth) {
+          left = rect.left - tooltipWidth - 20;
+        }
 
-          tooltip.style.display = "block";
-          tooltip.style.left = left + "px";
-          tooltip.style.top = top + "px";
-        });
-
-        row.addEventListener("mouseleave", function () {
-          tooltip.style.display = "none";
-        });
-
-        row.addEventListener("mousemove", function (e) {
-          const rect = this.getBoundingClientRect();
-          const tooltipWidth = 350;
-          const tooltipHeight = 200;
-
-          let left = rect.right + 20;
-          let top = rect.top + window.scrollY;
-
-          // Adjust if tooltip goes off screen
-          if (left + tooltipWidth > window.innerWidth) {
-            left = rect.left - tooltipWidth - 20;
-          }
-
-          if (top + tooltipHeight > window.innerHeight + window.scrollY) {
-            top = window.innerHeight + window.scrollY - tooltipHeight - 20;
-          }
-
-          tooltip.style.left = left + "px";
-          tooltip.style.top = top + "px";
-        });
+        tooltip.style.display = "block";
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
       });
-    </script>
-  </body>
+
+      row.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+
+      row.addEventListener("mousemove", function (e) {
+        const rect = this.getBoundingClientRect();
+        const tooltipWidth = 350;
+        const tooltipHeight = 200;
+
+        let left = rect.right + 20;
+        let top = rect.top + window.scrollY;
+
+        // Adjust if tooltip goes off screen
+        if (left + tooltipWidth > window.innerWidth) {
+          left = rect.left - tooltipWidth - 20;
+        }
+
+        if (top + tooltipHeight > window.innerHeight + window.scrollY) {
+          top = window.innerHeight + window.scrollY - tooltipHeight - 20;
+        }
+
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
+      });
+    });
+  </script>
+</body>
+
 </html>
+

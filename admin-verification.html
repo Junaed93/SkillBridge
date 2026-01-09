@@ -1,274 +1,226 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skill/Document Verification - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar admin-navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-          <a href="admin-panel.html" class="navbar-link"><i class="fas fa-cog"></i> Admin Panel</a>
-          <a href="admin-dashboard.html" class="navbar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-          <a href="admin-freelancer-approvals.html" class="navbar-link"
-            ><i class="fas fa-check-circle"></i> Freelancer Approvals</a
-          >
-          <a href="admin-client-approvals.html" class="navbar-link"
-            ><i class="fas fa-check-circle"></i> Client Approvals</a
-          >
-          <a href="admin-verification.html" class="navbar-link active"
-            ><i class="fas fa-shield-alt"></i> Verification</a
-          >
-          <div class="navbar-profile">
-            <div
-              class="avatar"
-              style="width: 32px; height: 32px; font-size: 1rem"
-            >
-              👤
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill/Document Verification - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar admin-navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="admin-panel.html" class="navbar-link"><i class="fas fa-cog"></i> Admin Panel</a>
+        <a href="admin-dashboard.html" class="navbar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="admin-freelancer-approvals.html" class="navbar-link"><i class="fas fa-check-circle"></i> Freelancer
+          Approvals</a>
+        <a href="admin-client-approvals.html" class="navbar-link"><i class="fas fa-check-circle"></i> Client
+          Approvals</a>
+        <a href="admin-verification.html" class="navbar-link active"><i class="fas fa-shield-alt"></i> Verification</a>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            ðŸ‘¤
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Skill/Document Verification -->
-    <div class="dashboard">
-      <div class="container">
-        <div class="dashboard-header">
-          <h1>Skill/Document Verification</h1>
-          <p style="color: var(--gray-600)">
-            Verify documents submitted by freelancers.
-          </p>
-        </div>
+  <!-- Skill/Document Verification -->
+  <div class="dashboard">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Skill/Document Verification</h1>
+        <p style="color: var(--gray-600)">
+          Verify documents submitted by freelancers.
+        </p>
+      </div>
 
-        <div class="card" style="max-width: 800px; margin: 0 auto">
-          <form action="#" method="post" id="verificationForm">
-            <div class="form-group">
-              <label class="form-label"
-                >Freelancer Name
-                <span style="color: var(--red-600)">*</span></label
-              >
-              <input
-                type="text"
-                class="form-input"
-                name="freelancerName"
-                placeholder="Enter freelancer name"
-                required
-              />
-            </div>
+      <div class="card" style="max-width: 800px; margin: 0 auto">
+        <form action="#" method="post" id="verificationForm">
+          <div class="form-group">
+            <label class="form-label">Freelancer Name
+              <span style="color: var(--red-600)">*</span></label>
+            <input type="text" class="form-input" name="freelancerName" placeholder="Enter freelancer name" required />
+          </div>
 
-            <div class="form-group">
-              <label class="form-label"
-                >Document Type
-                <span style="color: var(--red-600)">*</span></label
-              >
-              <select class="form-select" name="documentType" required>
-                <option value="">Select document type...</option>
-                <option value="portfolio">Portfolio</option>
-                <option value="certification">Certification</option>
-                <option value="education">Education Certificate</option>
-                <option value="identity">Identity Document</option>
-                <option value="skill-assessment">Skill Assessment</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label class="form-label">Document Type
+              <span style="color: var(--red-600)">*</span></label>
+            <select class="form-select" name="documentType" required>
+              <option value="">Select document type...</option>
+              <option value="portfolio">Portfolio</option>
+              <option value="certification">Certification</option>
+              <option value="education">Education Certificate</option>
+              <option value="identity">Identity Document</option>
+              <option value="skill-assessment">Skill Assessment</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label class="form-label">Document Status</label>
-              <div style="display: flex; gap: 2rem; margin-top: 0.5rem">
-                <label
-                  style="
+          <div class="form-group">
+            <label class="form-label">Document Status</label>
+            <div style="display: flex; gap: 2rem; margin-top: 0.5rem">
+              <label style="
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     cursor: pointer;
-                  "
-                >
-                  <input
-                    type="radio"
-                    name="documentStatus"
-                    value="confirmed"
-                    checked
-                  />
-                  <span>Confirmed</span>
-                </label>
-                <label
-                  style="
+                  ">
+                <input type="radio" name="documentStatus" value="confirmed" checked />
+                <span>Confirmed</span>
+              </label>
+              <label style="
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     cursor: pointer;
-                  "
-                >
-                  <input type="radio" name="documentStatus" value="pending" />
-                  <span>Pending</span>
-                </label>
-              </div>
+                  ">
+                <input type="radio" name="documentStatus" value="pending" />
+                <span>Pending</span>
+              </label>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label class="form-label">Verification Status</label>
-              <div style="display: flex; gap: 2rem; margin-top: 0.5rem">
-                <label
-                  style="
+          <div class="form-group">
+            <label class="form-label">Verification Status</label>
+            <div style="display: flex; gap: 2rem; margin-top: 0.5rem">
+              <label style="
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     cursor: pointer;
-                  "
-                >
-                  <input
-                    type="radio"
-                    name="verificationStatus"
-                    value="pending"
-                    checked
-                  />
-                  <span>Pending</span>
-                </label>
-                <label
-                  style="
+                  ">
+                <input type="radio" name="verificationStatus" value="pending" checked />
+                <span>Pending</span>
+              </label>
+              <label style="
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     cursor: pointer;
-                  "
-                >
-                  <input
-                    type="radio"
-                    name="verificationStatus"
-                    value="approved"
-                  />
-                  <span>Approved</span>
-                </label>
-                <label
-                  style="
+                  ">
+                <input type="radio" name="verificationStatus" value="approved" />
+                <span>Approved</span>
+              </label>
+              <label style="
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
                     cursor: pointer;
-                  "
-                >
-                  <input
-                    type="radio"
-                    name="verificationStatus"
-                    value="rejected"
-                  />
-                  <span>Rejected</span>
-                </label>
-              </div>
+                  ">
+                <input type="radio" name="verificationStatus" value="rejected" />
+                <span>Rejected</span>
+              </label>
             </div>
+          </div>
 
-            <div class="form-group">
-              <label class="form-label">Verification Notes (Optional)</label>
-              <textarea
-                class="form-textarea"
-                name="notes"
-                rows="4"
-                placeholder="Add any notes or comments about the verification..."
-              ></textarea>
-            </div>
+          <div class="form-group">
+            <label class="form-label">Verification Notes (Optional)</label>
+            <textarea class="form-textarea" name="notes" rows="4"
+              placeholder="Add any notes or comments about the verification..."></textarea>
+          </div>
 
-            <div style="display: flex; gap: 1rem; margin-top: 2rem">
-              <button type="submit" class="btn btn-success btn-lg">
-                Verify
-              </button>
-              <button type="reset" class="btn btn-secondary btn-lg">
-                Cancel
-              </button>
-            </div>
-          </form>
+          <div style="display: flex; gap: 1rem; margin-top: 2rem">
+            <button type="submit" class="btn btn-success btn-sm">
+              Verify
+            </button>
+            <button type="reset" class="btn btn-secondary btn-sm">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
-
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <div class="icon">f</div>
-            <div class="icon">📷</div>
-            <div class="icon">✉</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-  </body>
 </html>
+

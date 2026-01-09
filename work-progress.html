@@ -1,221 +1,234 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Work Progress Dashboard - SkillBridge</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-          <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-          <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-          <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
-          <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Page Header -->
-    <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-      <div class="container">
-        <h1 class="section-title">Work Progress Dashboard</h1>
-        <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Track your project progress and submit updates.</p>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="#update-form" class="btn btn-primary">Submit Update</a>
-        </div>
-        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-          <a href="#" class="btn btn-outline-secondary btn-sm">Overview</a>
-          <a href="#" class="btn btn-outline-secondary btn-sm">Deliverables</a>
-          <a href="#" class="btn btn-outline-secondary btn-sm">Payments</a>
-          <a href="#" class="btn btn-outline-secondary btn-sm">View Contract</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Progress Dashboard - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
+        <a href="post-project.html" class="btn btn-secondary btn-sm"><i class="fas fa-plus-circle"></i> Post a
+          Project</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <h1 class="section-title">Work Progress Dashboard</h1>
+      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Track your
+        project progress and submit updates.</p>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="#update-form" class="btn btn-primary btn-sm">Submit Update</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a href="#" class="btn btn-outline-secondary btn-sm">Overview</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Deliverables</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">Payments</a>
+        <a href="#" class="btn btn-outline-secondary btn-sm">View Contract</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Progress Overview -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Project Progress Overview</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Here's the overall progress for your project.</p>
+        <div class="metrics-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div class="metric-card"
+            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Current Progress</p>
+            <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">75%</p>
+            <span class="badge badge-info">In Progress</span>
+          </div>
+          <div class="metric-card"
+            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Tasks Completed</p>
+            <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">3 out of 4</p>
+            <span class="badge badge-warning">Pending Task</span>
+          </div>
+          <div class="metric-card"
+            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
+            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Next Steps</p>
+            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Review and adjustments required.</p>
+            <span style="color: var(--gray-500);">-</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Project Progress Overview -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Project Progress Overview</h2>
-          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Here's the overall progress for your project.</p>
-          <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Current Progress</p>
-              <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">75%</p>
-              <span class="badge badge-info">In Progress</span>
+  <!-- Update Form -->
+  <div class="section section-white" id="update-form">
+    <div class="container">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Update</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Provide details about your current progress.</p>
+        <div class="update-form-fields">
+          <div class="form-group">
+            <label class="form-label">Update Progress</label>
+            <input type="text" class="form-input" placeholder="Enter your percentage of work completed" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Update Comment</label>
+            <input type="text" class="form-input" placeholder="Comment on this iteration of update" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload files</label>
+            <input type="file" class="form-input" multiple />
+            <p class="form-hint">Upload relevant update files</p>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary btn-sm">Submit Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Previous Updates -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Previous Updates</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Review your past updates and files submitted.</p>
+        <div class="updates-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 1</h4>
+            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Completed the first milestone
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.2rem; font-weight: 600;">40%</span>
+              <span style="font-size: 0.85rem; color: var(--gray-500);">file1.pdf</span>
             </div>
-            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Tasks Completed</p>
-              <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">3 out of 4</p>
-              <span class="badge badge-warning">Pending Task</span>
+          </div>
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 2</h4>
+            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Revised after client feedback
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.2rem; font-weight: 600;">65%</span>
+              <span style="font-size: 0.85rem; color: var(--gray-500);">file2.docx</span>
             </div>
-            <div class="metric-card" style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-              <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Next Steps</p>
-              <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Review and adjustments required.</p>
-              <span style="color: var(--gray-500);">-</span>
+          </div>
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
+            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 3</h4>
+            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Final adjustments made</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.2rem; font-weight: 600;">75%</span>
+              <span style="font-size: 0.85rem; color: var(--gray-500);">final_project.zip</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Update Form -->
-    <div class="section section-white" id="update-form">
-      <div class="container">
-        <div class="card" style="max-width: 800px; margin: 0 auto;">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Update</h2>
-          <p class="section-subtitle" style="margin-bottom: 2rem;">Provide details about your current progress.</p>
-          <div class="update-form-fields">
-            <div class="form-group">
-              <label class="form-label">Update Progress</label>
-              <input type="text" class="form-input" placeholder="Enter your percentage of work completed" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Update Comment</label>
-              <input type="text" class="form-input" placeholder="Comment on this iteration of update" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Upload files</label>
-              <input type="file" class="form-input" multiple />
-              <p class="form-hint">Upload relevant update files</p>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-primary">Submit Update</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Previous Updates -->
-    <div class="section section-gray">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Previous Updates</h2>
-          <p class="section-subtitle" style="margin-bottom: 1.5rem;">Review your past updates and files submitted.</p>
-          <div class="updates-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
-            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 1</h4>
-              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Completed the first milestone</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.2rem; font-weight: 600;">40%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">file1.pdf</span>
-              </div>
-            </div>
-            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 2</h4>
-              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Revised after client feedback</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.2rem; font-weight: 600;">65%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">file2.docx</span>
-              </div>
-            </div>
-            <div class="update-card" style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-              <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 3</h4>
-              <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Final adjustments made</p>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.2rem; font-weight: 600;">75%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">final_project.zip</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Column 1 -->
-        <div class="footer-col">
-          <h2 class="logo">SkillsBridge</h2>
-          <p class="tagline">Where employment bridges skills</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
 
-          <h4>Address:</h4>
-          <p>
-            442 lorem ipsum, lorem<br />
-            Dhaka, Bangladesh
-          </p>
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
 
-          <h4>Contact:</h4>
-          <p>
-            +880-1710999999<br />
-            +880-1910999999<br />
-            support@skillbridge.com
-          </p>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="footer-col">
-          <h4>Services:</h4>
-          <ul>
-            <li>Post a Job</li>
-            <li>Browse Jobs</li>
-          </ul>
-
-          <h4>Find a:</h4>
-          <ul>
-            <li>Web Designer</li>
-            <li>Photoshop designer</li>
-            <li>Illustrator designer</li>
-            <li>Visualizer</li>
-            <li>SEO expert</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="footer-col">
-          <h4>Find a job for skills:</h4>
-          <ul>
-            <li>Web development</li>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>After effects</li>
-            <li>SEO</li>
-            <li>Digital Marketing</li>
-            <li>Social Media Management</li>
-            <li>C++ developer</li>
-            <li>PHP developer</li>
-          </ul>
-        </div>
-
-        <!-- Column 4 -->
-        <div class="footer-col">
-          <h4>Legal:</h4>
-          <ul>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms and conditions</li>
-          </ul>
-
-          <div class="social-icons">
-            <a href="#" class="social-link">Facebook</a>
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Email</a>
-          </div>
-        </div>
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
       </div>
 
-      <div class="footer-bottom">© 2025, SkillBridge, Inc</div>
-    </footer>
-  </body>
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
+
 </html>
+

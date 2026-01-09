@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Details</title>
-
+    <title>Project Details - SkillBridge</title>
     <!-- Link to your existing stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
         /* Page Layout */
         body {
+            /* Kept subtle background but removed conflict with main styles */
             background: linear-gradient(135deg, #f5f9ff, #eef7f2);
         }
 
@@ -97,7 +99,7 @@
 
         .offer-box {
             margin-top: 40px;
-            background: linear-gradient(135deg, #16a34a, #22c55e);
+            background: var(--blue-600);
             color: #ffffff;
             padding: 25px 30px;
             border-radius: 10px;
@@ -115,83 +117,32 @@
             font-size: 28px;
             font-weight: 800;
         }
-
-        .cta-btn {
-            margin-top: 25px;
-            display: inline-block;
-            background: #22c55e;
-            color: #ffffff;
-            padding: 12px 26px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s ease;
-        }
-
-        .cta-btn:hover {
-            background: #16a34a;
-        }
     </style>
 </head>
-<body>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testimonials</title>
-    <!-- Link to your existing stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Additional table styling */
-        .testimonials-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-        .testimonials-table th, .testimonials-table td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-        .testimonials-table th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
 <body>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkillBridge - Professional Freelance Marketplace</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="navbar-content">
-        <a href="index.html" class="navbar-logo">
-          <img src="logo.png" alt="SkillBridge Logo" />
-          <span
-            style="font-family: calibri; font-size: 25px; font-weight: bold"
-          >
-            <span style="color: greenyellow">Skill</span
-            ><span style="color: blue">Bridge</span>
-          </span>
-        </a>
-        <div class="navbar-links">
-          <a href="index.html" class="navbar-link">Home</a>
-          <a href="browse-projects.html" class="navbar-link navbar-browse"
-            >Find a Project</a
-          >
-          <a href="freelancer-dashboard.html" class="navbar-link" style="display: none;" id="dashboardLink">Dashboard</a>
-          <a href="#" class="navbar-link">About</a>
-          <a href="login.html" class="navbar-link">Login</a>
-          <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
-          <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post"
-            >Post a Project</a
-          >
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-logo">
+                <img src="logo.png" alt="SkillBridge Logo" />
+                <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+                    <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+                </span>
+            </a>
+            <div class="navbar-links">
+                <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+                <a href="browse-projects.html" class="navbar-link navbar-browse"><i class="fas fa-briefcase"></i> Find a
+                    Project</a>
+                <a href="freelancer-dashboard.html" class="navbar-link" style="display: none;"
+                    id="dashboardLink">Dashboard</a>
+                <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
+                <a href="post-project.html" class="btn btn-secondary btn-sm navbar-post"><i
+                        class="fas fa-plus-circle"></i> Post a Project</a>
+            </div>
         </div>
-      </div>
     </nav>
 
     <main class="details-container">
@@ -217,14 +168,20 @@
             <div class="section">
                 <h2>Description</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est laborum.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
-                    Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+                    cursus ante dapibus diam.
+                    Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
                     Fusce nec tellus sed augue semper porta. Mauris massa.
                 </p>
             </div>
@@ -240,9 +197,12 @@
             <div class="section">
                 <h2>Description</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. 
-                    Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. 
-                    Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ligula in libero. Sed
+                    dignissim lacinia nunc.
+                    Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed
+                    convallis tristique sem.
+                    Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus
+                    non, massa.
                     Fusce ac turpis quis ligula lacinia aliquet.
                 </p>
             </div>
@@ -258,17 +218,90 @@
                 </div>
             </div>
 
-            <a href="submit-proposal.html" class="cta-btn">Apply for This Project</a>
+            <div style="margin-top: 25px;">
+                <!-- Replaced custom cta-btn with standard btn-primary to match UI -->
+                <a href="submit-proposal.html" class="btn btn-primary btn-lg">Apply for This Project</a>
+            </div>
 
         </div>
     </main>
 
-    <!-- ===== FOOTER (same as index.html) ===== -->
-    <!-- Replace this section with your exact footer code from index.html if different -->
-    <footer style="margin-top: 60px; padding: 20px; text-align: center; background: #f8f8f8;">
-        <p>&copy; 2025 SkillBridge. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h2 class="logo">SkillsBridge</h2>
+                <p class="tagline">Where employment bridges skills</p>
+
+                <h4>Address:</h4>
+                <p>
+                    442 lorem ipsum, lorem<br />
+                    Dhaka, Bangladesh
+                </p>
+
+                <h4>Contact:</h4>
+                <p>
+                    +880-1710999999<br />
+                    +880-1910999999<br />
+                    support@skillbridge.com
+                </p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Services:</h4>
+                <ul>
+                    <li>Post a Job</li>
+                    <li>Browse Jobs</li>
+                </ul>
+
+                <h4>Find a:</h4>
+                <ul>
+                    <li>Web Designer</li>
+                    <li>Photoshop designer</li>
+                    <li>Illustrator designer</li>
+                    <li>Visualizer</li>
+                    <li>SEO expert</li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Find a job for skills:</h4>
+                <ul>
+                    <li>Web development</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>After effects</li>
+                    <li>SEO</li>
+                    <li>Digital Marketing</li>
+                    <li>Social Media Management</li>
+                    <li>C++ developer</li>
+                    <li>PHP developer</li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>Legal:</h4>
+                <ul>
+                    <li>Contact</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms and conditions</li>
+                </ul>
+
+                <div class="social-icons">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Email</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
     </footer>
-    <!-- ===== END FOOTER ===== -->
 
 </body>
+
 </html>
