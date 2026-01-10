@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wallet Dashboard - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/wallet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -13,14 +16,14 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
           <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <div class="navbar-profile">
@@ -82,37 +85,8 @@
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Transaction History</h2>
         <p class="section-subtitle" style="margin-bottom: 1.5rem;">Your past transactions</p>
         <div class="transactions-list" style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="transaction-item"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
-            <div>
-              <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Received</p>
-              <p style="font-size: 0.9rem; color: var(--gray-600);">Project A</p>
-            </div>
-            <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$200</p>
-          </div>
-          <div class="transaction-item"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
-            <div>
-              <p style="font-weight: 600; margin-bottom: 0.25rem;">Payment Made</p>
-              <p style="font-size: 0.9rem; color: var(--gray-600);">Project B</p>
-            </div>
-            <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$100</p>
-          </div>
-          <div class="transaction-item"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #ef4444;">
-            <div>
-              <p style="font-weight: 600; margin-bottom: 0.25rem;">Withdrawal</p>
-              <p style="font-size: 0.9rem; color: var(--gray-600);">Bank Transfer</p>
-            </div>
-            <p style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">-$50</p>
-          </div>
-          <div class="transaction-item"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #f9f9f9; border-radius: 10px; border-left: 4px solid #22c55e;">
-            <div>
-              <p style="font-weight: 600; margin-bottom: 0.25rem;">Deposit</p>
-              <p style="font-size: 0.9rem; color: var(--gray-600);">Direct Transfer</p>
-            </div>
-            <p style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">+$300</p>
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 2rem;">
+            No recent transactions.
           </div>
         </div>
         <div style="margin-top: 1.5rem; text-align: center;">

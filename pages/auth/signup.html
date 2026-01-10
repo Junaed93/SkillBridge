@@ -130,10 +130,10 @@
           </div>
         </div>
 
-        <a href="../freelancer/freelancer-dashboard.html" class="btn btn-primary" id="createAccountBtn"
-          style="width: 100%; margin-bottom: 1rem; display: block; text-align: center">
+        <button type="submit" class="btn btn-primary" id="createAccountBtn"
+          style="width: 100%; margin-bottom: 1rem; display: block; border: none; font-size: 1rem; cursor: pointer;">
           Create Account
-        </a>
+        </button>
 
         <p style="text-align: center; color: var(--gray-600)">
           Already have an account?
@@ -229,7 +229,7 @@
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
   <script>
-    document.getElementById('createAccountBtn').addEventListener('click', function (e) {
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const freelancerRadio = document.getElementById('roleFreelancer');
       if (freelancerRadio.checked) {
