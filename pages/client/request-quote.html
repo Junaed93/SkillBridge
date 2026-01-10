@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Request a Quote - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/dashboard.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -13,20 +16,21 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
           <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+          Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
+            👤
           </div>
         </div>
       </div>
@@ -37,11 +41,11 @@
     <div class="navbar-content">
       <div class="navbar-links">
         <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="request-quote.html" class="navbar-link active">Quotes</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
         <a href="proposal-overview.html" class="navbar-link">Proposals</a>
-        <a href="work-progress.html" class="navbar-link">Work Approval</a>
-        <a href="client-feedback.html" class="navbar-link">Ratings & Reviews</a>
+        <a href="client-chat.html" class="navbar-link">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="add-fund.html" class="navbar-link">Add Fund</a>
+        <a href="request-quote.html" class="navbar-link active">Quotes</a>
       </div>
     </div>
   </nav>
@@ -59,7 +63,10 @@
         </div>
         <div
           style="background-color: var(--gray-100); border-radius: 0.5rem; padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
-          <div style="color: var(--gray-400); font-size: 1.25rem;">Quote Request</div>
+          <div style="color: var(--gray-400); font-size: 1.25rem;">
+            <i class="fas fa-file-invoice-dollar" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+            Quote Request Preview
+          </div>
         </div>
       </div>
     </div>
@@ -70,44 +77,47 @@
     <div class="container">
       <div class="card" style="max-width: 800px; margin: 0 auto;">
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 2rem;">Quote Request Form</h2>
-        <div class="form-fields-section">
-          <div class="form-group">
-            <label class="form-label">Project Name</label>
-            <input type="text" class="form-input" placeholder="Enter project name" />
-          </div>
+        <form id="quote-request-form">
+          <div class="form-fields-section">
+            <div class="form-group">
+              <label class="form-label">Project Name</label>
+              <input type="text" class="form-input" placeholder="Enter project name" />
+            </div>
 
-          <div class="form-group">
-            <label class="form-label">Project Type</label>
-            <select class="form-input">
-              <option>Web Development</option>
-              <option>Mobile App Development</option>
-              <option>Graphic Design</option>
-              <option>Content Writing</option>
-              <option>SEO</option>
-              <option>Other</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label class="form-label">Project Type</label>
+              <select class="form-input">
+                <option value="">Select type...</option>
+                <option>Web Development</option>
+                <option>Mobile App Development</option>
+                <option>Graphic Design</option>
+                <option>Content Writing</option>
+                <option>SEO</option>
+                <option>Other</option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <label class="form-label">Budget</label>
-            <input type="text" class="form-input" placeholder="Enter your budget range" />
-          </div>
+            <div class="form-group">
+              <label class="form-label">Budget</label>
+              <input type="number" class="form-input" placeholder="Enter your budget range" />
+            </div>
 
-          <div class="form-group">
-            <label class="form-label">Deadline</label>
-            <input type="date" class="form-input" />
-          </div>
+            <div class="form-group">
+              <label class="form-label">Deadline</label>
+              <input type="date" class="form-input" />
+            </div>
 
-          <div class="form-group">
-            <label class="form-label">Description</label>
-            <textarea class="form-textarea" rows="5"
-              placeholder="Describe your project requirements in detail..."></textarea>
-          </div>
+            <div class="form-group">
+              <label class="form-label">Description</label>
+              <textarea class="form-textarea" rows="5"
+                placeholder="Describe your project requirements in detail..."></textarea>
+            </div>
 
-          <div class="form-actions">
-            <button class="btn btn-primary btn-sm">Submit</button>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-sm">Submit Request</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat Messages - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/chat.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -13,20 +16,21 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
           <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+          Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
+            👤
           </div>
         </div>
       </div>
@@ -37,11 +41,10 @@
     <div class="navbar-content">
       <div class="navbar-links">
         <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="request-quote.html" class="navbar-link">Quotes</a>
-        <a href="client-chat.html" class="navbar-link active">Chat</a>
         <a href="proposal-overview.html" class="navbar-link">Proposals</a>
-        <a href="work-progress.html" class="navbar-link">Work Approval</a>
-        <a href="client-feedback.html" class="navbar-link">Ratings & Reviews</a>
+        <a href="client-chat.html" class="navbar-link active">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="add-fund.html" class="navbar-link">Add Fund</a>
       </div>
     </div>
   </nav>
@@ -54,54 +57,9 @@
         <!-- Left Panel: Freelancer List -->
         <div class="card" style="width: 300px; flex-shrink: 0; padding: 20px;">
           <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Messages</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-
-            <!-- Active Freelancer -->
-            <div
-              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; border-left: 4px solid var(--blue-600); cursor: pointer;">
-              <div
-                style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
-                MT</div>
-              <div style="flex: 1; min-width: 0;">
-                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Mira Tabassum</p>
-                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Freelancer</p>
-              </div>
-            </div>
-
-            <!-- Other Freelancers -->
-            <div
-              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
-              <div
-                style="width: 45px; height: 45px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
-                JS</div>
-              <div style="flex: 1; min-width: 0;">
-                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">John Smith</p>
-                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Developer</p>
-              </div>
-            </div>
-
-            <div
-              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
-              <div
-                style="width: 45px; height: 45px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
-                SJ</div>
-              <div style="flex: 1; min-width: 0;">
-                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Sarah Johnson</p>
-                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Designer</p>
-              </div>
-            </div>
-
-            <div
-              style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #f9f9f9; border-radius: 10px; cursor: pointer;">
-              <div
-                style="width: 45px; height: 45px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
-                ED</div>
-              <div style="flex: 1; min-width: 0;">
-                <p style="font-weight: 600; margin: 0; font-size: 0.95rem;">Emily Davis</p>
-                <p style="color: var(--gray-600); margin: 0; font-size: 0.85rem;">Writer</p>
-              </div>
-            </div>
-
+          <div id="freelancer-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Freelancer list will be populated here -->
+            <p style="color: var(--gray-500); text-align: center; font-style: italic;">No conversations yet.</p>
           </div>
         </div>
 
@@ -109,51 +67,28 @@
         <div class="card" style="flex: 1; display: flex; flex-direction: column;">
 
           <!-- Chat Header -->
-          <div
-            style="display: flex; align-items: center; justify-content: space-between; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px; margin-bottom: 20px;">
+          <div id="chat-header"
+            style="display: flex; align-items: center; justify-content: space-between; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px; margin-bottom: 20px; display: none;">
             <div style="display: flex; align-items: center; gap: 15px;">
               <div
                 style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 600;">
-                MT</div>
+                <span id="chat-avatar-initials"></span>
+              </div>
               <div>
-                <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.25rem 0;">Mira Tabassum</h3>
+                <h3 id="chat-user-name" style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.25rem 0;"></h3>
                 <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;"><i class="fas fa-user-tie"
                     style="margin-right: 0.5rem;"></i>Freelancer</p>
               </div>
             </div>
-            <a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">View Profile</a>
+            <!-- <a href="#" class="btn btn-primary btn-sm">View Profile</a> -->
           </div>
 
           <!-- Messages -->
-          <div style="flex: 1; overflow-y: auto; padding: 0 20px;">
-            <div class="messages-list" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;">
-              <div class="message-item"
-                style="background: #f9f9f9; border-radius: 10px; padding: 16px; border-left: 4px solid var(--blue-600);">
-                <div
-                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                  <p style="font-weight: 600; margin: 0;">Mira Tabassum</p>
-                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:30 AM</span>
-                </div>
-                <p style="color: var(--gray-600); margin: 0;">Hey, I need a UI/UX design for my website</p>
-              </div>
-              <div class="message-item"
-                style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
-                <div
-                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                  <p style="font-weight: 600; margin: 0;">You</p>
-                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:32 AM</span>
-                </div>
-                <p style="color: var(--gray-600); margin: 0;">Sure, I can help you with that</p>
-              </div>
-              <div class="message-item"
-                style="background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 10px; padding: 16px; border-left: 4px solid #10b981;">
-                <div
-                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                  <p style="font-weight: 600; margin: 0;">You</p>
-                  <span style="font-size: 0.85rem; color: var(--gray-500);">10:35 AM</span>
-                </div>
-                <p style="color: var(--gray-600); margin: 0;">I have attached some samples for your review</p>
-              </div>
+          <div style="flex: 1; overflow-y: auto; padding: 0 20px; min-height: 300px;">
+            <div id="messages-list" class="messages-list"
+              style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem;">
+              <p style="color: var(--gray-500); text-align: center; margin-top: 2rem;">Select a conversation to start
+                chatting.</p>
             </div>
           </div>
 

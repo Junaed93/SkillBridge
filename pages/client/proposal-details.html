@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Proposal Details - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/dashboard.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
@@ -13,20 +16,21 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
           <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+          Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
+            👤
           </div>
         </div>
       </div>
@@ -37,11 +41,10 @@
     <div class="navbar-content">
       <div class="navbar-links">
         <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="request-quote.html" class="navbar-link">Quotes</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
         <a href="proposal-overview.html" class="navbar-link active">Proposals</a>
-        <a href="work-progress.html" class="navbar-link">Work Approval</a>
-        <a href="client-feedback.html" class="navbar-link">Ratings & Reviews</a>
+        <a href="client-chat.html" class="navbar-link">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="add-fund.html" class="navbar-link">Add Fund</a>
       </div>
     </div>
   </nav>
@@ -49,9 +52,10 @@
   <!-- Proposal Header -->
   <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
     <div class="container">
-      <h1 class="section-title">Proposal by Junaed</h1>
+      <!-- Proposal Title Placeholder -->
+      <h1 class="section-title" id="proposal-title">Proposal Details</h1>
       <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="proposal-overview.html" class="btn btn-primary btn-sm">View Proposal</a>
+        <a href="proposal-overview.html" class="btn btn-primary btn-sm">Back to Overview</a>
       </div>
     </div>
   </div>
@@ -61,37 +65,11 @@
     <div class="container">
       <div class="card">
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Updates</h2>
-        <div class="updates-grid"
+        <div id="pending-updates-grid" class="updates-grid"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Budget Markup</h4>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
-                style="margin-right: 0.5rem;"></i>Due by 01/10/2026</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="badge badge-warning">Pending</span>
-              <a href="work-progress.html" class="btn btn-primary btn-sm">Review</a>
-            </div>
-          </div>
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Marketing Campaign</h4>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
-                style="margin-right: 0.5rem;"></i>Due by 01/15/2026</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="badge badge-info">In Progress</span>
-              <a href="work-progress.html" class="btn btn-primary btn-sm">View</a>
-            </div>
-          </div>
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Technical Review</h4>
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
-                style="margin-right: 0.5rem;"></i>Due by 01/20/2026</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span class="badge badge-warning">Pending</span>
-              <a href="work-progress.html" class="btn btn-primary btn-sm">Review</a>
-            </div>
+          <!-- Pending updates will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 2rem;">
+            No pending updates.
           </div>
         </div>
       </div>
@@ -103,29 +81,11 @@
     <div class="container">
       <div class="card" style="max-width: 800px; margin: 0 auto;">
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Proposal Information</h2>
-        <div class="info-list"
+        <div id="proposal-info-list" class="info-list"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Project Name</p>
-            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">E-commerce Website Development</p>
-          </div>
-          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Freelancer</p>
-            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">Junaed</p>
-          </div>
-          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Bid Amount</p>
-            <p style="font-size: 1.1rem; font-weight: 600; margin: 0; color: #10b981;">$3,500</p>
-          </div>
-          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Delivery Time</p>
-            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">3 weeks</p>
-          </div>
-          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px; grid-column: 1 / -1;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Description</p>
-            <p style="font-size: 0.95rem; margin: 0; color: var(--gray-700);">Full-stack developer with 5+ years of
-              experience. I'll build a modern e-commerce platform using React and Node.js with payment integration and
-              admin dashboard.</p>
+          <!-- Proposal information will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 2rem;">
+            Loading proposal details...
           </div>
         </div>
         <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">

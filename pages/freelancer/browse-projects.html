@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Browse Projects - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/browse.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     /* BASIC RESET */
@@ -178,19 +181,19 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
           <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link active"><i class="fas fa-briefcase"></i> Browse Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
+            👤
           </div>
         </div>
       </div>
@@ -201,9 +204,9 @@
     <div class="navbar-content">
       <div class="navbar-links">
         <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="proposal-stats.html" class="navbar-link">Proposals</a>
+        <a href="submit-proposal.html" class="navbar-link">Proposals</a>
         <a href="client-chat.html" class="navbar-link">Chat</a>
-        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="#" class="navbar-link">Contracts</a>
         <a href="wallet.html" class="navbar-link">Earnings</a>
       </div>
     </div>
@@ -221,54 +224,8 @@
   <div class="section section-gray">
     <div class="container">
 
-      <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <h3 class="project-title">Web Designer Needed</h3>
-          <span class="project-skills">HTML, CSS, JavaScript</span>
-          <p class="project-description">Redesign company website with modern UI.</p>
-          <div class="project-tags">
-            <span class="badge">Remote</span>
-            <span class="badge urgent">Urgent</span>
-          </div>
-          <div class="project-client">Client: <strong>XYZ Corp</strong></div>
-          <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
-            <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
-          </div>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <h3 class="project-title">Mobile App Development</h3>
-          <span class="project-skills">React Native, API</span>
-          <p class="project-description">Build and maintain a cross-platform mobile app.</p>
-          <div class="project-tags">
-            <span class="badge">Part-time</span>
-            <span class="badge">Flexible</span>
-          </div>
-          <div class="project-client">Client: <strong>ABC Solutions</strong></div>
-          <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
-            <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
-          </div>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="project-card">
-          <h3 class="project-title">Content Writer</h3>
-          <span class="project-skills">SEO, Copywriting</span>
-          <p class="project-description">Write blog posts and website content.</p>
-          <div class="project-tags">
-            <span class="badge">Long-term</span>
-            <span class="badge">In-house</span>
-          </div>
-          <div class="project-client">Client: <strong>WriteRight</strong></div>
-          <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
-            <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
-          </div>
-        </div>
+      <div id="projects-grid-container" class="projects-grid">
+        <!-- Projects will be populated here -->
       </div>
     </div>
   </div>
