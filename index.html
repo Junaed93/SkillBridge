@@ -43,13 +43,14 @@
             </label>
             <span>For Freelancers</span>
           </div>
-          <h1 class="hero-title">
+          <h1 class="hero-title" id="heroTitle">
             Connect with world-class talent and grow your business.
           </h1>
-          <p class="hero-subtitle">What are you looking for?</p>
+          <p class="hero-subtitle" id="heroSubtitle">What are you looking for?</p>
 
           <div class="hero-search">
-            <input type="text" class="search-input" placeholder="Search for skills, services, or freelancers..." />
+            <input type="text" id="searchInput" class="search-input"
+              placeholder="Search for skills, services, or freelancers..." />
             <a href="browse-projects.html" class="btn btn-primary search-btn">Search</a>
           </div>
 
@@ -66,14 +67,14 @@
           <div class="hero-cta-buttons">
             <a href="signup.html" class="btn btn-primary btn-lg">Get started</a>
             <a href="testimonials.html" class="btn btn-outline btn-lg">Testimonials</a>
-            <a href="browse-projects.html" class="btn btn-outline btn-lg">Browse Top Freelancers</a>
+            <a href="browse-projects.html" class="btn btn-outline btn-lg" id="browseBtn">Browse Top Freelancers</a>
           </div>
         </div>
-        <div class = "hero-image-content">
-        <div class = "hero-image-placeholder">
-        <div class = "hero-person">
-        <img class = "hero-img-base" src = "images/Adobe Express - file (1).png">
-        <img class = "hero-img-over" src = "images/Adobe Express - file.png">
+        <div class="hero-image-content">
+          <div class="hero-image-placeholder">
+            <div class="hero-person">
+              <img id="heroImage" class="hero-img-base" src="images/Adobe Express - file (1).png">
+              <img id="heroImageOver" class="hero-img-over" src="images/Adobe Express - file.png">
             </div>
           </div>
         </div>
@@ -87,7 +88,10 @@
       <h2 class="section-title">Our trusted clients</h2>
       <div class="trusted-clients-container">
         <div class="client-item">
-          <div class="client-avatar">👩‍💼</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-1.jpg" alt="Fariha Malon"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">Fariha Malon</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -95,7 +99,10 @@
           </div>
         </div>
         <div class="client-item">
-          <div class="client-avatar">👨‍💼</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-2.jpg" alt="Kashif Khan"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">Kashif Khan</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -103,7 +110,10 @@
           </div>
         </div>
         <div class="client-item">
-          <div class="client-avatar">👩‍💻</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-3.jpg" alt="Sarah Ahmed"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">Sarah Ahmed</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -111,7 +121,9 @@
           </div>
         </div>
         <div class="client-item">
-          <div class="client-avatar">👨‍💻</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-4.jpg" alt="John Smith" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">John Smith</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -119,7 +131,10 @@
           </div>
         </div>
         <div class="client-item">
-          <div class="client-avatar">👩‍🎨</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-5.jpg" alt="Emily Davis"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">Emily Davis</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -127,7 +142,10 @@
           </div>
         </div>
         <div class="client-item">
-          <div class="client-avatar">👨‍🎨</div>
+          <div class="client-avatar" style="overflow: hidden; border: 2px solid var(--blue-600);">
+            <img src="images/testis/testi-6.jpg" alt="Michael Brown"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="client-content">
             <h3 class="client-name">Michael Brown</h3>
             <p class="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
@@ -223,22 +241,84 @@
       const heroToggle = document.querySelector('.hero-toggle');
       const allToggleSpans = heroToggle ? heroToggle.querySelectorAll('span:not(.toggle-switch)') : [];
 
-      function updateNavbar() {
+      const heroTitle = document.getElementById('heroTitle');
+      const heroSubtitle = document.getElementById('heroSubtitle');
+      const searchInput = document.getElementById('searchInput');
+      const browseBtn = document.getElementById('browseBtn');
+      const heroImage = document.getElementById('heroImage');
+      const heroImageOver = document.getElementById('heroImageOver');
+
+      function updateContent() {
         if (roleToggle && roleToggle.checked) {
-          // Freelancer mode - show "Find a Project", hide "Post a Project"
-          if (findProjectLink) {
-            findProjectLink.style.display = 'inline-flex';
+          // Freelancer mode
+          if (heroTitle) heroTitle.innerText = "Find the best projects and grow your career.";
+          if (heroSubtitle) heroSubtitle.innerText = "What kind of work are you looking for?";
+          if (searchInput) searchInput.placeholder = "Search for projects, categories, or skills...";
+          if (browseBtn) browseBtn.innerText = "Browse Top Projects";
+          if (heroImage) heroImage.style.display = 'none';
+          if (heroImageOver) heroImageOver.style.display = 'block';
+
+          if (findProjectLink) findProjectLink.style.display = 'inline-flex';
+          if (postProjectLink) postProjectLink.style.display = 'none';
+        } else {
+          // Hiring mode
+          if (heroTitle) heroTitle.innerText = "Connect with world-class talent and grow your business.";
+          if (heroSubtitle) heroSubtitle.innerText = "What are you looking for?";
+          if (searchInput) searchInput.placeholder = "Search for skills, services, or freelancers...";
+          if (browseBtn) browseBtn.innerText = "Browse Top Freelancers";
+          if (heroImage) heroImage.style.display = 'block';
+          if (heroImageOver) {
+            heroImageOver.style.display = 'block';
+            // Looking at the original code, hero-img-over was displayed over hero-img-base.
+            // The user said "change the hero image from Adobe Express file with Adobe Express file (1)"
+            // Adobe Express - file (1).png is hero-img-base
+            // Adobe Express - file.png is hero-img-over
+            // So in hiring mode, we should show both or just (1)?
+            // The request said "change the hero image from Adobe Express file with Adobe Express file (1)"
+            // This implies a direct swap.
           }
-          if (postProjectLink) {
-            postProjectLink.style.display = 'none';
+
+          if (findProjectLink) findProjectLink.style.display = 'none';
+          if (postProjectLink) postProjectLink.style.display = 'inline-block';
+        }
+      }
+
+      // Refactored updateContent based on user's specific request about images
+      function updateContentSpecific() {
+        if (roleToggle && roleToggle.checked) {
+          // Freelancer mode
+          if (heroTitle) heroTitle.innerText = "Find the best projects and grow your career.";
+          if (heroSubtitle) heroSubtitle.innerText = "What kind of work are you looking for?";
+          if (searchInput) searchInput.placeholder = "Search for projects, categories, or skills...";
+          if (browseBtn) browseBtn.innerText = "Browse Top Projects";
+
+          // Refined logic: swapping roles of images
+          // In Freelancer mode: Person (file (1)) is background, Blob (file) is foreground
+          if (heroImage) {
+            heroImage.src = "images/Adobe Express - file (1).png";
+            heroImage.style.zIndex = "1";
+          }
+          if (heroImageOver) {
+            heroImageOver.src = "images/Adobe Express - file.png";
+            heroImageOver.style.zIndex = "2";
+            heroImageOver.style.display = "block";
           }
         } else {
-          // Hiring mode - show "Post a Project", hide "Find a Project"
-          if (findProjectLink) {
-            findProjectLink.style.display = 'none';
+          // Hiring mode
+          if (heroTitle) heroTitle.innerText = "Connect with world-class talent and grow your business.";
+          if (heroSubtitle) heroSubtitle.innerText = "What are you looking for?";
+          if (searchInput) searchInput.placeholder = "Search for skills, services, or freelancers...";
+          if (browseBtn) browseBtn.innerText = "Browse Top Freelancers";
+
+          // In Hiring mode: Person (file (1)) is foreground, Blob (file) is background
+          if (heroImage) {
+            heroImage.src = "images/Adobe Express - file (1).png";
+            heroImage.style.zIndex = "2";
           }
-          if (postProjectLink) {
-            postProjectLink.style.display = 'inline-block';
+          if (heroImageOver) {
+            heroImageOver.src = "images/Adobe Express - file.png";
+            heroImageOver.style.zIndex = "1";
+            heroImageOver.style.display = "block";
           }
         }
       }
@@ -247,7 +327,6 @@
       function updateToggleLabels() {
         if (allToggleSpans.length >= 2) {
           if (roleToggle.checked) {
-            // Freelancer mode - second span (For Freelancers) should be active
             allToggleSpans[0].classList.remove('toggle-active');
             allToggleSpans[0].style.fontWeight = '400';
             allToggleSpans[0].style.color = 'var(--gray-600)';
@@ -255,7 +334,6 @@
             allToggleSpans[1].style.fontWeight = '600';
             allToggleSpans[1].style.color = 'var(--gray-900)';
           } else {
-            // Hiring mode - first span (For hiring) should be active
             allToggleSpans[0].classList.add('toggle-active');
             allToggleSpans[0].style.fontWeight = '600';
             allToggleSpans[0].style.color = 'var(--gray-900)';
@@ -269,12 +347,12 @@
       // Listen for toggle changes
       if (roleToggle) {
         roleToggle.addEventListener('change', function () {
-          updateNavbar();
+          updateContentSpecific();
           updateToggleLabels();
         });
 
-        // Initialize on page load (default: hiring mode - unchecked)
-        updateNavbar();
+        // Initialize on page load
+        updateContentSpecific();
         updateToggleLabels();
       }
     });
