@@ -636,6 +636,17 @@ input, textarea, select {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 0.8s ease 0.6s backwards;
 }
+.hero-img-base{
+ width: 100%;
+ height: auto;
+}
+.hero-img-over{
+    position: absolute;
+    height  : auto;
+    top     : 0px;
+    left    : -30px;
+    width: 450px;
+}
 
 .hero-person {
     font-size: 12rem;
