@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal Details - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            ðŸ‘¤
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="admin-navbar">
+    <div class="navbar-content">
+      <div class="navbar-links">
+        <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="request-quote.html" class="navbar-link">Quotes</a>
+        <a href="client-chat.html" class="navbar-link">Chat</a>
+        <a href="proposal-overview.html" class="navbar-link active">Proposals</a>
+        <a href="work-progress.html" class="navbar-link">Work Approval</a>
+        <a href="client-feedback.html" class="navbar-link">Ratings & Reviews</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Proposal Header -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <h1 class="section-title">Proposal by Junaed</h1>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="proposal-overview.html" class="btn btn-primary btn-sm">View Proposal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pending Updates -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Updates</h2>
+        <div class="updates-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Budget Markup</h4>
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
+                style="margin-right: 0.5rem;"></i>Due by 01/10/2026</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-warning">Pending</span>
+              <a href="work-progress.html" class="btn btn-primary btn-sm">Review</a>
+            </div>
+          </div>
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Marketing Campaign</h4>
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
+                style="margin-right: 0.5rem;"></i>Due by 01/15/2026</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-info">In Progress</span>
+              <a href="work-progress.html" class="btn btn-primary btn-sm">View</a>
+            </div>
+          </div>
+          <div class="update-card"
+            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Technical Review</h4>
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;"><i class="fas fa-calendar"
+                style="margin-right: 0.5rem;"></i>Due by 01/20/2026</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge badge-warning">Pending</span>
+              <a href="work-progress.html" class="btn btn-primary btn-sm">Review</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proposal Details -->
+  <div class="section section-white">
+    <div class="container">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Proposal Information</h2>
+        <div class="info-list"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Project Name</p>
+            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">E-commerce Website Development</p>
+          </div>
+          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Freelancer</p>
+            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">Junaed</p>
+          </div>
+          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Bid Amount</p>
+            <p style="font-size: 1.1rem; font-weight: 600; margin: 0; color: #10b981;">$3,500</p>
+          </div>
+          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px;">
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Delivery Time</p>
+            <p style="font-size: 1.1rem; font-weight: 600; margin: 0;">3 weeks</p>
+          </div>
+          <div class="info-item" style="background: #f9f9f9; border-radius: 10px; padding: 16px; grid-column: 1 / -1;">
+            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.5rem 0;">Description</p>
+            <p style="font-size: 0.95rem; margin: 0; color: var(--gray-700);">Full-stack developer with 5+ years of
+              experience. I'll build a modern e-commerce platform using React and Node.js with payment integration and
+              admin dashboard.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+          <button class="btn btn-success btn-sm">Accept Proposal</button>
+          <button class="btn btn-danger btn-sm">Reject Proposal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
+
+</html>
