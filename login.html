@@ -45,7 +45,7 @@
 
         <div class="form-group">
           <label class="form-label">Password</label>
-          <input type="password" class="form-input" name="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required />
+          <input type="password" class="form-input" name="password" placeholder="**********" required />
         </div>
 
         <div class="form-group">
@@ -58,10 +58,10 @@
           </select>
         </div>
 
-        <a href="freelancer-dashboard.html" class="btn btn-primary"
-          style="width: 100%; margin-bottom: 1rem; display: block; text-align: center">
+        <button type="submit" class="btn btn-primary"
+          style="width: 100%; margin-bottom: 1rem; display: block; border: none; font-size: 1rem; cursor: pointer;">
           Login
-        </a>
+        </button>
 
         <p style="text-align: center; color: var(--gray-600)">
           Don't have an account?
@@ -155,6 +155,21 @@
 
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const role = document.querySelector('select[name="role"]').value;
+      if (role === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else if (role === 'freelancer') {
+        window.location.href = 'freelancer-dashboard.html';
+      } else if (role === 'client') {
+        window.location.href = 'client-dashboard.html';
+      } else {
+        alert('Please select a role to login.');
+      }
+    });
+  </script>
 </body>
 
 </html>
