@@ -23,11 +23,11 @@
     }
 
     .section-white {
-      background: #ffffff;
+      background: var(--bg-surface);
     }
 
     .section-gray {
-      background: #f3f4f6;
+      background: var(--bg-surface-alt);
     }
 
     .container {
@@ -38,8 +38,8 @@
 
     /* Navbar (minimal) */
     .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-main);
     }
 
     .navbar-content {
@@ -65,7 +65,7 @@
     }
 
     .project-card {
-      background: #ffffff;
+      background: var(--bg-surface);
       border-radius: 14px;
       padding: 20px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
@@ -83,14 +83,14 @@
     .project-title {
       font-weight: 600;
       font-size: 18px;
-      color: #111827;
+      color: var(--text-main);
       margin: 0;
     }
 
     .project-skills {
       font-size: 13px;
-      color: #6b7280;
-      background: #f3f4f6;
+      color: var(--text-muted);
+      background: var(--bg-surface-alt);
       padding: 6px 12px;
       border-radius: 6px;
       display: inline-block;
@@ -99,7 +99,7 @@
 
     .project-description {
       font-size: 14px;
-      color: #4b5563;
+      color: var(--text-secondary);
       line-height: 1.5;
       margin: 8px 0;
       flex-grow: 1;
@@ -114,7 +114,7 @@
 
     .project-client {
       font-size: 12px;
-      color: #6b7280;
+      color: var(--text-muted);
       font-weight: 500;
     }
 
@@ -191,6 +191,9 @@
         <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link active"><i class="fas fa-briefcase"></i> Browse Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
             👤
@@ -304,5 +307,6 @@
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
 </body>
+<script src="../../js/theme.js"></script>
 
 </html>

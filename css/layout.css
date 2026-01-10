@@ -1,7 +1,7 @@
 /* Navbar Styles */
 .navbar {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--gray-200);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-main);
     position: sticky;
     top: 0;
     z-index: 50;
@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--gray-900);
+    color: var(--text-main);
     transition: transform 0.2s;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .navbar-link {
-    color: var(--gray-700);
+    color: var(--text-secondary);
     padding: 0.5rem 0.75rem;
     border-radius: 0.375rem;
     transition: all 0.2s ease;
@@ -64,8 +64,8 @@
 }
 
 .navbar-link:hover {
-    color: var(--gray-900);
-    background-color: var(--gray-100);
+    color: var(--text-main);
+    background-color: var(--bg-surface-alt);
     transform: translateY(-1px);
 }
 
@@ -107,7 +107,7 @@
 
 /* Admin Navbar */
 .admin-navbar {
-    background-color: var(--white);
+    background-color: var(--bg-surface);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -140,8 +140,8 @@
 }
 
 .admin-navbar .navbar-link:hover:not(.active) {
-    background-color: var(--gray-100);
-    color: var(--gray-900);
+    background-color: var(--bg-surface-alt);
+    color: var(--text-main);
 }
 
 @media (max-width: 1024px) {

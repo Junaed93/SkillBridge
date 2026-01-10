@@ -14,7 +14,7 @@
         /* Page Layout */
         body {
             /* Kept subtle background but removed conflict with main styles */
-            background: linear-gradient(135deg, #f5f9ff, #eef7f2);
+            background: var(--bg-body);
         }
 
         .details-container {
@@ -24,7 +24,7 @@
         }
 
         .details-card {
-            background: #ffffff;
+            background: var(--bg-surface);
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             padding: 40px;
@@ -34,7 +34,7 @@
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: #1f2937;
+            color: var(--text-main);
         }
 
         .project-meta {
@@ -45,8 +45,8 @@
         }
 
         .meta-box {
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-main);
             border-radius: 8px;
             padding: 15px 18px;
         }
@@ -55,14 +55,14 @@
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #6b7280;
+            color: var(--text-muted);
             margin-bottom: 5px;
         }
 
         .meta-value {
             font-size: 16px;
             font-weight: 600;
-            color: #111827;
+            color: var(--text-main);
         }
 
         .section {
@@ -72,14 +72,14 @@
         .section h2 {
             font-size: 20px;
             margin-bottom: 12px;
-            color: #111827;
+            color: var(--text-main);
             border-left: 4px solid #22c55e;
             padding-left: 10px;
         }
 
         .section p {
             line-height: 1.7;
-            color: #374151;
+            color: var(--text-secondary);
         }
 
         .tags {
@@ -101,7 +101,7 @@
         .offer-box {
             margin-top: 40px;
             background: var(--blue-600);
-            color: #ffffff;
+            color: var(--white);
             padding: 25px 30px;
             border-radius: 10px;
             display: flex;
@@ -135,6 +135,9 @@
                 <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
                 <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
                 <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+                <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <div class="navbar-profile">
                     <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
                         👤
@@ -281,6 +284,7 @@
         <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
     </footer>
 
+    <script src="../../js/theme.js"></script>
 </body>
 
 </html>

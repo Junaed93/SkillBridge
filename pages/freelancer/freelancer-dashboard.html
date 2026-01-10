@@ -26,6 +26,9 @@
         <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
             👤
@@ -52,16 +55,18 @@
     <div class="container">
       <div class="card">
         <div class="profile-card"
-          style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; background: linear-gradient(135deg, rgba(156, 199, 70, 0.1) 0%, rgba(49, 157, 214, 0.1) 100%); border-radius: 12px;">
+          style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px; background: var(--bg-surface-alt); border-radius: 12px;">
           <div style="display: flex; align-items: center; gap: 20px; flex: 1;">
             <div
               style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 600;">
               SA</div>
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0;">Shakib Akram</h3>
-              <p style="color: var(--gray-600); margin: 0 0 0.5rem 0; font-size: 0.95rem;"><span
+              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0; color: var(--text-main);">Shakib
+                Akram</h3>
+              <p style="color: var(--text-muted); margin: 0 0 0.5rem 0; font-size: 0.95rem;"><span
                   class="badge badge-info">Freelancer</span></p>
-              <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;">A passionate software developer.</p>
+              <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">A passionate software developer.
+              </p>
             </div>
           </div>
           <div style="display: flex; gap: 10px;">
@@ -122,29 +127,34 @@
         <div class="details-grid"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
           <div class="detail-item"
-            style="background: #f9f9f9; border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Bio</p>
-            <p id="bio-display" style="font-size: 0.95rem; margin: 0; color: var(--gray-700);">No bio added yet.</p>
+            style="background: var(--bg-surface-alt); border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Bio</p>
+            <p id="bio-display" style="font-size: 0.95rem; margin: 0; color: var(--text-secondary);">No bio added yet.
+            </p>
           </div>
           <div class="detail-item"
-            style="background: #f9f9f9; border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">GitHub Link
+            style="background: var(--bg-surface-alt); border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">GitHub
+              Link
             </p>
-            <p id="github-link-display" style="font-size: 0.95rem; margin: 0;"><span style="color: var(--gray-500);">Not
+            <p id="github-link-display" style="font-size: 0.95rem; margin: 0;"><span
+                style="color: var(--text-muted);">Not
                 linked</span></p>
           </div>
           <div class="detail-item"
-            style="background: #f9f9f9; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 5px;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Skills</p>
+            style="background: var(--bg-surface-alt); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 5px;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Skills
+            </p>
             <div id="skills-display" style="display: flex; flex-wrap: wrap; gap: 8px;">
               <!-- Skills will be populated here -->
             </div>
           </div>
           <div class="detail-item"
-            style="background: #f9f9f9; border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
-            <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Portfolio
+            style="background: var(--bg-surface-alt); border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Portfolio
               Documents</p>
-            <p id="portfolio-display" style="font-size: 0.95rem; margin: 0; color: var(--gray-700);">No documents.</p>
+            <p id="portfolio-display" style="font-size: 0.95rem; margin: 0; color: var(--text-secondary);">No documents.
+            </p>
           </div>
         </div>
       </div>
@@ -274,5 +284,6 @@
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
 </body>
+<script src="../../js/theme.js"></script>
 
 </html>

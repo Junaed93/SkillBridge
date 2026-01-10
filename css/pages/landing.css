@@ -34,8 +34,8 @@
 /* SkillBridge Hero Section */
 .skillbridge-hero {
     padding: 4rem 0 6rem;
-    background: var(--gray-50);
-    color: var(--gray-900);
+    background: var(--bg-body);
+    color: var(--text-main);
 }
 
 .hero-blob {
@@ -82,7 +82,7 @@
 
 .toggle-active {
     font-weight: 600;
-    color: var(--gray-900);
+    color: var(--text-main);
 }
 
 .toggle-switch {
@@ -136,7 +136,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: var(--gray-900);
+    color: var(--text-main);
     animation: fadeInUp 0.8s ease 0.1s backwards;
 }
 
@@ -144,7 +144,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 2rem;
-    color: var(--gray-700);
+    color: var(--text-secondary);
     animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
@@ -159,11 +159,11 @@
 .search-input {
     flex: 1;
     padding: 0.875rem 1rem;
-    border: 2px solid var(--gray-300);
+    border: 2px solid var(--border-main);
     border-radius: 0.5rem;
     font-size: 1rem;
-    background-color: var(--white);
-    color: var(--gray-900);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
     transition: all 0.3s ease;
 }
 
@@ -201,11 +201,11 @@
 
 .popular-tag {
     padding: 0.5rem 1rem;
-    background-color: var(--white);
-    border: 1px solid var(--gray-300);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-main);
     border-radius: 1.5rem;
     font-size: 0.875rem;
-    color: var(--gray-700);
+    color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -269,8 +269,8 @@
 }
 
 .client-item {
-    background-color: var(--white);
-    border: 1px solid var(--gray-200);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-main);
     border-radius: 0.5rem;
     padding: 2rem;
     display: flex;
@@ -309,12 +309,12 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
-    color: var(--gray-900);
+    color: var(--text-main);
 }
 
 .client-description {
     font-size: 0.875rem;
-    color: var(--gray-600);
+    color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
 }

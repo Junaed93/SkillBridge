@@ -15,11 +15,11 @@
 }
 
 .stat-card {
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-alt) 100%);
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--gray-100);
+    border: 1px solid var(--border-main);
     transition: all 0.3s ease;
 }
 
@@ -32,12 +32,12 @@
 .stat-value {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--gray-900);
+    color: var(--text-main);
     margin-bottom: 0.25rem;
 }
 
 .stat-label {
-    color: var(--gray-600);
+    color: var(--text-secondary);
     font-size: 0.875rem;
     font-weight: 500;
 }
@@ -57,7 +57,7 @@
 .admin-stat-card .stat-value {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--gray-900);
+    color: var(--text-main);
 }
 
 /* Admin Welcome Page */
@@ -71,7 +71,7 @@
 .profile-header {
     margin-bottom: 2rem;
     padding: 2rem;
-    background-color: var(--white);
+    background-color: var(--bg-surface);
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -136,13 +136,13 @@
 .metric-item {
     text-align: center;
     padding: 1rem;
-    background-color: var(--gray-50);
+    background-color: var(--bg-surface-alt);
     border-radius: 0.5rem;
 }
 
 .metric-label {
     font-size: 0.875rem;
-    color: var(--gray-600);
+    color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
@@ -170,7 +170,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 0;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--border-main);
 }
 
 .detail-item:last-child {
@@ -179,7 +179,7 @@
 
 .detail-label {
     font-weight: 500;
-    color: var(--gray-700);
+    color: var(--text-secondary);
 }
 
 .detail-value {
@@ -194,9 +194,9 @@
 
 .project-card {
     padding: 1.5rem;
-    background-color: var(--gray-50);
+    background-color: var(--bg-surface-alt);
     border-radius: 0.5rem;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--border-main);
 }
 
 .project-header {
@@ -260,9 +260,9 @@
 
 .bid-card {
     padding: 1.5rem;
-    background-color: var(--gray-50);
+    background-color: var(--bg-surface-alt);
     border-radius: 0.5rem;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--border-main);
 }
 
 .bid-card h3 {
@@ -299,9 +299,9 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: var(--gray-50);
+    background-color: var(--bg-surface-alt);
     border-radius: 0.5rem;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--border-main);
 }
 
 .document-icon {
@@ -323,7 +323,7 @@
 
 .document-name {
     font-weight: 500;
-    color: var(--gray-900);
+    color: var(--text-main);
     margin-bottom: 0.25rem;
 }
 

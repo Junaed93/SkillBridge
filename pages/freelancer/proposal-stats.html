@@ -27,6 +27,9 @@
         <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
             👤
@@ -80,7 +83,7 @@
 
       <div id="proposal-overview-grid" class="proposal-icons">
         <!-- Proposal cards will be populated here -->
-        <p style="color: var(--gray-500); width: 100%; text-align: center;">No active proposals found.</p>
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No active proposals found.</p>
       </div>
     </section>
 
@@ -97,7 +100,7 @@
 
       <div id="pending-proposals-grid" class="proposal-icons">
         <!-- Pending proposal cards will be populated here -->
-        <p style="color: var(--gray-500); width: 100%; text-align: center;">No pending proposals.</p>
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No pending proposals.</p>
       </div>
     </section>
 
@@ -110,7 +113,7 @@
 
       <div id="feedback-grid" class="feedback-grid">
         <!-- Feedback cards will be populated here -->
-        <p style="color: var(--gray-500); width: 100%; text-align: center;">No feedback yet.</p>
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No feedback yet.</p>
       </div>
     </section>
 
@@ -214,5 +217,7 @@
 
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
+  <script src="../../js/theme.js"></script>
+</body>
 
 </html>

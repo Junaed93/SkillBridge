@@ -28,7 +28,7 @@
 
     .admin-header p {
       font-size: 1.1rem;
-      color: var(--gray-600);
+      color: var(--text-muted);
       margin-top: 0.5rem;
     }
 
@@ -40,7 +40,7 @@
     }
 
     .admin-card {
-      background: #ffffff;
+      background: var(--bg-surface);
       border-radius: 14px;
       padding: 2rem;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -56,12 +56,12 @@
     .admin-card h3 {
       font-size: 1.3rem;
       margin-bottom: 0.6rem;
-      color: var(--gray-800);
+      color: var(--text-main);
     }
 
     .admin-card p {
       font-size: 0.95rem;
-      color: var(--gray-600);
+      color: var(--text-secondary);
       margin-bottom: 1.5rem;
     }
 
@@ -87,6 +87,9 @@
           Projects</a>
         <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
         <a href="admin-dashboard.html" class="btn btn-primary btn-sm"><i class="fas fa-cog"></i> Admin Panel</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
         <div class="navbar-profile">
           <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
             👤
@@ -228,5 +231,6 @@
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
 </body>
+<script src="../../js/theme.js"></script>
 
 </html>
