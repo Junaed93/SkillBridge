@@ -156,11 +156,6 @@
       color: #ffffff;
     }
 
-    .btn-outline-secondary {
-      border: 1px solid #9ca3af;
-      color: #374151;
-    }
-
     /* âœ… ACTION CELL â€“ FINAL FIX */
     .action-cell {
       display: flex;
@@ -186,16 +181,30 @@
       <a href="index.html" class="navbar-logo">
         <img src="logo.png" alt="SkillBridge Logo" />
         <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span>
-          <span style="color: blue">Bridge</span>
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
         </span>
       </a>
-
       <div class="navbar-links">
         <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
         <a href="browse-projects.html" class="navbar-link active"><i class="fas fa-briefcase"></i> Browse Projects</a>
-        <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
-        <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            ðŸ‘¤
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="admin-navbar">
+    <div class="navbar-content">
+      <div class="navbar-links">
+        <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="proposal-stats.html" class="navbar-link">Proposals</a>
+        <a href="client-chat.html" class="navbar-link">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="wallet.html" class="navbar-link">Earnings</a>
       </div>
     </div>
   </nav>
@@ -224,7 +233,7 @@
           </div>
           <div class="project-client">Client: <strong>XYZ Corp</strong></div>
           <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-outline-secondary btn-sm">Details</a>
+            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
             <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
           </div>
         </div>
@@ -240,7 +249,7 @@
           </div>
           <div class="project-client">Client: <strong>ABC Solutions</strong></div>
           <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-outline-secondary btn-sm">Details</a>
+            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
             <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
           </div>
         </div>
@@ -256,14 +265,14 @@
           </div>
           <div class="project-client">Client: <strong>WriteRight</strong></div>
           <div class="project-actions">
-            <a href="view-project-details.html" class="btn btn-outline-secondary btn-sm">Details</a>
+            <a href="view-project-details.html" class="btn btn-secondary btn-sm">Details</a>
             <a href="submit-proposal.html" class="btn btn-primary btn-sm">Apply</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <footer class="footer">
+  <footer class="footer">
     <div class="footer-container">
       <!-- Column 1 -->
       <div class="footer-col">
@@ -340,4 +349,3 @@
 </body>
 
 </html>
-
