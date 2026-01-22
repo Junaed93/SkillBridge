@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal Overview - SkillBridge</title>
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/proposal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            👤
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="admin-navbar">
+    <div class="navbar-content">
+      <div class="navbar-links">
+        <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="submit-proposal.html" class="navbar-link">Proposals</a>
+        <a href="freelancer-chat.html" class="navbar-link">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="wallet.html" class="navbar-link">Earnings</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+
+    <!-- PROFILE / HERO SECTION -->
+    <section class="profile-hero">
+      <div class="profile-left">
+        <div class="profile-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-info">
+          <h2 id="freelancer-name">--</h2>
+          <p>Freelancer Profile</p>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm">Log out</button>
+    </section>
+
+    <!-- PROPOSAL OVERVIEW -->
+    <section class="card-section">
+      <div class="section-header">
+        <h3>Proposal Overview</h3>
+        <p>Here you can view and approve proposals</p>
+      </div>
+
+      <div class="overview-content">
+        <div class="overview-actions">
+          <a href="submit-proposal.html" class="btn btn-primary btn-sm">Submit New Proposal</a>
+          <!-- <a href="#" class="btn btn-outline btn-lg">View Proposals</a> -->
+        </div>
+      </div>
+
+      <div id="proposal-overview-grid" class="proposal-icons">
+        <!-- Proposal cards will be populated here -->
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No active proposals found.</p>
+      </div>
+    </section>
+
+    <!-- PENDING PROPOSALS -->
+    <section class="card-section">
+      <div class="section-header">
+        <h3>Pending Proposals</h3>
+        <p>Proposals awaiting your review</p>
+      </div>
+
+      <div class="pending-actions">
+        <!-- Actions can be dynamic -->
+      </div>
+
+      <div id="pending-proposals-grid" class="proposal-icons">
+        <!-- Pending proposal cards will be populated here -->
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No pending proposals.</p>
+      </div>
+    </section>
+
+    <!-- RECENT FEEDBACK -->
+    <section class="card-section">
+      <div class="section-header">
+        <h3>Recent Feedback</h3>
+        <p>Feedback from your completed projects</p>
+      </div>
+
+      <div id="feedback-grid" class="feedback-grid">
+        <!-- Feedback cards will be populated here -->
+        <p style="color: var(--text-muted); width: 100%; text-align: center;">No feedback yet.</p>
+      </div>
+    </section>
+
+    <!-- PROPOSAL STATISTICS -->
+    <section class="card-section">
+      <div class="section-header center">
+        <h3>Proposal Statistics</h3>
+        <p>Check the latest stats of your proposals</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h4>Total Proposals</h4>
+          <p id="total-proposals-count">0</p>
+        </div>
+        <div class="stat-card">
+          <h4>Pending Reviews</h4>
+          <p id="pending-reviews-count">0</p>
+        </div>
+        <div class="stat-card">
+          <h4>Approved Proposals</h4>
+          <p id="approved-proposals-count">0</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+  <script src="../../js/theme.js"></script>
+</body>
+
+</html>

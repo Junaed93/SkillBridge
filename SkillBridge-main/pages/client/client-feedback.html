@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Feedback - SkillBridge</title>
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/layout.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/pages/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="../../index.html" class="navbar-logo">
+        <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+          Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
+        <button id="theme-toggle" class="navbar-link" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="navbar-profile">
+          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
+            👤
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="admin-navbar">
+    <div class="navbar-content">
+      <div class="navbar-links">
+        <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="proposal-overview.html" class="navbar-link">Proposals</a>
+        <a href="client-chat.html" class="navbar-link">Chat</a>
+        <a href="work-progress.html" class="navbar-link">Contracts</a>
+        <a href="client-feedback.html" class="navbar-link active">Ratings & Reviews</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Customer Feedback Header -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <h1 class="section-title" style="text-align: left; margin-bottom: 1rem;">Customer Feedback</h1>
+          <p style="color: var(--text-secondary); font-size: 1.125rem;">See what our clients say about working with
+            freelancers on SkillBridge</p>
+        </div>
+        <div
+          style="background-color: var(--bg-surface-alt); border-radius: 0.5rem; padding: 2rem; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+          <!-- Placeholder for charts or aggregate data -->
+          <div style="color: var(--text-muted); font-size: 1.25rem;">
+            <i class="fas fa-chart-line" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+            Feedback Analytics
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Reviews -->
+  <div class="section section-gray">
+    <div class="container">
+      <!-- Rate a Freelancer Section -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: left;">Rate a Freelancer
+        </h2>
+        <form>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 1rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Select Freelancer</label>
+              <select class="form-select" id="freelancer-select">
+                <option value="">Select a freelancer...</option>
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Rating</label>
+              <div style="font-size: 1.5rem; color: #fbbf24; padding-top: 5px;">
+                <i class="far fa-star service-rating" style="cursor: pointer;"></i>
+                <i class="far fa-star service-rating" style="cursor: pointer;"></i>
+                <i class="far fa-star service-rating" style="cursor: pointer;"></i>
+                <i class="far fa-star service-rating" style="cursor: pointer;"></i>
+                <i class="far fa-star service-rating" style="cursor: pointer;"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Review</label>
+            <textarea class="form-input" rows="3"
+              placeholder="Share your experience working with this freelancer..."></textarea>
+          </div>
+
+          <div style="text-align: right;">
+            <button type="submit" class="btn btn-primary btn-sm">Submit Review</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Reviews</h2>
+        <div id="reviews-grid" class="reviews-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+          <!-- Reviews will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 2rem;">
+            No reviews yet.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Makes Us Special -->
+  <div class="section section-white">
+    <div class="container">
+      <h2 class="section-title" style="margin-bottom: 3rem;">What Makes Us Special</h2>
+      <div class="features-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="feature-card"
+          style="background: var(--bg-surface); border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">✓</div>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;">Quality Assurance</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">We provide high-quality work with
+            attention
+            to detail and professional standards. All freelancers are vetted and verified for their expertise.</p>
+        </div>
+        <div class="feature-card"
+          style="background: var(--bg-surface); border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🕒</div>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;">24/7 Support</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">Our team is always ready to help you.
+            We
+            offer round-the-clock customer support to assist with any questions or issues you may have.</p>
+        </div>
+        <div class="feature-card"
+          style="background: var(--bg-surface); border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔒</div>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;">Secure Payments</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">All transactions are secure and
+            protected.
+            We use industry-standard encryption to keep your financial information safe.</p>
+        </div>
+        <div class="feature-card"
+          style="background: var(--bg-surface); border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;">Project Management</h3>
+          <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0;">Track your projects in real-time with our
+            built-in project management tools. Stay updated on progress and milestones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
+<script src="../../js/theme.js"></script>
+
+</html>
