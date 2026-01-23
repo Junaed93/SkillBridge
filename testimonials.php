@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials - SkillBridge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-logo">
+        <img src="logo.png" alt="SkillBridge Logo" />
+        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
+          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        </span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
+        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+        <a href="login.html" class="navbar-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Sign up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+      <h1 class="section-title">User Testimonials</h1>
+      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">See what our
+        community has to say.</p>
+    </div>
+  </div>
+
+  <!-- Testimonials Grid -->
+  <div class="section section-gray">
+    <div class="container">
+      <div class="grid grid-3">
+        <!-- Testimonial 1 -->
+        <div class="card">
+          <div class="card-feature" style="align-items: flex-start; text-align: left;">
+            <div class="client-avatar"
+              style="width: 60px; height: 60px; margin-bottom: 1rem; overflow: hidden; border: 2px solid var(--blue-600);">
+              <img src="images/testis/testi-1.jpg" alt="shakib akram"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-bottom: 0.25rem;">shakib akram</h3>
+            <span
+              style="font-size: 0.875rem; color: var(--blue-600); font-weight: 500; margin-bottom: 1rem;">Client</span>
+            <p>"Great experience working with talented freelancers!"</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="card">
+          <div class="card-feature" style="align-items: flex-start; text-align: left;">
+            <div class="client-avatar"
+              style="width: 60px; height: 60px; margin-bottom: 1rem; overflow: hidden; border: 2px solid var(--blue-600);">
+              <img src="images/testis/testi-2.jpg" alt="Nipa" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-bottom: 0.25rem;">Nipa</h3>
+            <span
+              style="font-size: 0.875rem; color: var(--blue-600); font-weight: 500; margin-bottom: 1rem;">Client</span>
+            <p>"Fast delivery and excellent communication."</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="card">
+          <div class="card-feature" style="align-items: flex-start; text-align: left;">
+            <div class="client-avatar"
+              style="width: 60px; height: 60px; margin-bottom: 1rem; overflow: hidden; border: 2px solid var(--blue-600);">
+              <img src="images/testis/testi-3.jpg" alt="Ishra" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-bottom: 0.25rem;">Ishra</h3>
+            <span
+              style="font-size: 0.875rem; color: var(--blue-600); font-weight: 500; margin-bottom: 1rem;">Client</span>
+            <p>"Highly recommend this platform."</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="card">
+          <div class="card-feature" style="align-items: flex-start; text-align: left;">
+            <div class="client-avatar"
+              style="width: 60px; height: 60px; margin-bottom: 1rem; overflow: hidden; border: 2px solid var(--green-600);">
+              <img src="images/testis/testi-4.jpg" alt="Mathin Son"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-bottom: 0.25rem;">Mathin Son</h3>
+            <span
+              style="font-size: 0.875rem; color: var(--green-600); font-weight: 500; margin-bottom: 1rem;">Freelancer</span>
+            <p>"Lots of great project opportunities here."</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="card">
+          <div class="card-feature" style="align-items: flex-start; text-align: left;">
+            <div class="client-avatar"
+              style="width: 60px; height: 60px; margin-bottom: 1rem; overflow: hidden; border: 2px solid var(--green-600);">
+              <img src="images/testis/testi-5.jpg" alt="Junaed khandakar"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-bottom: 0.25rem;">Junaed khandakar</h3>
+            <span
+              style="font-size: 0.875rem; color: var(--green-600); font-weight: 500; margin-bottom: 1rem;">Freelancer</span>
+            <p>"Clients were very professional and clear."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h2 class="logo">SkillsBridge</h2>
+        <p class="tagline">Where employment bridges skills</p>
+
+        <h4>Address:</h4>
+        <p>
+          442 lorem ipsum, lorem<br />
+          Dhaka, Bangladesh
+        </p>
+
+        <h4>Contact:</h4>
+        <p>
+          +880-1710999999<br />
+          +880-1910999999<br />
+          support@skillbridge.com
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Services:</h4>
+        <ul>
+          <li>Post a Job</li>
+          <li>Browse Jobs</li>
+        </ul>
+
+        <h4>Find a:</h4>
+        <ul>
+          <li>Web Designer</li>
+          <li>Photoshop designer</li>
+          <li>Illustrator designer</li>
+          <li>Visualizer</li>
+          <li>SEO expert</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h4>Find a job for skills:</h4>
+        <ul>
+          <li>Web development</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After effects</li>
+          <li>SEO</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Management</li>
+          <li>C++ developer</li>
+          <li>PHP developer</li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h4>Legal:</h4>
+        <ul>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+          <li>Terms and conditions</li>
+        </ul>
+
+        <div class="social-icons">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+  </footer>
+</body>
+
+</html>
