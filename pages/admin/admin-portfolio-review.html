@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Review - SkillBridge Admin</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/pages/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="../../index.html" class="navbar-logo">
+                <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
+                <span class="navbar-brand-text">
+                    <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
+                </span>
+            </a>
+            <div class="navbar-links">
+                <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+                <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+                    Projects</a>
+                <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="admin-dashboard.html" class="btn btn-primary btn-sm"><i class="fas fa-cog"></i> Admin Panel</a>
+                <div class="navbar-profile">
+                    <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">👤</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="admin-navbar">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="admin-freelancer-approvals.html" class="navbar-link">Freelancer Approvals</a>
+                <a href="admin-client-approvals.html" class="navbar-link">Client Approvals</a>
+                <a href="admin-verification.html" class="navbar-link">Verification</a>
+                <a href="admin-portfolio-review.html" class="navbar-link active">Portfolio Review</a>
+                <a href="admin-user-details.html" class="navbar-link">User Details</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Review Section -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Freelancer Portfolio Review</h1>
+                <p style="color: var(--gray-600)">Review and approve freelancer portfolios, projects, and
+                    certifications.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                    <div class="form-group" style="margin-bottom: 0; flex: 1; min-width: 200px;">
+                        <select class="form-select" name="statusFilter" id="statusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="pending">Pending Review</option>
+                            <option value="approved">Approved</option>
+                            <option value="changes-requested">Changes Requested</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-filter"></i> Apply Filter
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Cards Grid -->
+            <div class="grid grid-2" id="portfolioGrid" data-api-endpoint="/api/admin/portfolios">
+
+                <!-- Portfolio Card 1 - Placeholder for API data -->
+                <div class="portfolio-card" data-portfolio-id="">
+                    <div class="portfolio-header">
+                        <div class="avatar">SA</div>
+                        <div>
+                            <h3 style="margin: 0 0 0.25rem;">Freelancer Name</h3>
+                            <span class="badge status-pending">Pending Review</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-meta">
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value" data-field="projectCount">0</div>
+                            <div class="portfolio-meta-label">Projects</div>
+                        </div>
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value" data-field="certCount">0</div>
+                            <div class="portfolio-meta-label">Certifications</div>
+                        </div>
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value" data-field="rating">--</div>
+                            <div class="portfolio-meta-label">Rating</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.5rem;">
+                            <strong>GitHub:</strong>
+                            <a href="#" class="btn-link" data-field="githubLink" target="_blank">View Profile</a>
+                        </p>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">
+                            <strong>Portfolio:</strong>
+                            <a href="#" class="btn-link" data-field="portfolioLink" target="_blank">View Portfolio</a>
+                        </p>
+                    </div>
+
+                    <div class="portfolio-actions">
+                        <button type="button" class="btn btn-success btn-sm" data-action="approve">
+                            <i class="fas fa-check"></i> Approve
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-action="request-changes"
+                            data-modal-open="changesModal">
+                            <i class="fas fa-edit"></i> Request Changes
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" data-action="reject">
+                            <i class="fas fa-times"></i> Reject
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 2 - Placeholder -->
+                <div class="portfolio-card" data-portfolio-id="">
+                    <div class="portfolio-header">
+                        <div class="avatar">JD</div>
+                        <div>
+                            <h3 style="margin: 0 0 0.25rem;">Another Freelancer</h3>
+                            <span class="badge status-approved">Approved</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-meta">
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value">0</div>
+                            <div class="portfolio-meta-label">Projects</div>
+                        </div>
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value">0</div>
+                            <div class="portfolio-meta-label">Certifications</div>
+                        </div>
+                        <div class="portfolio-meta-item">
+                            <div class="portfolio-meta-value">--</div>
+                            <div class="portfolio-meta-label">Rating</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.5rem;">
+                            <strong>GitHub:</strong>
+                            <a href="#" class="btn-link" target="_blank">View Profile</a>
+                        </p>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">
+                            <strong>Portfolio:</strong>
+                            <a href="#" class="btn-link" target="_blank">View Portfolio</a>
+                        </p>
+                    </div>
+
+                    <div class="portfolio-actions">
+                        <button type="button" class="btn btn-success btn-sm" data-action="approve" disabled>
+                            <i class="fas fa-check"></i> Approve
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-action="request-changes">
+                            <i class="fas fa-edit"></i> Request Changes
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" data-action="reject">
+                            <i class="fas fa-times"></i> Reject
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty State -->
+            <div class="card hidden" id="emptyState" style="text-align: center; padding: 3rem;">
+                <i class="fas fa-folder-open" style="font-size: 3rem; color: var(--gray-400); margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--gray-600);">No portfolios to review</h3>
+                <p style="color: var(--gray-500);">All freelancer portfolios have been reviewed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Changes Modal -->
+    <div class="modal-overlay hidden" id="changesModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Request Portfolio Changes</h3>
+                <button class="modal-close" data-modal-close>&times;</button>
+            </div>
+            <form id="changesForm" data-api-endpoint="/api/admin/portfolios/request-changes">
+                <input type="hidden" name="portfolioId" id="changesPortfolioId" />
+                <div class="form-group">
+                    <label class="form-label" for="changesMessage">Message to Freelancer <span
+                            style="color: var(--red-600)">*</span></label>
+                    <textarea class="form-textarea" name="message" id="changesMessage" rows="4"
+                        placeholder="Describe what changes are needed..." required></textarea>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary btn-sm" data-modal-close>Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Send Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2 class="logo">SkillsBridge</h2>
+                <p class="tagline">Where employment bridges skills</p>
+                <h4>Address:</h4>
+                <p>442 lorem ipsum, lorem<br />Dhaka, Bangladesh</p>
+                <h4>Contact:</h4>
+                <p>+880-1710999999<br />+880-1910999999<br />support@skillbridge.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services:</h4>
+                <ul>
+                    <li>Post a Job</li>
+                    <li>Browse Jobs</li>
+                </ul>
+                <h4>Find a:</h4>
+                <ul>
+                    <li>Web Designer</li>
+                    <li>Photoshop designer</li>
+                    <li>Illustrator designer</li>
+                    <li>Visualizer</li>
+                    <li>SEO expert</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Find a job for skills:</h4>
+                <ul>
+                    <li>Web development</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>After effects</li>
+                    <li>SEO</li>
+                    <li>Digital Marketing</li>
+                    <li>Social Media Management</li>
+                    <li>C++ developer</li>
+                    <li>PHP developer</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal:</h4>
+                <ul>
+                    <li>Contact</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms and conditions</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Email</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/ui.js"></script>
+</body>
+
+</html>

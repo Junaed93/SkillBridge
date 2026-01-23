@@ -18,8 +18,8 @@
     <div class="navbar-content">
       <a href="../../index.html" class="navbar-logo">
         <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        <span class="navbar-brand-text">
+          <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
@@ -73,10 +73,59 @@
     <div class="container">
       <div class="card">
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Pending Proposals</h2>
-        <div id="pending-proposals-grid" class="proposals-grid"
-          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
-          <!-- Pending proposals will be populated here -->
-          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 2rem;">
+        <div id="pending-proposals-grid" class="proposals-grid" data-api-endpoint="/api/client/proposals/pending"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px;">
+
+          <!-- Proposal Card with Freelancer Summary -->
+          <div class="card" style="padding: 1.25rem; border: 1px solid var(--gray-200);" data-proposal-id="">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <h3 style="margin: 0; font-size: 1.1rem;" data-field="projectName">E-commerce Website Project</h3>
+              <span class="badge status-pending">Pending</span>
+            </div>
+
+            <!-- Freelancer Summary -->
+            <div class="freelancer-summary">
+              <div class="freelancer-summary-avatar" data-field="freelancerInitials">SA</div>
+              <div class="freelancer-summary-info">
+                <h4 class="freelancer-summary-name">
+                  <a href="../freelancer/freelancer-profile.html" data-freelancer-id=""
+                    data-field="freelancerName">Shakib Akram</a>
+                </h4>
+                <div class="freelancer-summary-meta">
+                  <span class="freelancer-summary-rating">
+                    <i class="fas fa-star"></i> <span data-field="rating">4.8</span>
+                  </span>
+                  <span data-field="completedProjects">12 projects</span>
+                  <a href="#" class="btn-link" data-field="portfolioLink">Portfolio</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills -->
+            <div style="margin-bottom: 1rem;">
+              <div class="skill-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap;" data-field="skills">
+                <span class="badge badge-secondary">React</span>
+                <span class="badge badge-secondary">Node.js</span>
+                <span class="badge badge-secondary">MongoDB</span>
+              </div>
+            </div>
+
+            <!-- Bid Amount & Actions -->
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="color: var(--gray-600); font-size: 0.875rem;">Bid Amount:</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;" data-field="bidAmount">$1,500</strong>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="proposal-details.html" class="btn btn-secondary btn-sm">View Details</a>
+                <button class="btn btn-success btn-sm" data-action="accept-proposal">Accept</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty State (shown when no proposals) -->
+          <div class="hidden" id="noProposalsMessage"
+            style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 2rem;">
             No pending proposals.
           </div>
         </div>

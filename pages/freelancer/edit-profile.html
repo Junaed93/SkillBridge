@@ -20,8 +20,8 @@
     <div class="navbar-content">
       <a href="../../index.html" class="navbar-logo">
         <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        <span class="navbar-brand-text">
+          <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
@@ -61,34 +61,39 @@
   <!-- Profile Form -->
   <div class="section section-gray">
     <div class="container">
-      <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Profile Information</h2>
-        <p style="color: var(--gray-600); margin-bottom: 2rem;">Make sure your information is up to date.</p>
-        <div class="form-fields-section">
+      <form id="profileForm" action="#" method="post" data-validate data-api-endpoint="/api/freelancer/profile">
+        <!-- Profile Information -->
+        <div class="card" style="max-width: 800px; margin: 0 auto 1.5rem;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Profile Information</h2>
+          <p style="color: var(--gray-600); margin-bottom: 2rem;">Make sure your information is up to date.</p>
+
           <div class="form-group">
-            <label class="form-label">Name</label>
-            <input type="text" class="form-input" placeholder="Enter your full name" />
+            <label class="form-label" for="fullName">Full Name <span style="color: var(--red-600)">*</span></label>
+            <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Enter your full name"
+              required />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Profile picture</label>
-            <input type="file" class="form-input" accept="image/*" />
-            <p class="form-hint">Update your profile picture.</p>
+            <label class="form-label" for="profilePicture">Profile Picture</label>
+            <input type="file" class="form-input" id="profilePicture" name="profilePicture" accept="image/*" />
+            <p class="form-hint">Update your profile picture (JPG, PNG, max 2MB).</p>
           </div>
 
           <div class="form-group">
-            <label class="form-label">Address</label>
-            <input type="text" class="form-input" placeholder="Enter your address" />
+            <label class="form-label" for="address">Address</label>
+            <input type="text" class="form-input" id="address" name="address" placeholder="Enter your address" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Baseline payment rate</label>
-            <input type="text" class="form-input" placeholder="Enter your baseline payment rate in $/hr" />
+            <label class="form-label" for="hourlyRate">Baseline Payment Rate ($/hr)</label>
+            <input type="number" class="form-input" id="hourlyRate" name="hourlyRate"
+              placeholder="Enter your hourly rate" min="1" step="0.01" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Payment Wallet Address</label>
-            <input type="text" class="form-input" placeholder="Enter your wallet address" />
+            <label class="form-label" for="walletAddress">Payment Wallet Address</label>
+            <input type="text" class="form-input" id="walletAddress" name="walletAddress"
+              placeholder="Enter your wallet address" />
           </div>
 
           <div class="form-group">
@@ -104,22 +109,82 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">GitHub Link</label>
-            <input type="text" class="form-input" placeholder="Enter your GitHub link" />
+            <label class="form-label" for="githubLink">GitHub Profile</label>
+            <input type="url" class="form-input" id="githubLink" name="githubLink"
+              placeholder="https://github.com/username" data-validate-type="url" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Portfolio/CV</label>
-            <input type="file" class="form-input" accept=".pdf,.doc,.docx" />
-            <p class="form-hint">Update your portfolio.</p>
-          </div>
-
-          <div class="form-actions">
-            <a href="freelancer-dashboard.html" class="btn btn-secondary btn-sm">Cancel</a>
-            <a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">Save Changes</a>
+            <label class="form-label" for="portfolioFile">Portfolio/CV</label>
+            <input type="file" class="form-input" id="portfolioFile" name="portfolioFile" accept=".pdf,.doc,.docx" />
+            <p class="form-hint">Upload your portfolio or CV (PDF, DOC, max 5MB).</p>
           </div>
         </div>
-      </div>
+
+        <!-- Certifications Section -->
+        <div class="card" style="max-width: 800px; margin: 0 auto 1.5rem;">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Certifications</h2>
+          <p style="color: var(--gray-600); margin-bottom: 2rem;">Add your professional certifications to showcase your
+            expertise.</p>
+
+          <div id="certificationsContainer">
+            <!-- Certification Item 1 -->
+            <div class="certification-item" data-certification-index="0">
+              <div class="certification-item-header">
+                <span class="certification-item-title">Certification #1</span>
+                <button type="button" class="certification-item-remove" data-action="remove-certification"
+                  aria-label="Remove certification">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="certification-fields">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="certTitle_0">Title <span style="color: var(--red-600)">*</span></label>
+                  <input type="text" class="form-input" id="certTitle_0" name="certifications[0][title]"
+                    placeholder="e.g., AWS Certified Developer" required />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="certIssuer_0">Issuer <span
+                      style="color: var(--red-600)">*</span></label>
+                  <input type="text" class="form-input" id="certIssuer_0" name="certifications[0][issuer]"
+                    placeholder="e.g., Amazon Web Services" required />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="certYear_0">Year</label>
+                  <select class="form-select" id="certYear_0" name="certifications[0][year]">
+                    <option value="">Select year...</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="certFile_0">Certificate File</label>
+                  <input type="file" class="form-input" id="certFile_0" name="certifications[0][file]"
+                    accept=".pdf,.jpg,.jpeg,.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add Another Certification Button -->
+          <button type="button" class="add-certification-btn" id="addCertificationBtn" data-action="add-certification">
+            <i class="fas fa-plus"></i> Add Another Certification
+          </button>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <div class="form-actions" style="display: flex; gap: 1rem; justify-content: flex-end;">
+            <a href="freelancer-dashboard.html" class="btn btn-secondary btn-sm">Cancel</a>
+            <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 

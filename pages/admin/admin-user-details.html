@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details - SkillBridge Admin</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+    <link rel="stylesheet" href="../../css/pages/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="../../index.html" class="navbar-logo">
+                <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
+                <span class="navbar-brand-text">
+                    <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
+                </span>
+            </a>
+            <div class="navbar-links">
+                <a href="../../index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
+                <a href="../freelancer/browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse
+                    Projects</a>
+                <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
+                <a href="admin-dashboard.html" class="btn btn-primary btn-sm"><i class="fas fa-cog"></i> Admin Panel</a>
+                <div class="navbar-profile">
+                    <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">👤</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="admin-navbar">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <a href="admin-dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="admin-freelancer-approvals.html" class="navbar-link">Freelancer Approvals</a>
+                <a href="admin-client-approvals.html" class="navbar-link">Client Approvals</a>
+                <a href="admin-verification.html" class="navbar-link">Verification</a>
+                <a href="admin-portfolio-review.html" class="navbar-link">Portfolio Review</a>
+                <a href="admin-user-details.html" class="navbar-link active">User Details</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- User Details Section -->
+    <div class="dashboard">
+        <div class="container">
+            <!-- Back Button -->
+            <div style="margin-bottom: 1.5rem;">
+                <a href="admin-freelancer-approvals.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-left"></i> Back to Users
+                </a>
+            </div>
+
+            <!-- User Header -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <div class="avatar avatar-lg" data-user-id="">UN</div>
+                    <div style="flex: 1;">
+                        <h1 style="margin: 0 0 0.5rem;" data-field="userName">User Name</h1>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                            <span class="badge badge-info" data-field="userRole">Freelancer</span>
+                            <span class="badge status-approved" data-field="accountStatus">Active</span>
+                            <span style="color: var(--gray-500); font-size: 0.875rem;">
+                                <i class="fas fa-calendar"></i> Joined: <span data-field="joinDate">--</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn-secondary btn-sm"><i class="fas fa-envelope"></i> Send Email</button>
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-ban"></i> Suspend</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="card" data-tabs>
+                <div class="user-tabs">
+                    <div class="user-tabs-list">
+                        <button class="user-tab active" data-tab="profile">
+                            <i class="fas fa-user"></i> Profile
+                        </button>
+                        <button class="user-tab" data-tab="documents">
+                            <i class="fas fa-file-alt"></i> Documents
+                        </button>
+                        <button class="user-tab" data-tab="activity">
+                            <i class="fas fa-history"></i> Activity
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Tab -->
+                <div class="user-tab-panel active" data-tab-panel="profile">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Full Name
+                            </h4>
+                            <p style="margin: 0;" data-field="fullName">--</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Email</h4>
+                            <p style="margin: 0;" data-field="email">--</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Phone</h4>
+                            <p style="margin: 0;" data-field="phone">--</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Location
+                            </h4>
+                            <p style="margin: 0;" data-field="location">--</p>
+                        </div>
+                        <div style="grid-column: 1 / -1;">
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Bio</h4>
+                            <p style="margin: 0; line-height: 1.6;" data-field="bio">--</p>
+                        </div>
+                        <div style="grid-column: 1 / -1;">
+                            <h4 style="color: var(--gray-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Skills</h4>
+                            <div class="skill-tags" data-field="skills">
+                                <!-- Skills populated by backend -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents Tab -->
+                <div class="user-tab-panel" data-tab-panel="documents">
+                    <div class="document-viewer">
+                        <div class="document-viewer-header">
+                            <span class="document-viewer-title">Uploaded Documents</span>
+                        </div>
+                        <div class="document-viewer-body" data-api-endpoint="/api/admin/users/{id}/documents">
+
+                            <!-- CV Document -->
+                            <div class="document-item" data-document-id="">
+                                <div class="document-info">
+                                    <div class="document-icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Curriculum Vitae (CV)</h4>
+                                        <p>Uploaded: <span data-field="cvUploadDate">--</span></p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <span class="badge status-pending" data-field="cvStatus">Pending</span>
+                                    <div class="document-actions">
+                                        <a href="#" class="btn btn-secondary btn-sm" data-action="view-document">
+                                            <i class="fas fa-eye"></i> View
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm" data-action="download-document"
+                                            download>
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ID Document -->
+                            <div class="document-item" data-document-id="">
+                                <div class="document-info">
+                                    <div class="document-icon">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Identity Document</h4>
+                                        <p>Uploaded: <span data-field="idUploadDate">--</span></p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <span class="badge status-approved" data-field="idStatus">Verified</span>
+                                    <div class="document-actions">
+                                        <a href="#" class="btn btn-secondary btn-sm" data-action="view-document">
+                                            <i class="fas fa-eye"></i> View
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm" data-action="download-document"
+                                            download>
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certification -->
+                            <div class="document-item" data-document-id="">
+                                <div class="document-info">
+                                    <div class="document-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="document-details">
+                                        <h4>Certification - Web Development</h4>
+                                        <p>Uploaded: <span data-field="certUploadDate">--</span></p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <span class="badge status-rejected" data-field="certStatus">Rejected</span>
+                                    <div class="document-actions">
+                                        <a href="#" class="btn btn-secondary btn-sm" data-action="view-document">
+                                            <i class="fas fa-eye"></i> View
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm" data-action="download-document"
+                                            download>
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Document Verification Actions -->
+                    <div
+                        style="margin-top: 1.5rem; padding: 1.5rem; background: var(--gray-50); border-radius: 0.5rem;">
+                        <h4 style="margin: 0 0 1rem;">Verify Documents</h4>
+                        <form id="documentVerificationForm" data-api-endpoint="/api/admin/documents/verify">
+                            <div class="form-group">
+                                <label class="form-label" for="verifyDocumentSelect">Select Document</label>
+                                <select class="form-select" name="documentId" id="verifyDocumentSelect">
+                                    <option value="">Choose document...</option>
+                                    <option value="cv">Curriculum Vitae</option>
+                                    <option value="id">Identity Document</option>
+                                    <option value="cert">Certification</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Verification Status</label>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" name="verifyStatus" value="verified" />
+                                        <span>Verified</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                        <input type="radio" name="verifyStatus" value="rejected" />
+                                        <span>Rejected</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="verifyNotes">Notes (Optional)</label>
+                                <textarea class="form-textarea" name="notes" id="verifyNotes" rows="2"
+                                    placeholder="Add verification notes..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Update Status</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Activity Tab -->
+                <div class="user-tab-panel" data-tab-panel="activity">
+                    <h4 style="margin: 0 0 1rem;">Recent Activity</h4>
+                    <div data-api-endpoint="/api/admin/users/{id}/activity">
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Submitted a proposal for "E-commerce Website"</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Completed project "Logo Design"</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Received 5-star rating from client</p>
+                                <span class="activity-time">2 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Uploaded new certification document</p>
+                                <span class="activity-time">5 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Updated profile information</p>
+                                <span class="activity-time">1 week ago</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2 class="logo">SkillsBridge</h2>
+                <p class="tagline">Where employment bridges skills</p>
+                <h4>Address:</h4>
+                <p>442 lorem ipsum, lorem<br />Dhaka, Bangladesh</p>
+                <h4>Contact:</h4>
+                <p>+880-1710999999<br />+880-1910999999<br />support@skillbridge.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services:</h4>
+                <ul>
+                    <li>Post a Job</li>
+                    <li>Browse Jobs</li>
+                </ul>
+                <h4>Find a:</h4>
+                <ul>
+                    <li>Web Designer</li>
+                    <li>Photoshop designer</li>
+                    <li>Illustrator designer</li>
+                    <li>Visualizer</li>
+                    <li>SEO expert</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Find a job for skills:</h4>
+                <ul>
+                    <li>Web development</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>After effects</li>
+                    <li>SEO</li>
+                    <li>Digital Marketing</li>
+                    <li>Social Media Management</li>
+                    <li>C++ developer</li>
+                    <li>PHP developer</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal:</h4>
+                <ul>
+                    <li>Contact</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms and conditions</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Email</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/ui.js"></script>
+</body>
+
+</html>

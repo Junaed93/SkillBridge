@@ -18,8 +18,8 @@
     <div class="navbar-content">
       <a href="index.html" class="navbar-logo">
         <img src="assets/images/logo/logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        <span class="navbar-brand-text">
+          <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
@@ -173,135 +173,10 @@
     <div class="footer-bottom">© 2026, SkillBridge, Inc</div>
   </footer>
 
-  <script>
-    // Toggle navbar links based on role selection
-    document.addEventListener('DOMContentLoaded', function () {
-      const roleToggle = document.getElementById('roleToggle');
-      const findProjectLink = document.getElementById('findProjectLink');
-      const postProjectLink = document.getElementById('postProjectLink');
-      const heroToggle = document.querySelector('.hero-toggle');
-      const allToggleSpans = heroToggle ? heroToggle.querySelectorAll('span:not(.toggle-switch)') : [];
-
-      const heroTitle = document.getElementById('heroTitle');
-      const heroSubtitle = document.getElementById('heroSubtitle');
-      const searchInput = document.getElementById('searchInput');
-      const browseBtn = document.getElementById('browseBtn');
-      const heroImage = document.getElementById('heroImage');
-      const heroImageOver = document.getElementById('heroImageOver');
-
-      function updateContent() {
-        if (roleToggle && roleToggle.checked) {
-          // Freelancer mode
-          if (heroTitle) heroTitle.innerText = "Find the best projects and grow your career.";
-          if (heroSubtitle) heroSubtitle.innerText = "What kind of work are you looking for?";
-          if (searchInput) searchInput.placeholder = "Search for projects, categories, or skills...";
-          if (browseBtn) {
-            browseBtn.innerText = "Browse Top Projects";
-            browseBtn.href = "pages/freelancer/browse-projects.html";
-          }
-          if (heroImage) heroImage.style.display = 'none';
-          if (heroImageOver) heroImageOver.style.display = 'block';
-
-          if (findProjectLink) findProjectLink.style.display = 'inline-flex';
-          if (postProjectLink) postProjectLink.style.display = 'none';
-        } else {
-          // Hiring mode
-          if (heroTitle) heroTitle.innerText = "Connect with world-class talent and grow your business.";
-          if (heroSubtitle) heroSubtitle.innerText = "What are you looking for?";
-          if (searchInput) searchInput.placeholder = "Search for skills, services, or freelancers...";
-          if (browseBtn) {
-            browseBtn.innerText = "Browse Top Freelancers";
-            browseBtn.href = "pages/client/browse-freelancers.html";
-          }
-          if (heroImage) heroImage.style.display = 'block';
-          if (heroImageOver) {
-            heroImageOver.style.display = 'block';
-          }
-
-          if (findProjectLink) findProjectLink.style.display = 'none';
-          if (postProjectLink) postProjectLink.style.display = 'inline-block';
-        }
-      }
-
-      // Refactored updateContent based on user's specific request about images
-      function updateContentSpecific() {
-        if (roleToggle && roleToggle.checked) {
-          // Freelancer mode
-          if (heroTitle) heroTitle.innerText = "Find the best projects and grow your career.";
-          if (heroSubtitle) heroSubtitle.innerText = "What kind of work are you looking for?";
-          if (searchInput) searchInput.placeholder = "Search for projects, categories, or skills...";
-          if (browseBtn) {
-            browseBtn.innerText = "Browse Top Projects";
-            browseBtn.href = "pages/freelancer/browse-projects.html";
-          }
-
-          // Refined logic: swapping roles of images
-          if (heroImage) {
-            heroImage.src = "assets/images/ui/Adobe Express - file (1).png";
-            heroImage.style.zIndex = "1";
-          }
-          if (heroImageOver) {
-            heroImageOver.src = "assets/images/ui/Adobe Express - file.png";
-            heroImageOver.style.zIndex = "2";
-            heroImageOver.style.display = "block";
-          }
-        } else {
-          // Hiring mode
-          if (heroTitle) heroTitle.innerText = "Connect with world-class talent and grow your business.";
-          if (heroSubtitle) heroSubtitle.innerText = "What are you looking for?";
-          if (searchInput) searchInput.placeholder = "Search for skills, services, or freelancers...";
-          if (browseBtn) {
-            browseBtn.innerText = "Browse Top Freelancers";
-            browseBtn.href = "pages/client/browse-freelancers.html";
-          }
-
-          // In Hiring mode: Person (file (1)) is foreground, Blob (file) is background
-          if (heroImage) {
-            heroImage.src = "assets/images/ui/Adobe Express - file (1).png";
-            heroImage.style.zIndex = "2";
-          }
-          if (heroImageOver) {
-            heroImageOver.src = "assets/images/ui/Adobe Express - file.png";
-            heroImageOver.style.zIndex = "1";
-            heroImageOver.style.display = "block";
-          }
-        }
-      }
-
-      // Update toggle label styling based on state
-      function updateToggleLabels() {
-        if (allToggleSpans.length >= 2) {
-          if (roleToggle.checked) {
-            allToggleSpans[0].classList.remove('toggle-active');
-            allToggleSpans[0].style.fontWeight = '400';
-            allToggleSpans[0].style.color = 'var(--gray-600)';
-            allToggleSpans[1].classList.add('toggle-active');
-            allToggleSpans[1].style.fontWeight = '600';
-            allToggleSpans[1].style.color = 'var(--gray-900)';
-          } else {
-            allToggleSpans[0].classList.add('toggle-active');
-            allToggleSpans[0].style.fontWeight = '600';
-            allToggleSpans[0].style.color = 'var(--gray-900)';
-            allToggleSpans[1].classList.remove('toggle-active');
-            allToggleSpans[1].style.fontWeight = '400';
-            allToggleSpans[1].style.color = 'var(--gray-600)';
-          }
-        }
-      }
-
-      // Listen for toggle changes
-      if (roleToggle) {
-        roleToggle.addEventListener('change', function () {
-          updateContentSpecific();
-          updateToggleLabels();
-        });
-
-        // Initialize on page load
-        updateContentSpecific();
-        updateToggleLabels();
-      }
-    });
-  </script>
+  <!-- External JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/validation.js"></script>
 </body>
 
 </html>

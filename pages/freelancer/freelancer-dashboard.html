@@ -18,8 +18,8 @@
     <div class="navbar-content">
       <a href="../../index.html" class="navbar-logo">
         <img src="../../assets/images/logo/logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
+        <span class="navbar-brand-text">
+          <span class="navbar-brand-skill">Skill</span><span class="navbar-brand-bridge">Bridge</span>
         </span>
       </a>
       <div class="navbar-links">
@@ -197,6 +197,84 @@
     </div>
   </div>
   </div>
+
+  <!-- Project Ratings (Individual Ratings per Project) -->
+  <div class="section section-white">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title">Project Ratings</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Individual ratings received for completed projects
+        </p>
+
+        <div id="project-ratings-container" data-api-endpoint="/api/freelancer/ratings">
+          <!-- Rating Card 1 -->
+          <div class="rating-card">
+            <div class="rating-card-header">
+              <div>
+                <h4 class="rating-card-project" data-field="projectName">E-commerce Website Development</h4>
+                <p class="rating-card-client" data-field="clientName">Client: TechStore Inc.</p>
+              </div>
+              <div class="rating-card-stars" data-field="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="rating-card-text" data-field="reviewText">"Outstanding work! Delivered ahead of schedule with
+              excellent attention to detail. The website exceeded our expectations."</p>
+            <span class="rating-card-date" data-field="ratingDate">Rated on: January 15, 2026</span>
+          </div>
+
+          <!-- Rating Card 2 -->
+          <div class="rating-card">
+            <div class="rating-card-header">
+              <div>
+                <h4 class="rating-card-project">Logo Design Project</h4>
+                <p class="rating-card-client">Client: StartupX</p>
+              </div>
+              <div class="rating-card-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <p class="rating-card-text">"Great communication throughout the project. The final logo was creative and
+              professional."</p>
+            <span class="rating-card-date">Rated on: January 10, 2026</span>
+          </div>
+
+          <!-- Rating Card 3 -->
+          <div class="rating-card">
+            <div class="rating-card-header">
+              <div>
+                <h4 class="rating-card-project">Mobile App UI Design</h4>
+                <p class="rating-card-client">Client: HealthApp Co.</p>
+              </div>
+              <div class="rating-card-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p class="rating-card-text">"Very skilled designer with a keen eye for user experience. Would definitely
+              work with again."</p>
+            <span class="rating-card-date">Rated on: December 28, 2025</span>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="#" class="btn btn-primary">View All Ratings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Footer -->
   <footer class="footer">
