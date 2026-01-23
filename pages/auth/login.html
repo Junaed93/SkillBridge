@@ -73,10 +73,6 @@
         </p>
       </form>
 
-      <div class="alert alert-info" style="margin-top: 1.5rem">
-        <strong>Demo Login:</strong><br />
-        Use any email/password and select a role to login.
-      </div>
 
       <div style="text-align: center; margin-top: 1rem">
         <a href="../../index.html" style="color: var(--gray-600); font-size: 0.875rem">&larr; Back to Home</a>
@@ -150,30 +146,19 @@
         </ul>
 
         <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
-  <script>
-    document.querySelector('form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const role = document.querySelector('select[name="role"]').value;
-      if (role === 'admin') {
-        window.location.href = '../admin/admin-dashboard.html';
-      } else if (role === 'freelancer') {
-        window.location.href = '../freelancer/freelancer-dashboard.html';
-      } else if (role === 'client') {
-        window.location.href = '../client/client-dashboard.html';
-      } else {
-        alert('Please select a role to login.');
-      }
-    });
-  </script>
+
+  <script src="../../js/main.js"></script>
+  <script src="../../js/ui.js"></script>
+  <script src="../../js/validation.js"></script>
 </body>
 
 </html>

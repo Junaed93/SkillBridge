@@ -58,10 +58,12 @@
               style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 600;">
               SA</div>
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0;">Shakib Akram</h3>
+              <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 0.5rem 0;" data-field="userName">Welcome,
+                Freelancer</h3>
               <p style="color: var(--gray-600); margin: 0 0 0.5rem 0; font-size: 0.95rem;"><span
-                  class="badge badge-info">Freelancer</span></p>
-              <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;">A passionate software developer.</p>
+                  class="badge badge-info" data-field="userRole">Freelancer</span></p>
+              <p style="color: var(--gray-600); margin: 0; font-size: 0.95rem;" data-field="userBio">Manage your
+                projects and profile.</p>
             </div>
           </div>
           <div style="display: flex; gap: 10px;">
@@ -85,27 +87,29 @@
             style="background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%); border-radius: 12px; padding: 20px; color: white;">
             <p style="opacity: 0.9; margin-bottom: 0.5rem; font-size: 0.95rem;">Wallet Balance</p>
             <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;"><a href="wallet.html"
-                style="color: white; text-decoration: none;">$0</a></p>
+                style="color: white; text-decoration: none;" data-field="walletBalance">--</a></p>
             <a href="wallet.html" class="btn btn-primary btn-sm" style="background: rgba(255,255,255,0.2);">View
               Details</a>
           </div>
           <div class="perf-card"
             style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 12px; padding: 20px; color: white;">
             <p style="opacity: 0.9; margin-bottom: 0.5rem; font-size: 0.95rem;">Rating</p>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;">0.0 / 5.0</p>
+            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;" data-field="userRating">-- / 5.0</p>
             <span style="opacity: 0.8;">-</span>
           </div>
           <div class="perf-card"
             style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 20px; color: white;">
             <p style="opacity: 0.9; margin-bottom: 0.5rem; font-size: 0.95rem;">Active Projects</p>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;">0</p>
+            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;" data-field="activeProjectsCount">--
+            </p>
             <a href="work-progress.html" class="btn btn-primary btn-sm" style="background: rgba(255,255,255,0.2);">View
               All</a>
           </div>
           <div class="perf-card"
             style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 12px; padding: 20px; color: white;">
             <p style="opacity: 0.9; margin-bottom: 0.5rem; font-size: 0.95rem;">Completed Projects</p>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;">0</p>
+            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem;" data-field="completedProjectsCount">
+              --</p>
             <span style="opacity: 0.8;">-</span>
           </div>
         </div>
@@ -138,6 +142,7 @@
             <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Skills</p>
             <div id="skills-display" style="display: flex; flex-wrap: wrap; gap: 8px;">
               <!-- Skills will be populated here -->
+              <span style="color: var(--gray-500); font-size: 0.9rem;">No skills listed</span>
             </div>
           </div>
           <div class="detail-item"
@@ -159,6 +164,9 @@
         <div id="ongoing-projects-container" class="projects-list"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 1.5rem;">
           <!-- Ongoing projects will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-600); padding: 2rem;">
+            No ongoing projects at the moment.
+          </div>
         </div>
         <a href="work-progress.html" class="btn btn-primary">View all ongoing projects</a>
       </div>
@@ -175,6 +183,9 @@
         <div id="active-bids-container" class="bids-grid"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 1.5rem;">
           <!-- Active bids will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-600); padding: 2rem;">
+            You haven't placed any bids yet.
+          </div>
         </div>
         <a href="browse-projects.html" class="btn btn-primary">View all active bids</a>
       </div>
@@ -191,6 +202,9 @@
         <div id="client-feedback-container" class="feedback-grid"
           style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 1.5rem;">
           <!-- Client feedback will be populated here -->
+          <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-600); padding: 2rem;">
+            No feedback received yet.
+          </div>
         </div>
         <a href="freelancer-dashboard.html" class="btn btn-primary">View all client reviews</a>
       </div>
@@ -207,64 +221,10 @@
         </p>
 
         <div id="project-ratings-container" data-api-endpoint="/api/freelancer/ratings">
-          <!-- Rating Card 1 -->
-          <div class="rating-card">
-            <div class="rating-card-header">
-              <div>
-                <h4 class="rating-card-project" data-field="projectName">E-commerce Website Development</h4>
-                <p class="rating-card-client" data-field="clientName">Client: TechStore Inc.</p>
-              </div>
-              <div class="rating-card-stars" data-field="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="rating-card-text" data-field="reviewText">"Outstanding work! Delivered ahead of schedule with
-              excellent attention to detail. The website exceeded our expectations."</p>
-            <span class="rating-card-date" data-field="ratingDate">Rated on: January 15, 2026</span>
-          </div>
-
-          <!-- Rating Card 2 -->
-          <div class="rating-card">
-            <div class="rating-card-header">
-              <div>
-                <h4 class="rating-card-project">Logo Design Project</h4>
-                <p class="rating-card-client">Client: StartupX</p>
-              </div>
-              <div class="rating-card-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-            </div>
-            <p class="rating-card-text">"Great communication throughout the project. The final logo was creative and
-              professional."</p>
-            <span class="rating-card-date">Rated on: January 10, 2026</span>
-          </div>
-
-          <!-- Rating Card 3 -->
-          <div class="rating-card">
-            <div class="rating-card-header">
-              <div>
-                <h4 class="rating-card-project">Mobile App UI Design</h4>
-                <p class="rating-card-client">Client: HealthApp Co.</p>
-              </div>
-              <div class="rating-card-stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-            <p class="rating-card-text">"Very skilled designer with a keen eye for user experience. Would definitely
-              work with again."</p>
-            <span class="rating-card-date">Rated on: December 28, 2025</span>
+          <!-- Empty State -->
+          <div style="text-align: center; padding: 2rem; color: var(--gray-600);">
+            <i class="far fa-star" style="font-size: 2rem; margin-bottom: 1rem; color: var(--gray-400);"></i>
+            <p>No project ratings yet.</p>
           </div>
         </div>
 
@@ -342,15 +302,19 @@
         </ul>
 
         <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
+
+  <!-- External JavaScript -->
+  <script src="../../js/main.js"></script>
+  <script src="../../js/ui.js"></script>
 </body>
 
 </html>

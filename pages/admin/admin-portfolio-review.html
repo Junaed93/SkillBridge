@@ -77,110 +77,11 @@
 
             <!-- Portfolio Cards Grid -->
             <div class="grid grid-2" id="portfolioGrid" data-api-endpoint="/api/admin/portfolios">
-
-                <!-- Portfolio Card 1 - Placeholder for API data -->
-                <div class="portfolio-card" data-portfolio-id="">
-                    <div class="portfolio-header">
-                        <div class="avatar">SA</div>
-                        <div>
-                            <h3 style="margin: 0 0 0.25rem;">Freelancer Name</h3>
-                            <span class="badge status-pending">Pending Review</span>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-meta">
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value" data-field="projectCount">0</div>
-                            <div class="portfolio-meta-label">Projects</div>
-                        </div>
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value" data-field="certCount">0</div>
-                            <div class="portfolio-meta-label">Certifications</div>
-                        </div>
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value" data-field="rating">--</div>
-                            <div class="portfolio-meta-label">Rating</div>
-                        </div>
-                    </div>
-
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.5rem;">
-                            <strong>GitHub:</strong>
-                            <a href="#" class="btn-link" data-field="githubLink" target="_blank">View Profile</a>
-                        </p>
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">
-                            <strong>Portfolio:</strong>
-                            <a href="#" class="btn-link" data-field="portfolioLink" target="_blank">View Portfolio</a>
-                        </p>
-                    </div>
-
-                    <div class="portfolio-actions">
-                        <button type="button" class="btn btn-success btn-sm" data-action="approve">
-                            <i class="fas fa-check"></i> Approve
-                        </button>
-                        <button type="button" class="btn btn-secondary btn-sm" data-action="request-changes"
-                            data-modal-open="changesModal">
-                            <i class="fas fa-edit"></i> Request Changes
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" data-action="reject">
-                            <i class="fas fa-times"></i> Reject
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Portfolio Card 2 - Placeholder -->
-                <div class="portfolio-card" data-portfolio-id="">
-                    <div class="portfolio-header">
-                        <div class="avatar">JD</div>
-                        <div>
-                            <h3 style="margin: 0 0 0.25rem;">Another Freelancer</h3>
-                            <span class="badge status-approved">Approved</span>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-meta">
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value">0</div>
-                            <div class="portfolio-meta-label">Projects</div>
-                        </div>
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value">0</div>
-                            <div class="portfolio-meta-label">Certifications</div>
-                        </div>
-                        <div class="portfolio-meta-item">
-                            <div class="portfolio-meta-value">--</div>
-                            <div class="portfolio-meta-label">Rating</div>
-                        </div>
-                    </div>
-
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.5rem;">
-                            <strong>GitHub:</strong>
-                            <a href="#" class="btn-link" target="_blank">View Profile</a>
-                        </p>
-                        <p style="font-size: 0.875rem; color: var(--gray-600); margin: 0;">
-                            <strong>Portfolio:</strong>
-                            <a href="#" class="btn-link" target="_blank">View Portfolio</a>
-                        </p>
-                    </div>
-
-                    <div class="portfolio-actions">
-                        <button type="button" class="btn btn-success btn-sm" data-action="approve" disabled>
-                            <i class="fas fa-check"></i> Approve
-                        </button>
-                        <button type="button" class="btn btn-secondary btn-sm" data-action="request-changes">
-                            <i class="fas fa-edit"></i> Request Changes
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" data-action="reject">
-                            <i class="fas fa-times"></i> Reject
-                        </button>
-                    </div>
-                </div>
-
+                <!-- Portfolio cards will be populated here -->
             </div>
 
             <!-- Empty State -->
-            <div class="card hidden" id="emptyState" style="text-align: center; padding: 3rem;">
+            <div class="card" id="emptyState" style="text-align: center; padding: 3rem;">
                 <i class="fas fa-folder-open" style="font-size: 3rem; color: var(--gray-400); margin-bottom: 1rem;"></i>
                 <h3 style="color: var(--gray-600);">No portfolios to review</h3>
                 <p style="color: var(--gray-500);">All freelancer portfolios have been reviewed.</p>
@@ -259,9 +160,9 @@
                     <li>Terms and conditions</li>
                 </ul>
                 <div class="social-icons">
-                    <a href="#" class="social-link">Facebook</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">Email</a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
