@@ -1,258 +1,168 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+session_start();
+require_once 'db.php';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work Progress Dashboard - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+  exit();
+}
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
-        </span>
-      </a>
-      <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-        <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
-        <div class="navbar-profile">
-          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+$user_id = $_SESSION['user_id'];
+$role = $_SESSION['role'];
+$error = '';
+$success = '';
 
-  <nav class="admin-navbar">
-    <div class="navbar-content">
-      <div class="navbar-links">
-        <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="proposal-stats.html" class="navbar-link">Proposals</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
-        <a href="work-progress.html" class="navbar-link active">Contracts</a>
-        <a href="wallet.html" class="navbar-link">Earnings</a>
-      </div>
-    </div>
-  </nav>
+// Handle progress update submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['project_id'])) {
+  $project_id = $_POST['project_id'];
+  $percent = $_POST['percent'];
+  $details = $_POST['details'];
 
-  <!-- Page Header -->
-  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-    <div class="container">
-      <h1 class="section-title">Work Progress Dashboard</h1>
-      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Track your
-        project progress and submit updates.</p>
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="#update-form" class="btn btn-primary btn-sm">Submit Update</a>
-      </div>
-      <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-        <a href="#" class="btn btn-secondary btn-sm">Overview</a>
-        <a href="#" class="btn btn-secondary btn-sm">Deliverables</a>
-        <a href="portfolio.pdf" class="btn btn-secondary btn-sm">Payments</a>
-        <a href="portfolio.pdf" class="btn btn-secondary btn-sm">View Contract</a>
-      </div>
-    </div>
-  </div>
+  $stmt = $conn->prepare("INSERT INTO project_progress (project_id, progress_percent, details) VALUES (?, ?, ?)");
+  $stmt->bind_param("iis", $project_id, $percent, $details);
+  if ($stmt->execute()) {
+    $success = "Progress update submitted!";
+  } else {
+    $error = "Error: " . $stmt->error;
+  }
+}
 
-  <!-- Project Progress Overview -->
-  <div class="section section-gray">
-    <div class="container">
-      <div class="card">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Project Progress Overview</h2>
-        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Here's the overall progress for your project.</p>
-        <div class="metrics-grid"
-          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-          <div class="metric-card"
-            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Current Progress</p>
-            <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">75%</p>
-            <span class="badge badge-info">In Progress</span>
-          </div>
-          <div class="metric-card"
-            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Tasks Completed</p>
-            <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem;">3 out of 4</p>
-            <span class="badge badge-warning">Pending Task</span>
-          </div>
-          <div class="metric-card"
-            style="background: #f9f9f9; border-radius: 12px; padding: 20px; border-left: 4px solid var(--blue-600);">
-            <p style="color: var(--gray-600); font-weight: 500; margin-bottom: 0.5rem;">Next Steps</p>
-            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Review and adjustments required.</p>
-            <span style="color: var(--gray-500);">-</span>
-          </div>
-        </div>
-      </div>
+// Fetch active projects for the user
+if ($role === 'freelancer') {
+  $query = "SELECT p.*, j.title, u.full_name as other_party 
+              FROM projects p 
+              JOIN jobs j ON p.job_id = j.job_id 
+              JOIN users u ON p.client_id = u.user_id 
+              WHERE p.freelancer_id = ? AND p.status = 'active'";
+} else {
+  $query = "SELECT p.*, j.title, u.full_name as other_party 
+              FROM projects p 
+              JOIN jobs j ON p.job_id = j.job_id 
+              JOIN users u ON p.freelancer_id = u.user_id 
+              WHERE p.client_id = ? AND p.status = 'active'";
+}
+
+$stmt_proj = $conn->prepare($query);
+$stmt_proj->bind_param("i", $user_id);
+$stmt_proj->execute();
+$projects = $stmt_proj->get_result();
+
+$pageTitle = 'Work Progress - SkillBridge';
+include 'header.php';
+?>
+
+<nav class="admin-navbar">
+  <div class="navbar-content">
+    <div class="navbar-links">
+      <?php if ($role === 'client'): ?>
+        <a href="client-dashboard.php" class="navbar-link">Dashboard</a>
+        <a href="request-quote.php" class="navbar-link">Quotes</a>
+        <a href="client-chat.php" class="navbar-link">Chat</a>
+        <a href="proposal-overview.php" class="navbar-link">Proposals</a>
+        <a href="work-progress.php" class="navbar-link active">Work Approval</a>
+      <?php else: ?>
+        <a href="freelancer-dashboard.php" class="navbar-link">Dashboard</a>
+        <a href="submit-proposal.php" class="navbar-link">Proposals</a>
+        <a href="client-chat.php" class="navbar-link">Chat</a>
+        <a href="work-progress.php" class="navbar-link active">Contracts</a>
+        <a href="wallet.php" class="navbar-link">Earnings</a>
+      <?php endif; ?>
     </div>
   </div>
+</nav>
 
-  <!-- Update Form -->
-  <div class="section section-white" id="update-form">
-    <div class="container">
-      <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Update</h2>
-        <p class="section-subtitle" style="margin-bottom: 2rem;">Provide details about your current progress.</p>
-        <div class="update-form-fields">
-          <div class="form-group">
-            <label class="form-label">Update Progress</label>
-            <input type="text" class="form-input" placeholder="Enter your percentage of work completed" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Update Comment</label>
-            <input type="text" class="form-input" placeholder="Comment on this iteration of update" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Upload files</label>
-            <input type="file" class="form-input" multiple />
-            <p class="form-hint">Upload relevant update files</p>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn btn-primary btn-sm">Submit Update</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- Page Header -->
+<div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+  <div class="container">
+    <h1 class="section-title">Active Projects & Progress</h1>
+    <p class="section-subtitle" style="text-align: center;">Track project milestones and submit updates.</p>
   </div>
+</div>
 
-  <!-- Previous Updates -->
-  <div class="section section-gray">
-    <div class="container">
-      <div class="card">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Previous Updates</h2>
-        <p class="section-subtitle" style="margin-bottom: 1.5rem;">Review your past updates and files submitted.</p>
-        <div class="updates-grid"
-          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 1</h4>
-            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Completed the first milestone
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <span style="font-size: 1.2rem; font-weight: 600; margin-right: 0.5rem;">40%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">file1.pdf</span>
-              </div>
-              <a href="file1.pdf" class="btn btn-secondary btn-sm" download><i class="fas fa-download"></i> Download</a>
+<div class="section section-gray">
+  <div class="container">
+    <?php if ($success): ?>
+      <div class="alert alert-success" style="margin-bottom: 1rem; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 0.75rem; border-radius: 0.25rem;">
+        <?php echo $success; ?>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($projects->num_rows > 0): ?>
+      <?php while ($proj = $projects->fetch_assoc()):
+        // Fetch latest progress
+        $stmt_prog = $conn->prepare("SELECT * FROM project_progress WHERE project_id = ? ORDER BY updated_at DESC LIMIT 1");
+        $stmt_prog->bind_param("i", $proj['project_id']);
+        $stmt_prog->execute();
+        $latest_prog = $stmt_prog->get_result()->fetch_assoc();
+        $percent = $latest_prog['progress_percent'] ?? 0;
+      ?>
+        <div class="card" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+            <div>
+              <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;"><?php echo htmlspecialchars($proj['title']); ?></h2>
+              <p style="color: var(--gray-600);"><strong><?php echo $role === 'client' ? 'Freelancer' : 'Client'; ?>:</strong> <?php echo htmlspecialchars($proj['other_party']); ?></p>
+            </div>
+            <span class="badge badge-info"><?php echo ucfirst($proj['status']); ?></span>
+          </div>
+
+          <div style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span>Overall Progress</span>
+              <span><?php echo $percent; ?>%</span>
+            </div>
+            <div style="width: 100%; background: #e5e7eb; height: 12px; border-radius: 6px; overflow: hidden;">
+              <div style="width: <?php echo $percent; ?>%; background: var(--blue-600); height: 100%;"></div>
             </div>
           </div>
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 2</h4>
-            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Revised after client feedback
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <span style="font-size: 1.2rem; font-weight: 600; margin-right: 0.5rem;">65%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">file2.docx</span>
-              </div>
-              <a href="file2.docx" class="btn btn-secondary btn-sm" download><i class="fas fa-download"></i>
-                Download</a>
+
+          <?php if ($role === 'freelancer'): ?>
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+              <h4 style="margin-bottom: 1rem;">Submit Progress Update</h4>
+              <form action="work-progress.php" method="post">
+                <input type="hidden" name="project_id" value="<?php echo $proj['project_id']; ?>">
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label class="form-label">Progress Percentage (0-100)</label>
+                    <input type="number" name="percent" class="form-input" min="0" max="100" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Details</label>
+                    <input type="text" name="details" class="form-input" placeholder="What did you work on?" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm" style="border: none; cursor: pointer;">Submit Update</button>
+              </form>
             </div>
-          </div>
-          <div class="update-card"
-            style="background: #ffffff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 20px;">
-            <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Update 3</h4>
-            <p style="color: var(--gray-600); margin-bottom: 1rem; font-size: 0.95rem;">Final adjustments made</p>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <span style="font-size: 1.2rem; font-weight: 600; margin-right: 0.5rem;">75%</span>
-                <span style="font-size: 0.85rem; color: var(--gray-500);">final_project.zip</span>
-              </div>
-              <a href="final_project.zip" class="btn btn-secondary btn-sm" download><i class="fas fa-download"></i>
-                Download</a>
+          <?php endif; ?>
+
+          <div style="margin-top: 2rem;">
+            <h4 style="margin-bottom: 1rem;">Recent History</h4>
+            <div style="max-height: 200px; overflow-y: auto;">
+              <?php
+              $stmt_history = $conn->prepare("SELECT * FROM project_progress WHERE project_id = ? ORDER BY updated_at DESC");
+              $stmt_history->bind_param("i", $proj['project_id']);
+              $stmt_history->execute();
+              $history = $stmt_history->get_result();
+              while ($h = $history->fetch_assoc()):
+              ?>
+                <div style="border-bottom: 1px solid #eee; padding: 10px 0;">
+                  <span style="font-weight: bold;"><?php echo $h['progress_percent']; ?>%</span> -
+                  <span><?php echo htmlspecialchars($h['details']); ?></span>
+                  <small style="float: right; color: #888;"><?php echo date('M d, H:i', strtotime($h['updated_at'])); ?></small>
+                </div>
+              <?php endwhile;
+              if ($history->num_rows == 0) echo "<p style='color: #888;'>No updates yet.</p>"; ?>
             </div>
           </div>
         </div>
+      <?php endwhile; ?>
+    <?php else: ?>
+      <div class="card" style="text-align: center; padding: 50px;">
+        <h3>No active projects.</h3>
+        <p style="color: var(--gray-600);">Go to Browse Projects or check your Proposals to get started!</p>
       </div>
-    </div>
+    <?php endif; ?>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <h2 class="logo">SkillsBridge</h2>
-        <p class="tagline">Where employment bridges skills</p>
-
-        <h4>Address:</h4>
-        <p>
-          442 lorem ipsum, lorem<br />
-          Dhaka, Bangladesh
-        </p>
-
-        <h4>Contact:</h4>
-        <p>
-          +880-1710999999<br />
-          +880-1910999999<br />
-          support@skillbridge.com
-        </p>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Services:</h4>
-        <ul>
-          <li>Post a Job</li>
-          <li>Browse Jobs</li>
-        </ul>
-
-        <h4>Find a:</h4>
-        <ul>
-          <li>Web Designer</li>
-          <li>Photoshop designer</li>
-          <li>Illustrator designer</li>
-          <li>Visualizer</li>
-          <li>SEO expert</li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Find a job for skills:</h4>
-        <ul>
-          <li>Web development</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>After effects</li>
-          <li>SEO</li>
-          <li>Digital Marketing</li>
-          <li>Social Media Management</li>
-          <li>C++ developer</li>
-          <li>PHP developer</li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Legal:</h4>
-        <ul>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms and conditions</li>
-        </ul>
-
-        <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
-  </footer>
-</body>
-
-</html>
+<?php include 'footer.php'; ?>

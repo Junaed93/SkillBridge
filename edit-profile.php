@@ -1,198 +1,176 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+session_start();
+require_once 'db.php';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edit Profile - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+  exit();
+}
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
-        </span>
-      </a>
-      <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-        <div class="navbar-profile">
-          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+$user_id = $_SESSION['user_id'];
+$role = $_SESSION['role'];
+$error = '';
+$success = '';
 
-  <nav class="admin-navbar">
-    <div class="navbar-content">
-      <div class="navbar-links">
-        <a href="freelancer-dashboard.html" class="navbar-link active">Dashboard</a>
-        <a href="proposal-stats.html" class="navbar-link">Proposals</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
-        <a href="work-progress.html" class="navbar-link">Contracts</a>
-        <a href="wallet.html" class="navbar-link">Earnings</a>
-      </div>
-    </div>
-  </nav>
+// Handle Profile Update
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $full_name = $_POST['full_name'];
+  $phone = $_POST['phone'];
 
-  <!-- Page Header -->
-  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-    <div class="container">
-      <h1 class="section-title">Profile Editing</h1>
-      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Update your
-        details to showcase your skills and experience.</p>
+  $conn->begin_transaction();
+  try {
+    // Update users table
+    $stmt = $conn->prepare("UPDATE users SET full_name = ?, phone = ? WHERE user_id = ?");
+    $stmt->bind_param("ssi", $full_name, $phone, $user_id);
+    $stmt->execute();
+
+    if ($role === 'freelancer') {
+      $title = $_POST['title'];
+      $skills = $_POST['skills'];
+      $hourly_rate = $_POST['hourly_rate'];
+      $bio = $_POST['bio'];
+      $github_link = $_POST['github_link'];
+
+      $stmt_f = $conn->prepare("UPDATE freelancer_profiles SET title = ?, skills = ?, hourly_rate = ?, bio = ?, github_link = ? WHERE freelancer_id = ?");
+      $stmt_f->bind_param("ssdsi", $title, $skills, $hourly_rate, $bio, $github_link, $user_id);
+      $stmt_f->execute();
+    } elseif ($role === 'client') {
+      $company_name = $_POST['company_name'];
+      $company_description = $_POST['company_description'];
+
+      $stmt_c = $conn->prepare("UPDATE client_profiles SET company_name = ?, company_description = ? WHERE client_id = ?");
+      $stmt_c->bind_param("ssi", $company_name, $company_description, $user_id);
+      $stmt_c->execute();
+    }
+
+    $conn->commit();
+    $success = "Profile updated successfully!";
+  } catch (Exception $e) {
+    $conn->rollback();
+    $error = "Error updating profile: " . $e->getMessage();
+  }
+}
+
+// Fetch current data
+$stmt_user = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
+$stmt_user->bind_param("i", $user_id);
+$stmt_user->execute();
+$u = $stmt_user->get_result()->fetch_assoc();
+
+if ($role === 'freelancer') {
+  $stmt_prof = $conn->prepare("SELECT * FROM freelancer_profiles WHERE freelancer_id = ?");
+  $stmt_prof->bind_param("i", $user_id);
+  $stmt_prof->execute();
+  $profile = $stmt_prof->get_result()->fetch_assoc();
+} else {
+  $stmt_prof = $conn->prepare("SELECT * FROM client_profiles WHERE client_id = ?");
+  $stmt_prof->bind_param("i", $user_id);
+  $stmt_prof->execute();
+  $profile = $stmt_prof->get_result()->fetch_assoc();
+}
+
+$pageTitle = 'Edit Profile - SkillBridge';
+include 'header.php';
+?>
+
+<nav class="admin-navbar">
+  <div class="navbar-content">
+    <div class="navbar-links">
+      <?php if ($role === 'client'): ?>
+        <a href="client-dashboard.php" class="navbar-link">Dashboard</a>
+        <a href="request-quote.php" class="navbar-link">Quotes</a>
+        <a href="client-chat.php" class="navbar-link">Chat</a>
+        <a href="proposal-overview.php" class="navbar-link">Proposals</a>
+        <a href="work-progress.php" class="navbar-link">Work Approval</a>
+      <?php else: ?>
+        <a href="freelancer-dashboard.php" class="navbar-link">Dashboard</a>
+        <a href="submit-proposal.php" class="navbar-link">Proposals</a>
+        <a href="client-chat.php" class="navbar-link">Chat</a>
+        <a href="work-progress.php" class="navbar-link">Contracts</a>
+        <a href="wallet.php" class="navbar-link">Earnings</a>
+      <?php endif; ?>
     </div>
   </div>
+</nav>
 
-  <!-- Profile Form -->
-  <div class="section section-gray">
-    <div class="container">
-      <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Profile Information</h2>
-        <p style="color: var(--gray-600); margin-bottom: 2rem;">Make sure your information is up to date.</p>
-        <div class="form-fields-section">
+<div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+  <div class="container">
+    <h1 class="section-title">Edit Your Profile</h1>
+    <p class="section-subtitle" style="text-align: center;">Keep your professional information up to date.</p>
+  </div>
+</div>
+
+<div class="section section-gray">
+  <div class="container">
+    <div class="card" style="max-width: 800px; margin: 0 auto;">
+
+      <?php if ($error): ?>
+        <div class="alert alert-danger" style="margin-bottom: 1rem; color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $error; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($success): ?>
+        <div class="alert alert-success" style="margin-bottom: 1rem; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $success; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="edit-profile.php" method="post" class="form-fields-section">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" name="full_name" class="form-input" value="<?php echo htmlspecialchars($u['full_name']); ?>" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="text" name="phone" class="form-input" value="<?php echo htmlspecialchars($u['phone'] ?? ''); ?>" />
+        </div>
+
+        <?php if ($role === 'freelancer'): ?>
           <div class="form-group">
-            <label class="form-label">Name</label>
-            <input type="text" class="form-input" placeholder="Enter your full name" />
+            <label class="form-label">Professional Title</label>
+            <input type="text" name="title" class="form-input" value="<?php echo htmlspecialchars($profile['title'] ?? ''); ?>" placeholder="e.g. Senior Full Stack Developer" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Profile picture</label>
-            <input type="file" class="form-input" accept="image/*" />
-            <p class="form-hint">Update your profile picture.</p>
+            <label class="form-label">Skills (comma separated)</label>
+            <input type="text" name="skills" class="form-input" value="<?php echo htmlspecialchars($profile['skills'] ?? ''); ?>" placeholder="e.g. PHP, MySQL, React" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Address</label>
-            <input type="text" class="form-input" placeholder="Enter your address" />
+            <label class="form-label">Hourly Rate ($)</label>
+            <input type="number" step="0.01" name="hourly_rate" class="form-input" value="<?php echo htmlspecialchars($profile['hourly_rate'] ?? '0.00'); ?>" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Baseline payment rate</label>
-            <input type="text" class="form-input" placeholder="Enter your baseline payment rate in $/hr" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Payment Wallet Address</label>
-            <input type="text" class="form-input" placeholder="Enter your wallet address" />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Select Skills</label>
-            <div class="skills-chips">
-              <span class="skill-chip">Web Development</span>
-              <span class="skill-chip">Graphic Design</span>
-              <span class="skill-chip">SEO</span>
-              <span class="skill-chip">Content Writing</span>
-              <span class="skill-chip">Data Analysis</span>
-            </div>
-            <p class="form-hint">Add new skills or remove current skills.</p>
+            <label class="form-label">Bio</label>
+            <textarea name="bio" class="form-input" rows="4"><?php echo htmlspecialchars($profile['bio'] ?? ''); ?></textarea>
           </div>
 
           <div class="form-group">
             <label class="form-label">GitHub Link</label>
-            <input type="text" class="form-input" placeholder="Enter your GitHub link" />
+            <input type="url" name="github_link" class="form-input" value="<?php echo htmlspecialchars($profile['github_link'] ?? ''); ?>" placeholder="https://github.com/yourprofile" />
+          </div>
+        <?php elseif ($role === 'client'): ?>
+          <div class="form-group">
+            <label class="form-label">Company Name</label>
+            <input type="text" name="company_name" class="form-input" value="<?php echo htmlspecialchars($profile['company_name'] ?? ''); ?>" />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Portfolio/CV</label>
-            <input type="file" class="form-input" accept=".pdf,.doc,.docx" />
-            <p class="form-hint">Update your portfolio.</p>
+            <label class="form-label">Company Description</label>
+            <textarea name="company_description" class="form-input" rows="4"><?php echo htmlspecialchars($profile['company_description'] ?? ''); ?></textarea>
           </div>
+        <?php endif; ?>
 
-          <div class="form-actions">
-            <a href="freelancer-dashboard.html" class="btn btn-secondary btn-sm">Cancel</a>
-            <a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">Save Changes</a>
-          </div>
+        <div class="form-actions">
+          <a href="<?php echo $role; ?>-dashboard.php" class="btn btn-secondary btn-sm">Cancel</a>
+          <button type="submit" class="btn btn-primary btn-sm" style="border: none; cursor: pointer;">Save Changes</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <h2 class="logo">SkillsBridge</h2>
-        <p class="tagline">Where employment bridges skills</p>
-
-        <h4>Address:</h4>
-        <p>
-          442 lorem ipsum, lorem<br />
-          Dhaka, Bangladesh
-        </p>
-
-        <h4>Contact:</h4>
-        <p>
-          +880-1710999999<br />
-          +880-1910999999<br />
-          support@skillbridge.com
-        </p>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Services:</h4>
-        <ul>
-          <li>Post a Job</li>
-          <li>Browse Jobs</li>
-        </ul>
-
-        <h4>Find a:</h4>
-        <ul>
-          <li>Web Designer</li>
-          <li>Photoshop designer</li>
-          <li>Illustrator designer</li>
-          <li>Visualizer</li>
-          <li>SEO expert</li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Find a job for skills:</h4>
-        <ul>
-          <li>Web development</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>After effects</li>
-          <li>SEO</li>
-          <li>Digital Marketing</li>
-          <li>Social Media Management</li>
-          <li>C++ developer</li>
-          <li>PHP developer</li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Legal:</h4>
-        <ul>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms and conditions</li>
-        </ul>
-
-        <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
-  </footer>
-</body>
-
-</html>
+<?php include 'footer.php'; ?>

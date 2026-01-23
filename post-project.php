@@ -1,251 +1,114 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+session_start();
+require_once 'db.php';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Post a Project - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'client') {
+  header("Location: login.php");
+  exit();
+}
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
-        </span>
-      </a>
-      <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-        <a href="post-project.html" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Post a Project</a>
-        <div class="navbar-profile">
-          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+$error = '';
+$success = '';
 
-  <nav class="admin-navbar">
-    <div class="navbar-content">
-      <div class="navbar-links">
-        <a href="client-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="request-quote.html" class="navbar-link">Quotes</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
-        <a href="proposal-overview.html" class="navbar-link">Proposals</a>
-        <a href="work-progress.html" class="navbar-link">Work Approval</a>
-        <a href="client-feedback.html" class="navbar-link">Ratings & Reviews</a>
-      </div>
-    </div>
-  </nav>
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $title = $_POST['title'];
+  $description = $_POST['description'];
+  $budget = $_POST['budget'];
+  $deadline = $_POST['deadline'];
+  $client_id = $_SESSION['user_id'];
 
-  <!-- Post Project Form -->
-  <div class="dashboard">
-    <div class="container">
-      <div class="dashboard-header">
-        <h1>Post a New Project</h1>
-        <p style="color: var(--gray-600)">
-          Fill out the form below to post your project. It will be reviewed by
-          admin before being published.
-        </p>
-      </div>
+  $stmt = $conn->prepare("INSERT INTO jobs (client_id, title, description, budget, deadline, status) VALUES (?, ?, ?, ?, ?, 'open')");
+  $stmt->bind_param("isdds", $client_id, $title, $description, $budget, $deadline);
 
-      <div class="card" style="max-width: 800px; margin: 0 auto">
-        <form action="admin-dashboard.html" method="get" id="postProjectForm">
-          <div class="form-group">
-            <label class="form-label">Project Title
-              <span style="color: var(--red-600)">*</span></label>
-            <input type="text" class="form-input" name="title" placeholder="e.g., Build a responsive e-commerce website"
-              required />
-          </div>
+  if ($stmt->execute()) {
+    $success = "Project posted successfully! It is now visible to freelancers.";
+  } else {
+    $error = "Error posting project: " . $stmt->error;
+  }
+}
 
-          <div class="form-group">
-            <label class="form-label">Project Description
-              <span style="color: var(--red-600)">*</span></label>
-            <textarea class="form-textarea" name="description" rows="6"
-              placeholder="Describe your project in detail. Include requirements, deliverables, and any specific features needed."
-              required></textarea>
-          </div>
+$pageTitle = 'Post a Project - SkillBridge';
+include 'header.php';
+?>
 
-          <div class="grid grid-2">
-            <div class="form-group">
-              <label class="form-label">Category <span style="color: var(--red-600)">*</span></label>
-              <select class="form-select" name="category" required>
-                <option value="">Select a category...</option>
-                <option value="web-development">Web Development</option>
-                <option value="ui-ux-design">UI/UX Design</option>
-                <option value="mobile-development">Mobile Development</option>
-                <option value="content-writing">Content Writing</option>
-                <option value="video-editing">Video Editing</option>
-                <option value="data-science">Data Science</option>
-                <option value="graphic-design">Graphic Design</option>
-                <option value="marketing">Marketing</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Budget Range
-                <span style="color: var(--red-600)">*</span></label>
-              <select class="form-select" name="budget" required>
-                <option value="">Select budget range...</option>
-                <option value="under-500">Under $500</option>
-                <option value="500-1000">$500 - $1,000</option>
-                <option value="1000-2500">$1,000 - $2,500</option>
-                <option value="2500-5000">$2,500 - $5,000</option>
-                <option value="5000-10000">$5,000 - $10,000</option>
-                <option value="over-10000">Over $10,000</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid grid-2">
-            <div class="form-group">
-              <label class="form-label">Project Duration
-                <span style="color: var(--red-600)">*</span></label>
-              <select class="form-select" name="duration" required>
-                <option value="">Select duration...</option>
-                <option value="less-than-week">Less than 1 week</option>
-                <option value="1-2-weeks">1-2 weeks</option>
-                <option value="2-4-weeks">2-4 weeks</option>
-                <option value="1-2-months">1-2 months</option>
-                <option value="2-3-months">2-3 months</option>
-                <option value="over-3-months">Over 3 months</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Required Skills</label>
-              <input type="text" class="form-input" name="skills"
-                placeholder="e.g., React, Node.js, MongoDB (comma separated)" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Additional Requirements</label>
-            <textarea class="form-textarea" name="requirements" rows="4"
-              placeholder="Any additional requirements, preferences, or notes for freelancers..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Attachments (Optional)</label>
-            <div class="file-upload">
-              <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.png" />
-              <label for="fileInput" style="cursor: pointer">
-                <p style="margin: 0; color: var(--gray-600)">
-                  Click to upload files or drag and drop
-                </p>
-                <p style="
-                      margin: 0.5rem 0 0;
-                      font-size: 0.875rem;
-                      color: var(--gray-500);
-                    ">
-                  PDF, DOC, DOCX, JPG, PNG (Max 10MB)
-                </p>
-              </label>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1rem; margin-top: 2rem">
-            <button type="submit" class="btn btn-primary btn-lg">
-              Submit for Review
-            </button>
-            <a href="client-dashboard.html" class="btn btn-secondary btn-lg">Cancel</a>
-          </div>
-
-          <div class="alert alert-info" style="margin-top: 1.5rem">
-            <strong>Note:</strong> Your project will be submitted to admin for
-            approval. Once approved, it will be visible to freelancers who can
-            submit proposals. You'll be notified when your project is
-            approved.
-          </div>
-        </form>
-      </div>
+<nav class="admin-navbar">
+  <div class="navbar-content">
+    <div class="navbar-links">
+      <a href="client-dashboard.php" class="navbar-link">Dashboard</a>
+      <a href="request-quote.php" class="navbar-link">Quotes</a>
+      <a href="client-chat.php" class="navbar-link">Chat</a>
+      <a href="proposal-overview.php" class="navbar-link">Proposals</a>
+      <a href="work-progress.php" class="navbar-link">Work Approval</a>
+      <a href="client-feedback.php" class="navbar-link">Ratings & Reviews</a>
     </div>
   </div>
+</nav>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <h2 class="logo">SkillsBridge</h2>
-        <p class="tagline">Where employment bridges skills</p>
-
-        <h4>Address:</h4>
-        <p>
-          442 lorem ipsum, lorem<br />
-          Dhaka, Bangladesh
-        </p>
-
-        <h4>Contact:</h4>
-        <p>
-          +880-1710999999<br />
-          +880-1910999999<br />
-          support@skillbridge.com
-        </p>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Services:</h4>
-        <ul>
-          <li>Post a Job</li>
-          <li>Browse Jobs</li>
-        </ul>
-
-        <h4>Find a:</h4>
-        <ul>
-          <li>Web Designer</li>
-          <li>Photoshop designer</li>
-          <li>Illustrator designer</li>
-          <li>Visualizer</li>
-          <li>SEO expert</li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Find a job for skills:</h4>
-        <ul>
-          <li>Web development</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>After effects</li>
-          <li>SEO</li>
-          <li>Digital Marketing</li>
-          <li>Social Media Management</li>
-          <li>C++ developer</li>
-          <li>PHP developer</li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Legal:</h4>
-        <ul>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms and conditions</li>
-        </ul>
-
-        <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
-        </div>
-      </div>
+<!-- Post Project Form -->
+<div class="dashboard">
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>Post a New Project</h1>
+      <p style="color: var(--gray-600)">
+        Fill out the form below to post your project.
+      </p>
     </div>
 
-    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
-  </footer>
-</body>
+    <div class="card" style="max-width: 800px; margin: 0 auto">
+      <?php if ($error): ?>
+        <div class="alert alert-danger" style="margin-bottom: 1rem; color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $error; ?>
+        </div>
+      <?php endif; ?>
 
-</html>
+      <?php if ($success): ?>
+        <div class="alert alert-success" style="margin-bottom: 1rem; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $success; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="post-project.php" method="post" id="postProjectForm">
+        <div class="form-group">
+          <label class="form-label">Project Title
+            <span style="color: var(--red-600)">*</span></label>
+          <input type="text" class="form-input" name="title" placeholder="e.g., Build a responsive e-commerce website"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Project Description
+            <span style="color: var(--red-600)">*</span></label>
+          <textarea class="form-textarea" name="description" rows="6"
+            placeholder="Describe your project in detail. Include requirements, deliverables, and any specific features needed."
+            required></textarea>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label class="form-label">Budget ($) <span style="color: var(--red-600)">*</span></label>
+            <input type="number" step="0.01" class="form-input" name="budget" placeholder="Enter budget" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Deadline <span style="color: var(--red-600)">*</span></label>
+            <input type="date" class="form-input" name="deadline" required />
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem">
+          <button type="submit" class="btn btn-primary btn-lg">
+            Post Project
+          </button>
+          <a href="client-dashboard.php" class="btn btn-secondary btn-lg">Cancel</a>
+        </div>
+
+        <div class="alert alert-info" style="margin-top: 1.5rem">
+          <strong>Note:</strong> Once posted, your project will be visible to freelancers who can
+          submit proposals. You can manage your projects from the dashboard.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<?php include 'footer.php'; ?>

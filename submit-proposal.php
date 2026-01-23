@@ -1,167 +1,109 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+session_start();
+require_once 'db.php';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Proposal - SkillBridge</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'freelancer') {
+  header("Location: login.php");
+  exit();
+}
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-content">
-      <a href="index.html" class="navbar-logo">
-        <img src="logo.png" alt="SkillBridge Logo" />
-        <span style="font-family: calibri; font-size: 25px; font-weight: bold">
-          <span style="color: greenyellow">Skill</span><span style="color: blue">Bridge</span>
-        </span>
-      </a>
-      <div class="navbar-links">
-        <a href="index.html" class="navbar-link"><i class="fas fa-home"></i> Home</a>
-        <a href="browse-projects.html" class="navbar-link"><i class="fas fa-briefcase"></i> Browse Projects</a>
-        <a href="#" class="navbar-link"><i class="fas fa-info-circle"></i> About</a>
-        <div class="navbar-profile">
-          <div class="avatar" style="width: 32px; height: 32px; font-size: 1rem">
-            ðŸ‘¤
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+$error = '';
+$success = '';
+$job_id = $_GET['job_id'] ?? ($_POST['job_id'] ?? null);
 
-  <nav class="admin-navbar">
-    <div class="navbar-content">
-      <div class="navbar-links">
-        <a href="freelancer-dashboard.html" class="navbar-link">Dashboard</a>
-        <a href="proposal-stats.html" class="navbar-link active">Proposals</a>
-        <a href="client-chat.html" class="navbar-link">Chat</a>
-        <a href="work-progress.html" class="navbar-link">Contracts</a>
-        <a href="wallet.html" class="navbar-link">Earnings</a>
-      </div>
-    </div>
-  </nav>
+if (!$job_id) {
+  header("Location: browse-projects.php");
+  exit();
+}
 
-  <!-- Page Header -->
-  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
-    <div class="container">
-      <h1 class="section-title">Submit Your Proposal</h1>
-      <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Fill out the
-        form below to apply for the job. Make your proposal stand out!</p>
-    </div>
-  </div>
+// Fetch job title for display
+$stmt_job = $conn->prepare("SELECT title FROM jobs WHERE job_id = ?");
+$stmt_job->bind_param("i", $job_id);
+$stmt_job->execute();
+$job_title = $stmt_job->get_result()->fetch_assoc()['title'] ?? 'Selected Project';
 
-  <!-- Proposal Form -->
-  <div class="section section-gray">
-    <div class="container">
-      <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <p style="color: var(--gray-600); margin-bottom: 2rem;">Provide your bid amount, delivery time, and a cover
-          letter.</p>
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $bid_amount = $_POST['bid_amount'];
+  $cover_letter = $_POST['cover_letter'];
+  $freelancer_id = $_SESSION['user_id'];
 
-        <div class="proposal-form-fields">
-          <div class="form-group">
-            <label class="form-label">Bid Amount</label>
-            <input type="text" class="form-input" placeholder="Enter your bid amount (in USD)" />
-          </div>
+  $stmt = $conn->prepare("INSERT INTO proposals (job_id, freelancer_id, bid_amount, cover_letter) VALUES (?, ?, ?, ?)");
+  $stmt->bind_param("iids", $job_id, $freelancer_id, $bid_amount, $cover_letter);
 
-          <div class="form-group">
-            <label class="form-label">Delivery Time</label>
-            <input type="text" class="form-input" placeholder="Enter delivery time (in days)" />
-          </div>
+  if ($stmt->execute()) {
+    $success = "Your proposal has been submitted successfully!";
+  } else {
+    if ($conn->errno == 1062) {
+      $error = "You have already submitted a proposal for this project.";
+    } else {
+      $error = "Error: " . $stmt->error;
+    }
+  }
+}
 
-          <div class="form-group">
-            <label class="form-label">Cover Letter</label>
-            <textarea class="form-textarea-proposal" placeholder="Explain why you are the right fit for this job"
-              rows="3"></textarea>
-            <p class="form-hint">Provide details on your relevant experience and skills</p>
-          </div>
+$pageTitle = 'Submit Proposal - SkillBridge';
+include 'header.php';
+?>
 
-          <div class="form-actions">
-            <a href="browse-projects.html" class="btn btn-secondary btn-sm">Cancel</a>
-            <a href="freelancer-dashboard.html" class="btn btn-primary btn-sm">Submit proposal</a>
-          </div>
-        </div>
-      </div>
+<nav class="admin-navbar">
+  <div class="navbar-content">
+    <div class="navbar-links">
+      <a href="freelancer-dashboard.php" class="navbar-link">Dashboard</a>
+      <a href="submit-proposal.php" class="navbar-link active">Proposals</a>
+      <a href="client-chat.php" class="navbar-link">Chat</a>
+      <a href="work-progress.php" class="navbar-link">Contracts</a>
+      <a href="wallet.php" class="navbar-link">Earnings</a>
     </div>
   </div>
+</nav>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
-        <h2 class="logo">SkillsBridge</h2>
-        <p class="tagline">Where employment bridges skills</p>
+<!-- Page Header -->
+<div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
+  <div class="container">
+    <h1 class="section-title">Submit Proposal for: <?php echo htmlspecialchars($job_title); ?></h1>
+    <p class="section-subtitle" style="text-align: center; font-size: 1.25rem; color: var(--gray-600);">Make your proposal stand out!</p>
+  </div>
+</div>
 
-        <h4>Address:</h4>
-        <p>
-          442 lorem ipsum, lorem<br />
-          Dhaka, Bangladesh
-        </p>
+<!-- Proposal Form -->
+<div class="section section-gray">
+  <div class="container">
+    <div class="card" style="max-width: 800px; margin: 0 auto;">
 
-        <h4>Contact:</h4>
-        <p>
-          +880-1710999999<br />
-          +880-1910999999<br />
-          support@skillbridge.com
-        </p>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col">
-        <h4>Services:</h4>
-        <ul>
-          <li>Post a Job</li>
-          <li>Browse Jobs</li>
-        </ul>
-
-        <h4>Find a:</h4>
-        <ul>
-          <li>Web Designer</li>
-          <li>Photoshop designer</li>
-          <li>Illustrator designer</li>
-          <li>Visualizer</li>
-          <li>SEO expert</li>
-        </ul>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="footer-col">
-        <h4>Find a job for skills:</h4>
-        <ul>
-          <li>Web development</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>After effects</li>
-          <li>SEO</li>
-          <li>Digital Marketing</li>
-          <li>Social Media Management</li>
-          <li>C++ developer</li>
-          <li>PHP developer</li>
-        </ul>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="footer-col">
-        <h4>Legal:</h4>
-        <ul>
-          <li>Contact</li>
-          <li>Privacy Policy</li>
-          <li>Terms and conditions</li>
-        </ul>
-
-        <div class="social-icons">
-          <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">Email</a>
+      <?php if ($error): ?>
+        <div class="alert alert-danger" style="margin-bottom: 1rem; color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $error; ?>
         </div>
-      </div>
+      <?php endif; ?>
+
+      <?php if ($success): ?>
+        <div class="alert alert-success" style="margin-bottom: 1rem; color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; padding: 0.75rem; border-radius: 0.25rem;">
+          <?php echo $success; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="submit-proposal.php" method="post" class="proposal-form-fields">
+        <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
+
+        <div class="form-group">
+          <label class="form-label">Bid Amount ($)</label>
+          <input type="number" step="0.01" name="bid_amount" class="form-input" placeholder="Enter your bid amount" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Cover Letter</label>
+          <textarea name="cover_letter" class="form-textarea-proposal" placeholder="Explain why you are the right fit for this job"
+            rows="6" required></textarea>
+          <p class="form-hint">Provide details on your relevant experience and skills</p>
+        </div>
+
+        <div class="form-actions">
+          <a href="view-project-details.php?id=<?php echo $job_id; ?>" class="btn btn-secondary btn-sm">Cancel</a>
+          <button type="submit" class="btn btn-primary btn-sm" style="border: none; cursor: pointer;">Submit proposal</button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
 
-    <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
-  </footer>
-</body>
-
-</html>
+<?php include 'footer.php'; ?>
