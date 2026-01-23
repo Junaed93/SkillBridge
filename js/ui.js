@@ -209,6 +209,60 @@ function initRoleToggle() {
     updateContent();
 }
 
+/* ===== SEARCH & FILTERS ===== */
+function initSearchAndFilters() {
+    const searchForm = document.getElementById('searchForm');
+    const filterButtons = document.querySelectorAll('[data-action="apply-filters"]');
+    const clearButtons = document.querySelectorAll('[data-action="clear-filters"]');
+
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = this.querySelector('input').value;
+            console.log('Searching for:', query);
+            // API connection point
+            // fetch(`${this.getAttribute('data-api-endpoint')}?q=${query}`)...
+        });
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const panel = this.closest('.filter-panel');
+            if (panel) {
+                const endpoint = panel.getAttribute('data-api-endpoint');
+                const formData = new FormData();
+                
+                // Collect all inputs, selects, and checkboxes in the panel
+                panel.querySelectorAll('input, select').forEach(input => {
+                    if (input.type === 'checkbox') {
+                        if (input.checked) formData.append(input.name, input.value);
+                    } else {
+                        formData.append(input.name, input.value);
+                    }
+                });
+                
+                console.log('Applying filters to:', endpoint, Object.fromEntries(formData));
+                // API connection point
+                // fetch(endpoint, { method: 'POST', body: formData })...
+            }
+        });
+    });
+
+    clearButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const panel = this.closest('.filter-panel');
+            if (panel) {
+                panel.querySelectorAll('input, select').forEach(input => {
+                    if (input.type === 'checkbox') input.checked = false;
+                    else if (input.tagName === 'SELECT') input.selectedIndex = 0;
+                    else input.value = '';
+                });
+                console.log('Filters cleared');
+            }
+        });
+    });
+}
+
 /* ===== UI STATE TOGGLES ===== */
 function toggleActiveState(element) {
     if (element) {
@@ -235,5 +289,49 @@ function setActiveNavLink() {
     });
 }
 
-// Auto-initialize navbar active state
-document.addEventListener('DOMContentLoaded', setActiveNavLink);
+/* ===== NAVBAR RESPONSIVE TOGGLE ===== */
+function initNavbar() {
+    // Select all navbar content containers (e.g. main navbar and admin navbar)
+    const navbars = document.querySelectorAll('.navbar-content');
+    
+    navbars.forEach(navbarContent => {
+        const navbarLinks = navbarContent.querySelector('.navbar-links');
+        
+        // Only proceed if we have links but no existing toggle
+        if (navbarLinks && !navbarContent.querySelector('.navbar-toggle')) {
+            // Create Toggle Button
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'navbar-toggle';
+            toggleBtn.innerHTML = '<i class="fas fa-bars" style="font-size: 1.25rem;"></i>';
+            toggleBtn.ariaLabel = 'Toggle navigation';
+            
+            // Insert before navbarLinks
+            navbarContent.insertBefore(toggleBtn, navbarLinks);
+            
+            // Add Click Handler
+            toggleBtn.addEventListener('click', function() {
+                navbarLinks.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (navbarLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+    });
+}
+
+// Auto-initialize components
+document.addEventListener('DOMContentLoaded', () => {
+    initDropdowns();
+    initModals();
+    initTabs();
+    initFilterChips();
+    initRoleToggle();
+    initSearchAndFilters();
+    setActiveNavLink();
+    initNavbar();
+});

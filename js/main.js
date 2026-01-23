@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize filter chips if present
     if (typeof initFilterChips === 'function') initFilterChips();
     
+    // Initialize search and filters if present
+    if (typeof initSearchAndFilters === 'function') initSearchAndFilters();
+    
     console.log('SkillBridge initialized');
 });
 

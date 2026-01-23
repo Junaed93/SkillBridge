@@ -174,6 +174,37 @@
         flex-direction: column;
       }
     }
+
+    /* Browse Grid */
+    .browse-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .browse-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box input {
+        width: 100%;
+      }
+
+      .search-box button {
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -212,20 +243,134 @@
     </div>
   </nav>
 
-  <!-- Page Title -->
-  <div class="section section-white">
+  <!-- Page Title & Search -->
+  <div class="section section-white" style="padding-top: 4rem; padding-bottom: 2rem;">
     <div class="container">
-      <h1 class="section-title">Browse Projects</h1>
-      <p class="section-subtitle">Explore the latest job opportunities</p>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+        <div>
+          <h1 class="section-title" style="text-align: left; margin: 0 0 0.5rem 0;">Browse Projects</h1>
+          <p class="section-subtitle" style="text-align: left; margin: 0;">Explore the latest job opportunities</p>
+        </div>
+        <div style="flex: 1; max-width: 500px;">
+          <form id="searchForm" class="search-box" style="display: flex; gap: 0.5rem;">
+            <input type="text" class="form-input" placeholder="Search for projects, skills, or clients..."
+              style="flex: 1;" />
+            <button type="submit" class="btn btn-primary" style="padding: 0 1.5rem;">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Projects Grid -->
+  <!-- Main Content with Sidebar -->
   <div class="section section-gray">
     <div class="container">
+      <div class="browse-grid">
 
-      <div id="projects-grid-container" class="projects-grid">
-        <!-- Projects will be populated here -->
+        <!-- Filter Sidebar -->
+        <aside>
+          <div class="filter-panel" data-api-endpoint="/api/projects/filter">
+            <h3 class="filter-panel-title"><i class="fas fa-filter"></i> Filter Projects</h3>
+
+            <!-- Category Filter -->
+            <div class="filter-group">
+              <label class="filter-group-label" for="categoryFilter">Category</label>
+              <select class="form-select" name="category" id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-development">Mobile Development</option>
+                <option value="graphic-design">Graphic Design</option>
+                <option value="content-writing">Content Writing</option>
+                <option value="seo">SEO & Marketing</option>
+              </select>
+            </div>
+
+            <!-- Budget Filter -->
+            <div class="filter-group">
+              <label class="filter-group-label" for="budgetFilter">Budget Range</label>
+              <select class="form-select" name="budgetRange" id="budgetFilter">
+                <option value="">Any Budget</option>
+                <option value="0-500">$0 - $500</option>
+                <option value="500-2000">$500 - $2,000</option>
+                <option value="2000-5000">$2,000 - $5,000</option>
+                <option value="5000+">$5,000+</option>
+              </select>
+            </div>
+
+            <!-- Project Type Filter -->
+            <div class="filter-group">
+              <label class="filter-group-label">Project Type</label>
+              <div class="filter-checkbox-list">
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="type[]" value="fixed-price" />
+                  <span>Fixed Price</span>
+                </label>
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="type[]" value="hourly" />
+                  <span>Hourly</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Skills Filter -->
+            <div class="filter-group">
+              <label class="filter-group-label">Skills Required</label>
+              <div class="filter-checkbox-list">
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="skills[]" value="html-css" />
+                  <span>HTML/CSS</span>
+                </label>
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="skills[]" value="javascript" />
+                  <span>JavaScript</span>
+                </label>
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="skills[]" value="php" />
+                  <span>PHP</span>
+                </label>
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="skills[]" value="python" />
+                  <span>Python</span>
+                </label>
+                <label class="filter-checkbox-item">
+                  <input type="checkbox" name="skills[]" value="ui-ux" />
+                  <span>UI/UX Design</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filter Actions -->
+            <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem;">
+              <button type="button" class="btn btn-primary btn-sm" style="flex: 1;" data-action="apply-filters">
+                Apply Filters
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" data-action="clear-filters">
+                Clear
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Projects Grid -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <p style="color: var(--gray-600); margin: 0;">
+              Found <span data-field="resultCount">0</span> projects
+            </p>
+            <select class="form-select" name="sortBy" style="width: auto;">
+              <option value="recent">Newest First</option>
+              <option value="budget-high">Budget: High to Low</option>
+              <option value="budget-low">Budget: Low to High</option>
+              <option value="deadline">Upcoming Deadlines</option>
+            </select>
+          </div>
+          <div id="projects-grid-container" class="projects-grid" data-api-endpoint="/api/projects"
+            style="margin-top: 0;">
+            <!-- Projects will be populated here -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -303,6 +448,9 @@
 
     <div class="footer-bottom">&copy; 2026, SkillBridge, Inc</div>
   </footer>
+  <!-- External JavaScript -->
+  <script src="../../js/main.js"></script>
+  <script src="../../js/ui.js"></script>
 </body>
 
 </html>
