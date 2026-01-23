@@ -33,16 +33,14 @@ if (!in_array($role, $allowed_roles)) {
 try {
     $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ?");
     $stmt->execute([$email]);
-    
+
     if ($stmt->rowCount() > 0) {
         echo json_encode(['success' => false, 'message' => 'Email already registered']);
         exit;
     }
 
-    // Hash Password
+    // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert User
     $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, role) VALUES (?, ?, ?, ?)");
     $stmt->execute([$full_name, $email, $hashed_password, $role]);
     $user_id = $conn->lastInsertId();
@@ -55,14 +53,12 @@ try {
         $stmt = $conn->prepare("INSERT INTO client_profiles (client_id) VALUES (?)");
         $stmt->execute([$user_id]);
     }
-    
+
     // Create Wallet
     $stmt = $conn->prepare("INSERT INTO wallet (user_id) VALUES (?)");
     $stmt->execute([$user_id]);
 
     echo json_encode(['success' => true, 'message' => 'Registration successful']);
-
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
 }
-?>

@@ -27,7 +27,7 @@ try {
     // Fetch User
     $stmt = $conn->prepare("SELECT user_id, full_name, password, role, status FROM users WHERE email = ?");
     $stmt->execute([$email]);
-    
+
     if ($stmt->rowCount() === 0) {
         echo json_encode(['success' => false, 'message' => 'Invalid credentials']);
         exit;
@@ -40,7 +40,7 @@ try {
         echo json_encode(['success' => false, 'message' => 'Invalid credentials']);
         exit;
     }
-    
+
     // Check Status (Optional - if you want to block pending users)
     // if ($user['status'] === 'rejected') { ... }
 
@@ -59,8 +59,6 @@ try {
             'status' => $user['status']
         ]
     ]);
-
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
 }
-?>
