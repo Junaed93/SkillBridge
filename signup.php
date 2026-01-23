@@ -1,5 +1,9 @@
 ﻿<?php
 session_start();
+// die("PHP is working on signup.php"); // Uncomment to test if script is reached
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 require_once 'db.php';
 
 $error = '';
@@ -45,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $conn->commit();
       $success = "Account created successfully! You can now <a href='login.php'>Login</a>.";
-    } catch (Exception $e) {
+    } catch (Throwable $e) {
       $conn->rollback();
-      if ($conn->errno == 1062) {
+      if (isset($conn->errno) && $conn->errno == 1062) {
         $error = "Email already registered.";
       } else {
-        $error = "Error: " . $e->getMessage();
+        $error = "System Error: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine();
       }
     }
   }
