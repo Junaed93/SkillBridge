@@ -307,4 +307,47 @@
     .grid-2, .grid-3, .grid-4 {
         grid-template-columns: 1fr;
     }
+
+    /* Mobile Navbar Styles - Moved to end for specificity */
+    .navbar-content, 
+    .admin-navbar .navbar-content {
+        flex-wrap: wrap !important;
+        height: auto !important;
+        padding: 0.75rem 1.5rem !important;
+    }
+
+    .navbar-toggle {
+        display: block; /* Show hamburger on mobile */
+        margin-left: auto; /* Push to right */
+    }
+    
+    .navbar-links,
+    .admin-navbar .navbar-links {
+        display: none; /* Hide links by default */
+        width: 100%; /* Full width */
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+        border-top: 1px solid var(--gray-200);
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .navbar-links.active,
+    .admin-navbar .navbar-links.active {
+        display: flex !important; /* Force show when active */
+    }
+    
+    .navbar-link {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+        justify-content: flex-start;
+    }
+
+    .navbar-profile {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--gray-100);
+    }
 }
