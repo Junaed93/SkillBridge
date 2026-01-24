@@ -26,10 +26,11 @@ if (isset($_GET['action']) && isset($_GET['user_id'])) {
   }
 }
 
-// Fetch Pending Freelancers
-$query = "SELECT u.*, fp.title, fp.skills, fp.bio 
+// Fetch Pending Freelancers with their latest verification document if any
+$query = "SELECT u.*, fp.title, fp.skills, fp.bio, vd.document_path, vd.doc_id 
           FROM users u 
           LEFT JOIN freelancer_profiles fp ON u.user_id = fp.freelancer_id 
+          LEFT JOIN verification_documents vd ON u.user_id = vd.user_id AND vd.status = 'pending'
           WHERE u.role = 'freelancer' AND u.status = 'pending' 
           ORDER BY u.created_at ASC";
 $result = $conn->query($query);
@@ -42,6 +43,7 @@ include 'includes/header.php';
   <div class="navbar-content">
     <div class="navbar-links">
       <a href="admin-dashboard.php" class="navbar-link">Dashboard</a>
+      <a href="admin-projects.php" class="navbar-link">Projects</a>
       <a href="admin-freelancer-approvals.php" class="navbar-link active">Freelancer Approvals</a>
       <a href="admin-client-approvals.php" class="navbar-link">Client Approvals</a>
       <a href="admin-verification.php" class="navbar-link">Verification</a>
@@ -78,6 +80,11 @@ include 'includes/header.php';
             </div>
             <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);">
               <p style="margin: 0.5rem 0;"><strong>Skills:</strong> <?php echo htmlspecialchars($f['skills'] ?? 'Not provided'); ?></p>
+              <?php if ($f['document_path']): ?>
+                <p style="margin: 0.5rem 0;"><a href="<?php echo htmlspecialchars($f['document_path']); ?>" target="_blank" style="color: var(--blue-600); font-weight: 600;"><i class="fas fa-file-alt"></i> View Verification Document</a></p>
+              <?php else: ?>
+                <p style="margin: 0.5rem 0; color: var(--red-600); font-style: italic;">No document uploaded yet.</p>
+              <?php endif; ?>
             </div>
             <div style="display: flex; gap: 0.5rem;">
               <a href="admin-user-details.php?id=<?php echo $f['user_id']; ?>" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>

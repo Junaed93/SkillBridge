@@ -26,10 +26,11 @@ if (isset($_GET['action']) && isset($_GET['user_id'])) {
   }
 }
 
-// Fetch Pending Clients
-$query = "SELECT u.*, cp.company_name, cp.company_description 
+// Fetch Pending Clients with their latest verification document if any
+$query = "SELECT u.*, cp.company_name, cp.company_description, vd.document_path, vd.doc_id 
           FROM users u 
           LEFT JOIN client_profiles cp ON u.user_id = cp.client_id 
+          LEFT JOIN verification_documents vd ON u.user_id = vd.user_id AND vd.status = 'pending'
           WHERE u.role = 'client' AND u.status = 'pending' 
           ORDER BY u.created_at ASC";
 $result = $conn->query($query);
@@ -42,6 +43,7 @@ include 'includes/header.php';
   <div class="navbar-content">
     <div class="navbar-links">
       <a href="admin-dashboard.php" class="navbar-link">Dashboard</a>
+      <a href="admin-projects.php" class="navbar-link">Projects</a>
       <a href="admin-freelancer-approvals.php" class="navbar-link">Freelancer Approvals</a>
       <a href="admin-client-approvals.php" class="navbar-link active">Client Approvals</a>
       <a href="admin-verification.php" class="navbar-link">Verification</a>
@@ -78,6 +80,9 @@ include 'includes/header.php';
             <div style="background: #f9f9f9; border-radius: 8px; padding: 12px; margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-600);">
               <p style="margin: 0.5rem 0;"><strong>Rep:</strong> <?php echo htmlspecialchars($c['full_name']); ?></p>
               <p style="margin: 0.5rem 0;"><strong>Phone:</strong> <?php echo htmlspecialchars($c['phone'] ?? 'N/A'); ?></p>
+              <?php if ($c['document_path']): ?>
+                <p style="margin: 0.5rem 0;"><a href="<?php echo htmlspecialchars($c['document_path']); ?>" target="_blank" style="color: var(--blue-600); font-weight: 600;"><i class="fas fa-file-alt"></i> View Verification Document</a></p>
+              <?php endif; ?>
             </div>
             <div style="display: flex; gap: 0.5rem;">
               <a href="admin-user-details.php?id=<?php echo $c['user_id']; ?>" class="btn btn-secondary btn-sm" style="flex: 1;">Details</a>

@@ -215,8 +215,8 @@ include 'includes/header.php';
           style="background: #f9f9f9; border-radius: 10px; padding: 16px; display: flex; flex-direction: column;">
           <p style="color: var(--gray-600); font-size: 0.95rem; margin: 0 0 0.75rem 0; font-weight: bold;">Portfolio
             Documents</p>
-          <a href="portfolio.pdf" download style="font-size: 0.95rem; margin: 0;"><i class="fas fa-file-pdf"
-              style="margin-right: 0.5rem; color: #ef4444;"></i>Portfolio.pdf</a>
+          <a href="view-portfolio.php?id=<?php echo $user_id; ?>" style="font-size: 0.95rem; margin: 0;"><i class="fas fa-file-pdf"
+              style="margin-right: 0.5rem; color: #ef4444;"></i>Generate Dynamic Portfolio (PDF)</a>
         </div>
       </div>
     </div>

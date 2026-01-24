@@ -42,6 +42,7 @@ include 'includes/header.php';
   <div class="navbar-content">
     <div class="navbar-links">
       <a href="admin-dashboard.php" class="navbar-link">Dashboard</a>
+      <a href="admin-projects.php" class="navbar-link">Projects</a>
       <a href="admin-freelancer-approvals.php" class="navbar-link">Freelancer Approvals</a>
       <a href="admin-client-approvals.php" class="navbar-link">Client Approvals</a>
       <a href="admin-verification.php" class="navbar-link active">Verification</a>

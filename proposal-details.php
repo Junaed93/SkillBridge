@@ -159,7 +159,19 @@ include 'includes/header.php';
         <a href="proposal-overview.php?action=accept&proposal_id=<?php echo $proposal['proposal_id']; ?>" class="btn btn-primary">Accept Proposal</a>
         <a href="proposal-overview.php?action=reject&proposal_id=<?php echo $proposal['proposal_id']; ?>" class="btn btn-secondary" style="background: #ef4444; color: white;">Reject Proposal</a>
       </div>
-    <?php endif; ?>
+      <?php elseif ($proposal['status'] === 'accepted'):
+      // Fetch project_id for the accepted proposal
+      $stmt_proj_id = $conn->prepare("SELECT project_id FROM projects WHERE job_id = ? AND freelancer_id = ?");
+      $stmt_proj_id->bind_param("ii", $proposal['job_id'], $proposal['freelancer_id']);
+      $stmt_proj_id->execute();
+      $p_res = $stmt_proj_id->get_result()->fetch_assoc();
+      if ($p_res):
+      ?>
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center;">
+          <a href="view-contract.php?id=<?php echo $p_res['project_id']; ?>" class="btn btn-primary"><i class="fas fa-file-contract"></i> View Signed Contract</a>
+        </div>
+    <?php endif;
+    endif; ?>
   </div>
 
   <div style="text-align: center; margin-top: 2rem;">

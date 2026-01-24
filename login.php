@@ -85,10 +85,7 @@ include 'includes/header.php';
       </p>
     </form>
 
-    <div class="alert alert-info" style="margin-top: 1.5rem">
-      <strong>Database Notice:</strong><br />
-      Ensure you have imported the latest <code>schema.sql</code> into your MySQL <code>skillbridge</code> database.
-    </div>
+
 
     <div style="text-align: center; margin-top: 1rem">
       <a href="index.php" style="color: var(--gray-600); font-size: 0.875rem">&larr; Back to Home</a>

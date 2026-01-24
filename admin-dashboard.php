@@ -34,6 +34,7 @@ include 'includes/header.php';
   <div class="navbar-content">
     <div class="navbar-links">
       <a href="admin-dashboard.php" class="navbar-link active">Dashboard</a>
+      <a href="admin-projects.php" class="navbar-link">Projects</a>
       <a href="admin-verification.php" class="navbar-link">Verifications <?php if ($pending_verifications > 0): ?><span class="badge urgent" style="padding: 2px 6px;"><?php echo $pending_verifications; ?></span><?php endif; ?></a>
       <a href="admin-freelancer-approvals.php" class="navbar-link">Freelancers</a>
       <a href="admin-client-approvals.php" class="navbar-link">Clients</a>

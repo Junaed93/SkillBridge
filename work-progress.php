@@ -134,7 +134,10 @@ include 'includes/header.php';
               <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;"><?php echo htmlspecialchars($proj['title']); ?></h2>
               <p style="color: var(--gray-600);"><strong><?php echo $role === 'client' ? 'Freelancer' : 'Client'; ?>:</strong> <?php echo htmlspecialchars($proj['other_party']); ?></p>
             </div>
-            <span class="badge badge-info"><?php echo ucfirst($proj['status']); ?></span>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <a href="view-contract.php?id=<?php echo $proj['project_id']; ?>" class="btn btn-secondary btn-xs" style="padding: 5px 10px; font-size: 0.75rem;"><i class="fas fa-file-contract"></i> View Contract</a>
+              <span class="badge badge-info"><?php echo ucfirst($proj['status']); ?></span>
+            </div>
           </div>
 
           <div style="margin-bottom: 2rem;">
